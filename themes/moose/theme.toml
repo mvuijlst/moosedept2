@@ -1,21 +1,13 @@
-# theme.toml template for a Hugo theme
-# See https://github.com/gohugoio/hugoThemes#themetoml for an example
-
 name = "Moose"
 license = "MIT"
-licenselink = "https://github.com/yourname/yourtheme/blob/master/LICENSE"
-description = ""
-homepage = "http://example.com/"
+licenselink = "https://github.com/mvuijlst/moose/blob/master/LICENSE"
+description = "Theme for Moose Dept. personal site"
+homepage = "http://users.ugent.be/~mvujlst"
 tags = []
 features = []
 min_version = "0.41.0"
 
 [author]
-  name = ""
-  homepage = ""
+  name = "Michel Vuijlsteke"
+  homepage = "https://blog.zog.org"
 
-# If porting an existing theme
-[original]
-  name = ""
-  homepage = ""
-  repo = ""

@@ -1,0 +1,8 @@
+{{ $dateTime := .PublishDate.Format "2006-01-02" }}
+<time datetime="{{ $dateTime }}">{{ .PublishDate | time.Format "2 January 2006" }}</time>
+{{ with .Params.tags }}
+{{ range . }}
+{{ $href := print (absURL "tags/") (urlize .) }}
+<a href="{{ $href }}">{{ . }}</a>
+{{ end }}
+{{ end }}
