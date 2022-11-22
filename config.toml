@@ -1,0 +1,4 @@
+baseURL = 'http://users.ugent.be/~mvuijlst/hugo/'
+languageCode = 'nl-be'
+title = 'Moose Dept.'
+theme = 'moose'
