@@ -1,1 +1,10 @@
 <footer>&copy; {{ now.Format "2006"}} Michel Vuijlsteke, tralala. Niet dat er iets te copyrighten is maar hey.</footer>
+<script>
+    for (let img of document.getElementsByTagName('img')) {
+        let a = document.createElement('a');
+        let parent = img.parentElement;
+        a.href = img.src;
+        a.appendChild(img);
+        parent.prepend(a);
+    }
+</script>

@@ -9,26 +9,29 @@
     
     
     <title>Moose Dept. | Een ouder ding om te testen</title>
-</head><body><div id="nav-border" class="container">
-    <nav id="nav" class="nav justify-content-center">
-        
-        <a class="nav-link" href="/~mvuijlst/hugo/">
-        
-        Home
-        </a>
-        
-        <a class="nav-link" href="/~mvuijlst/hugo/posts/">
-        
-        Posts
-        </a>
-        
-        <a class="nav-link" href="/~mvuijlst/hugo/tags/">
-        
-        Tags
-        </a>
-        
-    </nav>
-</div><div id="content">
+</head><body><ol  class="nav navbar-nav">
+  
+
+
+
+
+
+<li>
+  <a href="http://users.ugent.be/~mvuijlst/hugo/"></a>
+</li>
+
+
+<li>
+  <a href="http://users.ugent.be/~mvuijlst/hugo/posts/">Posts</a>
+</li>
+
+
+<li class="active" aria-current="page" >
+  <a href="http://users.ugent.be/~mvuijlst/hugo/posts/oud/">Een ouder ding om te testen</a>
+</li>
+
+</ol>
+<div id="content">
 <h1>Een ouder ding om te testen</h1>
 
 <time datetime="2022-05-01">1 mei 2022</time>
@@ -37,5 +40,14 @@
 <p>Dit zou moeten in het schoon Vlaams verschijnen.</p>
 
 
-        </div><footer>&copy; 2022 Michel Vuijlsteke, tralala. Niet dat er iets te copyrighten is maar hey.</footer></body>
+        </div><footer>&copy; 2022 Michel Vuijlsteke, tralala. Niet dat er iets te copyrighten is maar hey.</footer>
+<script>
+    for (let img of document.getElementsByTagName('img')) {
+        let a = document.createElement('a');
+        let parent = img.parentElement;
+        a.href = img.src;
+        a.appendChild(img);
+        parent.prepend(a);
+    }
+</script></body>
 </html>

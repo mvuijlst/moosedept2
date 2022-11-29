@@ -9,30 +9,35 @@
     
     
     <title>Moose Dept. | Tags</title>
-</head><body><div id="nav-border" class="container">
-    <nav id="nav" class="nav justify-content-center">
-        
-        <a class="nav-link" href="/~mvuijlst/hugo/">
-        
-        Home
-        </a>
-        
-        <a class="nav-link" href="/~mvuijlst/hugo/posts/">
-        
-        Posts
-        </a>
-        
-        <a class="nav-link" href="/~mvuijlst/hugo/tags/">
-        
-        Tags
-        </a>
-        
-    </nav>
-</div><div id="content">
+</head><body><ol  class="nav navbar-nav">
+  
+
+
+
+<li>
+  <a href="http://users.ugent.be/~mvuijlst/hugo/"></a>
+</li>
+
+
+<li class="active" aria-current="page" >
+  <a href="http://users.ugent.be/~mvuijlst/hugo/tags/">Tags</a>
+</li>
+
+</ol>
+<div id="content">
 <h1>Tags</h1>
 
 
 
 
-        </div><footer>&copy; 2022 Michel Vuijlsteke, tralala. Niet dat er iets te copyrighten is maar hey.</footer></body>
+        </div><footer>&copy; 2022 Michel Vuijlsteke, tralala. Niet dat er iets te copyrighten is maar hey.</footer>
+<script>
+    for (let img of document.getElementsByTagName('img')) {
+        let a = document.createElement('a');
+        let parent = img.parentElement;
+        a.href = img.src;
+        a.appendChild(img);
+        parent.prepend(a);
+    }
+</script></body>
 </html>

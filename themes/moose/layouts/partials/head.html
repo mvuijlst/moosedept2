@@ -5,6 +5,9 @@
         href="https://fonts.googleapis.com/css2?family=Roboto+Slab&family=Roboto:ital,wght@0,400;0,500;1,400&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ `css/style.css` | relURL }}">
+    {{ if .Params.Wide }}
+        <link rel="stylesheet" type="text/css" href="{{ `css/style_wide.css` | relURL }}">
+    {{ end }}
     {{ $title := print .Site.Title " | " .Title }}
     {{ if .IsHome }}{{ $title = .Site.Title }}{{ end }}
     <title>{{ $title }}</title>

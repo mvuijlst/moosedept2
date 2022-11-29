@@ -1,0 +1,7 @@
+body {
+    max-width: max(50em, 60vw);
+}
+
+img {
+    max-width: max(50em, 60vw);
+}
