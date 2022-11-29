@@ -15,6 +15,10 @@ h2 {
     color: azure;
 }
 
+img {
+    max-width: 50em;
+}
+
 
 a {
     color: #fa0;
@@ -44,4 +48,27 @@ li {
 
 dt {
     margin-top: 1em;
+}
+
+th {
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+    position: sticky; top: 0;
+    background-color: #272624;
+}
+
+td {
+    border-bottom: 1px solid #444;
+}
+
+tr>td:nth-child(2) {
+    white-space: nowrap;
+}
+
+@media only screen and (max-width: 600px) {
+
+    th,
+    td {
+        font-size: 0.8em;
+    }
 }

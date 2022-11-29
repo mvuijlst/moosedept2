@@ -1,48 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Moose Dept.</title>
-    <link>http://users.ugent.be/~mvuijlst/hugo/</link>
-    <description>Recent content on Moose Dept.</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 22 Nov 2022 11:36:06 +0100</lastBuildDate><atom:link href="http://users.ugent.be/~mvuijlst/hugo/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Allo</title>
-      <link>http://users.ugent.be/~mvuijlst/hugo/posts/allo/</link>
-      <pubDate>Tue, 22 Nov 2022 11:36:06 +0100</pubDate>
-      
-      <guid>http://users.ugent.be/~mvuijlst/hugo/posts/allo/</guid>
-      <description>Als wij op het werk Hugo gaan gebruiken, is het misschien geen slecht idee om dat zelf ook eens allemaal op te frissen.
-Dus bij dezen.</description>
-    </item>
-    
-    <item>
-      <title>Een ouder ding om te testen</title>
-      <link>http://users.ugent.be/~mvuijlst/hugo/posts/oud/</link>
-      <pubDate>Sun, 01 May 2022 11:36:06 +0100</pubDate>
-      
-      <guid>http://users.ugent.be/~mvuijlst/hugo/posts/oud/</guid>
-      <description>Dit zou moeten in het schoon Vlaams verschijnen.</description>
-    </item>
-    
-    <item>
-      <title>Dingen die ik gelezen heb</title>
-      <link>http://users.ugent.be/~mvuijlst/hugo/gelezen/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://users.ugent.be/~mvuijlst/hugo/gelezen/</guid>
-      <description>← HomeDingen die ik gelezen hebIk weet nog dat ik vroeger jaloers was op mensen die een boeklog bijhielden. En dus doe ik dat nu ook. Ik probeer van elk boek dat ik lees iets bij te houden. Meestal staat dat dan op mijn web blog, in de categorie &#39;boeken&#39;, als ik het niet vergeet. Ik houd ook bij op Goodreads wat ik gelezen heb. Als ik, juist, het niet vergeet.</description>
-    </item>
-    
-    <item>
-      <title>Dingen te doen</title>
-      <link>http://users.ugent.be/~mvuijlst/hugo/huis/planten/plantentodo/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://users.ugent.be/~mvuijlst/hugo/huis/planten/plantentodo/</guid>
-      <description>Er is vanalles dat in principe elk jaar terugkomt of dat regelmatig moet gebeuren. Kwestie van het niet tevergeten, zet ik dat alhier. Maartroos: dood bruin hout wegsnoeien, grondscheuten zo diep mogelijk, dunne takjes weg, te houdentakken tot op twee ogen (laatste oog naar buiten)prachtriet: snoeien tot 10cm boven de grondooievaarsbek: kort snoeien in het voorjaarlavendel: diep terugsnoeien; groen overlatenrozemarijn: bevroren stukken wegsnoeienMeitijm snoeien tot een beetje boven het houtJulisalie na bloei snoeien tot 5-10 cm boven de grondAugustustijm snoeien tot een beetje boven het houtoregano licht terugsnoeien na bloeiOktobersalie snoeien tot 5-10 cm boven de grondrozemarijn snoeien om in vorm te krijgenAlgemeenlavendel geen water gevenooievaarsbek bloemen die uitgebloeid zijn snoeienbergenia uitgebloeide bloemen afsnijdencampanula uitgebloeide bloemen afsnijden2022heucherella uithalen; grond mengen met compost; terugplanten</description>
-    </item>
-    
+    <title>Dingen die ik gezien heb on Moose Dept.</title>
+    <link>http://users.ugent.be/~mvuijlst/hugo/gekeken/</link>
+    <description>Recent content in Dingen die ik gezien heb on Moose Dept.</description>
+    <generator>Hugo -- gohugo.io</generator><atom:link href="http://users.ugent.be/~mvuijlst/hugo/gekeken/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Gezien in 2019</title>
       <link>http://users.ugent.be/~mvuijlst/hugo/gekeken/2019gekeken/</link>
@@ -77,83 +39,6 @@ Dus bij dezen.</description>
       
       <guid>http://users.ugent.be/~mvuijlst/hugo/gekeken/2022gekeken/</guid>
       <description>2019 |2020 |2021 |2022Ik houd het met de hand bij in Emacs en dan exporteer ik het naar html. Dat wil dus zeggen dat ik zeker dingenvergeet. Ook: wat ik maar met een half oog of oor bekijk, zet ik er niet in. #datumtypenaamjaareptitel★12021-01-01 Fri 22:19serieArcane2021s01e01Welcome to the Playground&amp;#xa0;22022-01-02 Sun 00:40serieArcane2021s01e02Some Mysteries Are Better Left Unsolved&amp;#xa0;32022-01-02 Sun 01:16serieArcane2021s01e03The Base Violence Necessary for Change&amp;#xa0;42022-01-02 Sun 02:16serieArcane2021s01e04Happy Progress Day!</description>
-    </item>
-    
-    <item>
-      <title>Het jaar 2022</title>
-      <link>http://users.ugent.be/~mvuijlst/hugo/jaar/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://users.ugent.be/~mvuijlst/hugo/jaar/</guid>
-      <description>← Home
-Het jaar 2022</description>
-    </item>
-    
-    <item>
-      <title>Planten in juli 2020</title>
-      <link>http://users.ugent.be/~mvuijlst/hugo/huis/planten/planten202007/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://users.ugent.be/~mvuijlst/hugo/huis/planten/planten202007/</guid>
-      <description>juni 2019 |maart 2020 |mei 2020 |juli 2020 |mei 2020 |juni 2021 Het belangrijkse is dat de bodembedekkers alletwee nu ook echt de hele bodem bedekken. Aan de schaduwkant heefthet stekelnootje alles overgenomen (op een klein stukje helemaal aan het begin, tegen de keuken), en aan dezonkant is de kruiptijm helemaal dichtgegroeid. Ik was bang dat hij het niet ging doen, en op de lege plekkenheb ik er een tweede soort kruiptijm tussengeplant, maar ik denk ook dat het niet echt nodig was, en hetverschil tussen de twee is niet meer zichtbaar.</description>
-    </item>
-    
-    <item>
-      <title>Planten in juni 2019</title>
-      <link>http://users.ugent.be/~mvuijlst/hugo/huis/planten/planten201906/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://users.ugent.be/~mvuijlst/hugo/huis/planten/planten201906/</guid>
-      <description>juni 2019 |maart 2020 |mei 2020 |juli 2020 |mei 2020 |juni 2021 &amp;nbsp;Naamin &#39;t Latijns#aroosRosa &#34;guirlande d&#39;amour’1b</description>
-    </item>
-    
-    <item>
-      <title>Planten in juni 2021</title>
-      <link>http://users.ugent.be/~mvuijlst/hugo/huis/planten/planten202106/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://users.ugent.be/~mvuijlst/hugo/huis/planten/planten202106/</guid>
-      <description>juni 2019 |maart 2020 |mei 2020 |juli 2020 |mei 2021 |juni 2021 Nieuwe kruiptijm, in de hoop dat hij deze keer de nattigheid overleeft. Ik heb van vier verschillende soortenThymus praecox (O) elkzes planten gezet (Albiflorus, Coccineus, Doone Valley en Red carpet): benieuwd of ze het allemaal even goed ofslecht doen. Ook: nieuwe tomaten (&amp;AElig). Ik heb er drie in volle gron gzet en drie in een grote pot, en voor alle zes ben ikeen beetje bezorgd, want het zijn van die megagrote tomaten en ik vrees dat de planten gewoon niet recht gaanblijven, ondanks de tomatenspiralen en al.</description>
-    </item>
-    
-    <item>
-      <title>Planten in maart 2020</title>
-      <link>http://users.ugent.be/~mvuijlst/hugo/huis/planten/planten202003/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://users.ugent.be/~mvuijlst/hugo/huis/planten/planten202003/</guid>
-      <description>juni 2019 |maart 2020 |mei 2020 |juli 2020 |mei 2020 |juni 2021 &#39;t Zag er allemaal enorm dood uit, maar uiteindelijk waren er maar een paar planten écht dood: watechinacea&#39;s(I), één van de campanula&#39;s (C), en één van de 50 plantjes kruiptijm (O). De rest is in deloop van de maand uitgekomen of beginnen doorgroeien. Enige twijfelgeval is de rozemarijn (L), die er kapotuitziet maar nog groen is vanbinnen (het internet zegt afwisselend dat hij te koud heeft gehad, tewarm, te veel of te weinig water -- aan het internet hebt ge niet altijd iets).</description>
-    </item>
-    
-    <item>
-      <title>Planten in mei 2020</title>
-      <link>http://users.ugent.be/~mvuijlst/hugo/huis/planten/planten202005/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://users.ugent.be/~mvuijlst/hugo/huis/planten/planten202005/</guid>
-      <description>juni 2019 |maart 2020 |mei 2020 |juli 2020 |mei 2020 |juni 2021 Ik was eerst bang om iets aan de planten te veranderen, maar we zijn er gewoon bij beginnen kopen. Het slechtstedat er kan gebeuren, is dat de planten dood gaan. Dat is dan spijtig, maar het is zo.
-De parameters:
-we houden ons aan het kleurenschema van wit en paarsik wil dat den hof ook presentabel is in de winter, dus als er nieuwe planten bij komen, liefst winterhardde muren zijn leeg en zullen niet in de eerste jaren geverfd geraken, dus ook klimplanten nodigHet resultaat:</description>
-    </item>
-    
-    <item>
-      <title>Planten in mei 2021</title>
-      <link>http://users.ugent.be/~mvuijlst/hugo/huis/planten/planten202105/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://users.ugent.be/~mvuijlst/hugo/huis/planten/planten202105/</guid>
-      <description>juni 2019 |maart 2020 |mei 2020 |juli 2020 |mei 2021 |juni 2021 Ik was zo content van de kruiptijm vorig jaar, &#39;t was te peinzen dat hij dewinter niet zou overleven. &#39;t Is te zeggen: de winter is hij nog doorgekomen, maar de zijknatte maanden daarnaniet. Op een paar plekken na is hij zo dood als een pier. De Edelweiss is ook schielijk komen te gaan, vrees ik, en één van de twee salies is zo niet helemaal dan tochbijna helemaal dood.</description>
-    </item>
-    
-    <item>
-      <title>Verbouwdingen te doen</title>
-      <link>http://users.ugent.be/~mvuijlst/hugo/huis/todo/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://users.ugent.be/~mvuijlst/hugo/huis/todo/</guid>
-      <description>De eeuwige verbouwing. Twintig jaar aan de gang en gelijk nooit eindigend.
-Wat er nog moet gebeuren, min of meerin een mogelijke volgorde:
-Badkamervloer en muren uitbreken 30/01/2020iets doen aan de kapotte kinderbalken 11/02/2020electriciteit leggen 14/02/2020waterleidingen 14/02/2020nieuwe muren zetten 25/02/2020geluidsisolatie 26/02/2020gat voor verluchting boren 12/05/2020tegels tegen de muur en op de vloer 24/06/2020plafond ruwbouw 16/07/2020muur plaatsen 07/08/2020douche plaatsen 06/08/2020lichten aan het plafond 06/08/2020muren schilderen 06/08/2020planken op de vloer 07/08/2020bad plaatsen 19/08/2020verluchting in orde krijgen 27/08/2020afdekplaten en schakelaars 27/08/2020wasbak plaatsen 27/08/2020chauffage ophangen 27/08/2020WC zetten 27/08/2020deur installerenspiegelkast in elkaar zetten en ophangen 27/08/2020plafond schilderenGang 1stevloer en muren uitbreken 30/01/2020electriciteit leggen 14/02/2020nieuwe muren zetten 25/02/2020licht installeren 16/07/2020muren plakken 16/07/2020plankenvloer 07/08/2020kasten plaatsen 20/08/2020kast boven kasten laten makenbuizen in hoek in kast stekendeur installerenmuren schilderenplintenplafond schilderenSlaapkamervloer en muren uitbreken 30/01/2020iets doen aan de kapotte kinderbalken 11/02/2020geluidsisolatie 26/02/2020electriciteit leggen 14/02/2020waterleidingen 14/02/2020nieuwe muren zetten 25/02/2020muren plakken 10/03/2020plankenvloer 04/05/2020bed terug monteren 16/05/2020kasten monteren 07/07/2020kasten aan mekaar vijzen 16/07/2020licht installeren 12/08/2020kast boven kasten laten makenafdekplaten en schakelaarsdeur installerenbehangenmuren schilderenplintenplafond schilderenKinderkamersvensters afwerkenherschilderenvloeren in orde krijgenWC bovenschilderenvloerBenedendeuren in orde makenKeukennieuwe verlichtingGang 2dekasten plaatsenalles hervervenWCiets aan de wasbak doenkastje in de hoek bouwenschilderenVoorgevelherdoennieuwe deur in stekensmeedwerk voor nieuwe deurDakherdoen</description>
     </item>
     
   </channel>
