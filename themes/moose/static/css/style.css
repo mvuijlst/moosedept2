@@ -25,6 +25,16 @@ a {
     text-decoration: none;
 }
 
+a.tag {
+    background: #444;
+    padding: 0px 4px;
+    font-size: 12px;
+    color: #aaa;
+    border-radius: 3px;
+}
+
+time {font-size: 12px;}
+
 a:hover {
     color: #fd3;
     text-decoration: underline;
