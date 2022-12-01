@@ -2,54 +2,58 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://users.ugent.be/~mvuijlst/hugo/</loc>
+    <loc>http://users.ugent.be/~mvuijlst/</loc>
     <lastmod>2022-11-22T11:36:06+01:00</lastmod>
   </url><url>
-    <loc>http://users.ugent.be/~mvuijlst/hugo/posts/allo/</loc>
+    <loc>http://users.ugent.be/~mvuijlst/posts/allo/</loc>
     <lastmod>2022-11-22T11:36:06+01:00</lastmod>
   </url><url>
-    <loc>http://users.ugent.be/~mvuijlst/hugo/posts/</loc>
+    <loc>http://users.ugent.be/~mvuijlst/posts/</loc>
     <lastmod>2022-11-22T11:36:06+01:00</lastmod>
   </url><url>
-    <loc>http://users.ugent.be/~mvuijlst/hugo/posts/oud/</loc>
+    <loc>http://users.ugent.be/~mvuijlst/posts/oud/</loc>
     <lastmod>2022-05-01T11:36:06+01:00</lastmod>
   </url><url>
-    <loc>http://users.ugent.be/~mvuijlst/hugo/categories/</loc>
+    <loc>http://users.ugent.be/~mvuijlst/categories/</loc>
   </url><url>
-    <loc>http://users.ugent.be/~mvuijlst/hugo/gelezen/</loc>
+    <loc>http://users.ugent.be/~mvuijlst/gelezen/</loc>
   </url><url>
-    <loc>http://users.ugent.be/~mvuijlst/hugo/gekeken/</loc>
+    <loc>http://users.ugent.be/~mvuijlst/gekeken/</loc>
   </url><url>
-    <loc>http://users.ugent.be/~mvuijlst/hugo/huis/planten/plantentodo/</loc>
+    <loc>http://users.ugent.be/~mvuijlst/huis/planten/plantentodo/</loc>
   </url><url>
-    <loc>http://users.ugent.be/~mvuijlst/hugo/huis/</loc>
+    <loc>http://users.ugent.be/~mvuijlst/huis/</loc>
   </url><url>
-    <loc>http://users.ugent.be/~mvuijlst/hugo/gekeken/2019gekeken/</loc>
+    <loc>http://users.ugent.be/~mvuijlst/gelezen/2021gelezen/</loc>
   </url><url>
-    <loc>http://users.ugent.be/~mvuijlst/hugo/gekeken/2020gekeken/</loc>
+    <loc>http://users.ugent.be/~mvuijlst/gelezen/2022gelezen/</loc>
   </url><url>
-    <loc>http://users.ugent.be/~mvuijlst/hugo/gekeken/2021gekeken/</loc>
+    <loc>http://users.ugent.be/~mvuijlst/gekeken/2019gekeken/</loc>
   </url><url>
-    <loc>http://users.ugent.be/~mvuijlst/hugo/gekeken/2022gekeken/</loc>
+    <loc>http://users.ugent.be/~mvuijlst/gekeken/2020gekeken/</loc>
   </url><url>
-    <loc>http://users.ugent.be/~mvuijlst/hugo/jaar/</loc>
+    <loc>http://users.ugent.be/~mvuijlst/gekeken/2021gekeken/</loc>
   </url><url>
-    <loc>http://users.ugent.be/~mvuijlst/hugo/huis/planten/</loc>
+    <loc>http://users.ugent.be/~mvuijlst/gekeken/2022gekeken/</loc>
   </url><url>
-    <loc>http://users.ugent.be/~mvuijlst/hugo/huis/planten/planten202007/</loc>
+    <loc>http://users.ugent.be/~mvuijlst/jaar/</loc>
   </url><url>
-    <loc>http://users.ugent.be/~mvuijlst/hugo/huis/planten/planten201906/</loc>
+    <loc>http://users.ugent.be/~mvuijlst/huis/planten/</loc>
   </url><url>
-    <loc>http://users.ugent.be/~mvuijlst/hugo/huis/planten/planten202106/</loc>
+    <loc>http://users.ugent.be/~mvuijlst/huis/planten/planten202007/</loc>
   </url><url>
-    <loc>http://users.ugent.be/~mvuijlst/hugo/huis/planten/planten202003/</loc>
+    <loc>http://users.ugent.be/~mvuijlst/huis/planten/planten201906/</loc>
   </url><url>
-    <loc>http://users.ugent.be/~mvuijlst/hugo/huis/planten/planten202005/</loc>
+    <loc>http://users.ugent.be/~mvuijlst/huis/planten/planten202106/</loc>
   </url><url>
-    <loc>http://users.ugent.be/~mvuijlst/hugo/huis/planten/planten202105/</loc>
+    <loc>http://users.ugent.be/~mvuijlst/huis/planten/planten202003/</loc>
   </url><url>
-    <loc>http://users.ugent.be/~mvuijlst/hugo/tags/</loc>
+    <loc>http://users.ugent.be/~mvuijlst/huis/planten/planten202005/</loc>
   </url><url>
-    <loc>http://users.ugent.be/~mvuijlst/hugo/huis/todo/</loc>
+    <loc>http://users.ugent.be/~mvuijlst/huis/planten/planten202105/</loc>
+  </url><url>
+    <loc>http://users.ugent.be/~mvuijlst/tags/</loc>
+  </url><url>
+    <loc>http://users.ugent.be/~mvuijlst/huis/todo/</loc>
   </url>
 </urlset>

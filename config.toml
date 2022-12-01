@@ -1,24 +1,4 @@
-baseURL = 'http://users.ugent.be/~mvuijlst/hugo/'
+baseURL = 'http://users.ugent.be/~mvuijlst/'
 defaultContentLanguage = 'nl'
 title = 'Moose Dept.'
 theme = 'moose'
-
-[menu]
-  [[menu.main]]
-    name = "Home"
-    url = "/"
-    weight = 1
-  [[menu.main]]
-    name = "Huis"
-    url = "/huis/"
-    weight = 2
-  [[menu.main]]
-    name = "Gekeken"
-    pre = "tag"
-    url = "/gekeken/"
-    weight = 3
-  [[menu.main]]
-    name = "Gelezen"
-    pre = "tag"
-    url = "/gelezen/"
-    weight = 4
