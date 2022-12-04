@@ -5,4 +5,4 @@ draft: false
 tags: ['gekeken']
 ---
 
-Alsmaar minder dingen die via decentrale backup bekeken worden, maar soms kan het niet anders. 2022-12-04 12:25:16
+Alsmaar minder dingen die via decentrale backup bekeken worden, maar soms kan het niet anders. 't Is azo. 
