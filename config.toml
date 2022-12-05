@@ -2,3 +2,8 @@ baseURL = 'http://users.ugent.be/~mvuijlst/'
 defaultContentLanguage = 'nl'
 title = 'Moose Dept.'
 theme = 'moose'
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
