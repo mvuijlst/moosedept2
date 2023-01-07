@@ -1,6 +1,6 @@
 body {
     font-family: Roboto, Helvetica, sans-serif;
-    background-color: #272624;
+    background-color: #212121;
     color: #ddd;
     margin: 0 auto;
     max-width: 50em;
@@ -21,7 +21,7 @@ img {
 
 
 a {
-    color: #fa0;
+    color: #ffc107;
     text-decoration: none;
 }
 
@@ -61,7 +61,7 @@ a.tagcloud-item:hover b {
 time {font-size: 12px;}
 
 a:hover {
-    color: #fd3;
+    color: #fff59d;
     text-decoration: underline;
 }
 
