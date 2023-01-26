@@ -5,7 +5,7 @@ draft: false
 tags: ['verbouwingen']
 ---
 
-Er staat *as we speak* een mnes aan de muur te schrapen buiten. Dat wil zeggen dat ze na een maand of zo stil liggen wegens feesten en slecht weer, herbegonnen zijn. 
+Er staat *as we speak* een mens aan de muur te schrapen buiten. Dat wil zeggen dat ze na een maand of zo stil liggen wegens feesten en slecht weer, herbegonnen zijn. 
 
 Nog een laag die dan afgevlakt wordt, dan nog een lag die afgevlakt wordt, en dan schilderen en nog eens schilderen. 
 
