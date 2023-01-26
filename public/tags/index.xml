@@ -7,11 +7,29 @@
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Thu, 26 Jan 2023 14:56:51 +0100</lastBuildDate><atom:link href="http://users.ugent.be/~mvuijlst/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>verbouwingen</title>
-      <link>http://users.ugent.be/~mvuijlst/tags/verbouwingen/</link>
+      <title>gevel</title>
+      <link>http://users.ugent.be/~mvuijlst/tags/gevel/</link>
       <pubDate>Thu, 26 Jan 2023 14:56:51 +0100</pubDate>
       
-      <guid>http://users.ugent.be/~mvuijlst/tags/verbouwingen/</guid>
+      <guid>http://users.ugent.be/~mvuijlst/tags/gevel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>huis</title>
+      <link>http://users.ugent.be/~mvuijlst/tags/huis/</link>
+      <pubDate>Thu, 26 Jan 2023 14:56:51 +0100</pubDate>
+      
+      <guid>http://users.ugent.be/~mvuijlst/tags/huis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>deur</title>
+      <link>http://users.ugent.be/~mvuijlst/tags/deur/</link>
+      <pubDate>Thu, 19 Jan 2023 12:53:11 +0100</pubDate>
+      
+      <guid>http://users.ugent.be/~mvuijlst/tags/deur/</guid>
       <description></description>
     </item>
     
@@ -30,24 +48,6 @@
       <pubDate>Sun, 01 Jan 2023 18:31:07 +0100</pubDate>
       
       <guid>http://users.ugent.be/~mvuijlst/tags/leven/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>gevel</title>
-      <link>http://users.ugent.be/~mvuijlst/tags/gevel/</link>
-      <pubDate>Sun, 18 Dec 2022 18:53:14 +0000</pubDate>
-      
-      <guid>http://users.ugent.be/~mvuijlst/tags/gevel/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>huis</title>
-      <link>http://users.ugent.be/~mvuijlst/tags/huis/</link>
-      <pubDate>Sun, 18 Dec 2022 18:53:14 +0000</pubDate>
-      
-      <guid>http://users.ugent.be/~mvuijlst/tags/huis/</guid>
       <description></description>
     </item>
     

@@ -2,7 +2,7 @@
 title: "Herbegonnen"
 date: 2023-01-26T14:56:51+01:00
 draft: false
-tags: ['verbouwingen']
+tags: ['huis', 'gevel']
 ---
 
 Er staat *as we speak* een mens aan de muur te schrapen buiten. Dat wil zeggen dat ze na een maand of zo stil liggen wegens feesten en slecht weer, herbegonnen zijn. 
