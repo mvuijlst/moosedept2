@@ -11,4 +11,37 @@
     {{ $title := print .Site.Title " | " .Title }}
     {{ if .IsHome }}{{ $title = .Site.Title }}{{ end }}
     <title>{{ $title }}</title>
+
+    {{- define "breadcrumbs" -}}        
+        {{- if .p1.Parent -}}
+            {{- template "breadcrumbs" (dict "p1" .p1.Parent "p2" .p2 ) -}}
+        {{- else if not .p1.IsHome -}}
+            {{- template "breadcrumbs" (dict "p1" .p1.Site.Home "p2" .p2 ) -}}
+        {{- end -}}
+
+        {{- $path := split .p1.Permalink "/" -}}
+        {{- $pos := -4 -}}
+        {{ if eq (substr .p1.Permalink 7 5) "moose" }}
+            {{- $pos = -3 -}}
+        {{ else }}            
+        {{ end }}
+        {{- range $path -}} {{ $pos = add $pos 1}} {{- end -}}
+
+        {
+            "@type": "ListItem",
+            "position": {{- $pos -}},
+            "name": "{{- with .p1.Title -}} {{- . -}} {{- else -}} Home {{- end -}}",
+            "item": "{{- .p1.Permalink -}}"
+        }{{- if ne .p1 .p2 -}},{{- end -}}
+    {{- end -}}
+
+    <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {{- template "breadcrumbs" (dict "p1" . "p2" . ) -}}
+        ]
+        }
+    </script>
 </head>
