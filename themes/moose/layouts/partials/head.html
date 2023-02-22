@@ -20,9 +20,9 @@
         {{- end -}}
 
         {{- $path := split .p1.Permalink "/" -}}
-        {{- $pos := -4 -}}
-        {{ if eq (substr .p1.Permalink 7 5) "moose" }}
-            {{- $pos = -2 -}}
+        {{- $pos := -3 -}}
+        {{ if eq (substr .p1.Permalink 7 5) "users" }}
+            {{- $pos = -4 -}}
         {{ else }}            
         {{ end }}
         {{- range $path -}} {{ $pos = add $pos 1}} {{- end -}}
