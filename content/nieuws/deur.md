@@ -20,5 +20,5 @@ Dit is wat we onze architect jaren geleden had geschreven (maar misschien is de 
 - Brievenbus links (in zelfde afwerking als smeedwerk)
 - Naar binnen opendraaiende ramen. We hadden staan: “superisolerende, gelaagde beglazing GGG Thermobel Top N+; Stratobel 33.2 met opaalfilm”, maar van als het goed isoleert en doorschijnend maar niet doorzichtig is (bvb gezandstraald), is het goed. - De kleur van de deur zelf is NCS S 3040-B.
 
-Voor het smeedwerk waren we al gaan spreken met Peter De Bruyn (https://www.smederijdebruyn.be/). Het smeedwerk moet in twee delen, en we zouden graag een tekening hebben die in de twee deurpanelen doorloopt, dus zoals op het beeld met de blauwe ddeuren, in een art nouveau-achtige stijl -- maar dat is werk voor een smid, natuurlijk. 
+Voor het smeedwerk waren we al gaan spreken met Peter De Bruyn (https://www.smederijdebruyn.be/). Het smeedwerk moet in twee delen, en we zouden graag een tekening hebben die in de twee deurpanelen doorloopt, dus zoals op het beeld met de blauwe deuren, in een art nouveau-achtige stijl -- maar dat is werk voor een smid, natuurlijk. 
 </blockquote>
