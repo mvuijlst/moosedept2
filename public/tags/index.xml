@@ -5,11 +5,20 @@
     <link>http://users.ugent.be/~mvuijlst/tags/</link>
     <description>Recent content in Tags on Moose Dept.</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 03 Jun 2023 11:53:13 +0000</lastBuildDate><atom:link href="http://users.ugent.be/~mvuijlst/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 03 Jun 2023 12:07:28 +0000</lastBuildDate><atom:link href="http://users.ugent.be/~mvuijlst/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>site</title>
+      <link>http://users.ugent.be/~mvuijlst/tags/site/</link>
+      <pubDate>Sat, 03 Jun 2023 12:07:28 +0000</pubDate>
+      
+      <guid>http://users.ugent.be/~mvuijlst/tags/site/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>dak</title>
       <link>http://users.ugent.be/~mvuijlst/tags/dak/</link>
-      <pubDate>Sat, 03 Jun 2023 11:53:13 +0000</pubDate>
+      <pubDate>Fri, 19 May 2023 12:07:28 +0000</pubDate>
       
       <guid>http://users.ugent.be/~mvuijlst/tags/dak/</guid>
       <description></description>
@@ -18,18 +27,9 @@
     <item>
       <title>huis</title>
       <link>http://users.ugent.be/~mvuijlst/tags/huis/</link>
-      <pubDate>Sat, 03 Jun 2023 11:53:13 +0000</pubDate>
-      
-      <guid>http://users.ugent.be/~mvuijlst/tags/huis/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>site</title>
-      <link>http://users.ugent.be/~mvuijlst/tags/site/</link>
       <pubDate>Fri, 19 May 2023 12:07:28 +0000</pubDate>
       
-      <guid>http://users.ugent.be/~mvuijlst/tags/site/</guid>
+      <guid>http://users.ugent.be/~mvuijlst/tags/huis/</guid>
       <description></description>
     </item>
     

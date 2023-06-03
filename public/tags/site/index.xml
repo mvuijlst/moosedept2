@@ -5,11 +5,11 @@
     <link>http://users.ugent.be/~mvuijlst/tags/site/</link>
     <description>Recent content in site on Moose Dept.</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 19 May 2023 12:07:28 +0000</lastBuildDate><atom:link href="http://users.ugent.be/~mvuijlst/tags/site/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 03 Jun 2023 12:07:28 +0000</lastBuildDate><atom:link href="http://users.ugent.be/~mvuijlst/tags/site/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Build, vervolg</title>
       <link>http://users.ugent.be/~mvuijlst/nieuws/build2/</link>
-      <pubDate>Fri, 19 May 2023 12:07:28 +0000</pubDate>
+      <pubDate>Sat, 03 Jun 2023 12:07:28 +0000</pubDate>
       
       <guid>http://users.ugent.be/~mvuijlst/nieuws/build2/</guid>
       <description>&amp;rsquo;t Is nog altijd geen échte build of zo, maar xcopy public \\files\mvuijlst\www\users /s /y is weg en vervangen door robocopy public \\files\mvuijlst\www\users /MIR /Z /W:5 /COPY:DT /XC.
