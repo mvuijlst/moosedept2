@@ -5,18 +5,7 @@
     <link>http://users.ugent.be/~mvuijlst/</link>
     <description>Recent content on Moose Dept.</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 03 Jun 2023 12:07:28 +0000</lastBuildDate><atom:link href="http://users.ugent.be/~mvuijlst/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Build, vervolg</title>
-      <link>http://users.ugent.be/~mvuijlst/nieuws/build2/</link>
-      <pubDate>Sat, 03 Jun 2023 12:07:28 +0000</pubDate>
-      
-      <guid>http://users.ugent.be/~mvuijlst/nieuws/build2/</guid>
-      <description>&amp;rsquo;t Is nog altijd geen échte build of zo, maar xcopy public \\files\mvuijlst\www\users /s /y is weg en vervangen door robocopy public \\files\mvuijlst\www\users /MIR /Z /W:5 /COPY:DT /XC.
-Ik had er nog nooit van gehoord, maar Robust File Copy zit blijkbaar al sinds Windows NT 4.0 in de NT Resource Kit, en sinds 2008 in alle Windows. Zot.
-Ik weet wel niet of het echt de moeite waard is, met de kleine kleine bestandjes hier, maar toch.</description>
-    </item>
-    
+    <lastBuildDate>Sat, 03 Jun 2023 11:53:13 +0000</lastBuildDate><atom:link href="http://users.ugent.be/~mvuijlst/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Dak, binnenkort</title>
       <link>http://users.ugent.be/~mvuijlst/nieuws/dak/</link>
@@ -24,6 +13,17 @@ Ik weet wel niet of het echt de moeite waard is, met de kleine kleine bestandjes
       
       <guid>http://users.ugent.be/~mvuijlst/nieuws/dak/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>Build, vervolg</title>
+      <link>http://users.ugent.be/~mvuijlst/nieuws/build2/</link>
+      <pubDate>Fri, 19 May 2023 12:07:28 +0000</pubDate>
+      
+      <guid>http://users.ugent.be/~mvuijlst/nieuws/build2/</guid>
+      <description>&amp;rsquo;t Is nog altijd geen échte build of zo, maar xcopy public \\files\mvuijlst\www\users /s /y is weg en vervangen door robocopy public \\files\mvuijlst\www\users /MIR /Z /W:5 /COPY:DT /XC.
+Ik had er nog nooit van gehoord, maar Robust File Copy zit blijkbaar al sinds Windows NT 4.0 in de NT Resource Kit, en sinds 2008 in alle Windows. Zot.
+Ik weet wel niet of het echt de moeite waard is, met de kleine kleine bestandjes hier, maar toch.</description>
     </item>
     
     <item>
