@@ -1,15 +1,9 @@
 
 const progressBars = [
-  { title: "Seconde", legendId: "second-legend", progressId: "second-progress", legendText: "nog x ms" },
-  { title: "Minuut", legendId: "minute-legend", progressId: "minute-progress", legendText: "nog x.y seconden" },
-  { title: "Uur", legendId: "hour-legend", progressId: "hour-progress", legendText: "nog x minuten y seconden" },
   { title: "Werkdag", legendId: "workday-legend", progressId: "workday-progress", legendText: "xx.yyy%" },
   { title: "Dag", legendId: "day-legend", progressId: "day-progress", legendText: "xx.yyy%" },
   { title: "Werkweek", legendId: "workweek-legend", progressId: "workweek-progress", legendText: "nog x uur y minuten z seconden" },
   { title: "Week", legendId: "week-legend", progressId: "week-progress", legendText: "xx.yyy%" },
-  { title: "Maand", legendId: "month-legend", progressId: "month-progress", legendText: "xx.yyy%" },
-  { title: "Jaar", legendId: "year-legend", progressId: "year-progress", legendText: "nog xx.yyyyy%" },
-  { title: "Pensioen", legendId: "pension-legend", progressId: "progress", legendText: "xx.yyyyy%" },
 ];
 
 const startDate = new Date('1970-08-27T00:00:00'); 
@@ -73,41 +67,6 @@ function formatRemainingTime(days, hours, minutes, seconds) {
 }
 
 
-function updateSecondCountdown() {
-  const now = new Date();
-  const remainingMillisecondsInSecond = 999 - now.getMilliseconds();
-  const secondProgress = (now.getMilliseconds() / 1000) * 100;
-  document.getElementById('second-progress').style.width = secondProgress + '%';
-  document.getElementById('second-legend').textContent = `nog ${remainingMillisecondsInSecond} ms`;
-}
-
-function updateMinuteCountdown() {
-  const now = new Date();
-  const remainingSecondsInMinute = 59 - now.getSeconds() + (999 - now.getMilliseconds()) / 1000;
-  const minuteProgress = (now.getSeconds() * 1000 + now.getMilliseconds()) / 60000 * 100;
-  document.getElementById('minute-progress').style.width = minuteProgress + '%';
-  document.getElementById('minute-legend').textContent = `nog ${remainingSecondsInMinute.toFixed(3)} seconden`;
-}
-
-function updateHourCountdown() {
-  const now = new Date();
-  const startHour = new Date(now.getFullYear(), now.getMonth(), now.getDate(), now.getHours(), 0, 0);
-  const endHour = new Date(now.getFullYear(), now.getMonth(), now.getDate(), now.getHours() + 1, 0, 0);
-  
-  const hourDuration = endHour - startHour;
-  const elapsedTime = now - startHour;
-  
-  const percentage = (elapsedTime / hourDuration) * 100;
-  
-  // Calculate remaining time in the hour
-  const remainingTime = hourDuration - elapsedTime;
-  const remainingHours = Math.floor(remainingTime / (1000 * 60 * 60));
-  const remainingMinutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
-  const remainingSeconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
-
-  document.getElementById('hour-progress').style.width = percentage + '%';
-  document.getElementById('hour-legend').textContent = formatRemainingTime(0, remainingHours, remainingMinutes, remainingSeconds);
-}
 
 function updateDayCountdown() {
   const now = new Date();
@@ -238,141 +197,13 @@ function updateWorkweekCountdown() {
 }
 
 
-function updateMonthCountdown() {
-  const now = new Date();
-  const startOfMonth = new Date(now.getFullYear(), now.getMonth(), 1);
-  const endOfMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0, 23, 59, 59, 999);
-  const elapsedTime = now - startOfMonth;
-  const totalTime = endOfMonth - startOfMonth;
-  const progress = (elapsedTime / totalTime) * 100;
-  document.getElementById('month-progress').style.width = progress + '%';
-  document.getElementById('month-legend').textContent = `${progress.toFixed(5)}%`;
-}
-
-function updateYearCountdown() {
-  const now = new Date();
-  const startOfYear = new Date(now.getFullYear(), 1, 1);
-  const endOfYear = new Date(now.getFullYear(), 11, 31, 23, 59, 59, 999);
-  const elapsedTime = now - startOfYear;
-  const totalTime = endOfYear - startOfYear;
-  const progress = (elapsedTime / totalTime) * 100;
-  document.getElementById('year-progress').style.width = progress + '%';
-  document.getElementById('year-legend').textContent = `${progress.toFixed(7)}%`;
-}
-
-function updatePensionCountdown() {
-  const now = new Date();
-  const remainingTime = endDate - now;
-  const totalDuration = endDate - startDate;
-  const progressPast = (1 - remainingTime / totalDuration) * 100;
-  const progressRemaining = 100 - progressPast; 
-  document.getElementById('progress').style.width = progressPast + '%';
-  document.getElementById('pension-legend').textContent = `al ${progressPast.toFixed(10)}% gedaan`;
-}
-
-function calculateWorkdays(start, end) {
-  let workdays = 0;
-  let current = new Date(start);
-  const oneYearInMilliseconds = 1000 * 60 * 60 * 24 * 365;
-  const daysOff = (end - start) / oneYearInMilliseconds * daysOffPerYear;
-
-  while (current <= end) {
-    if (current.getDay() !== 0 && current.getDay() !== 6) {
-      workdays++;
-    }
-    current.setDate(current.getDate() + 1);
-  }
-
-  workdays -= daysOff;
-
-  return Math.max(0, workdays).toFixed();
-}
-
-
-function fuzzyTime() {
-    const now = new Date();
-    h = now.getHours();
-    m = now.getMinutes();
-
-    hours = ['middernacht', 'één', 'twee', 'drie', 'vier', 'vijf', 'zes', 'zeven', 'acht', 'negen', 'tien', 'elf', 'twaalf', 'één', 'twee', 'drie', 'vier', 'vijf', 'zes', 'zeven', 'acht', 'negen', 'tien', 'elf', 'middernacht'];
-    if (m < 30) {
-        x = hours[h];
-    } else {
-        x = hours[h + 1];
-    }
-    if (m == 59 || m == 0) { x += ' uur' };
-    if (m == 0) { return ('exact ' + x); }
-    if (m >= 1 && m <= 4) { return ('een beetje na ' + x); }
-    if (m == 5) { return ('vijf na ' + x); }
-    if (m >= 6 && m <= 9) { return ('bijna tien na ' + x); }
-    if (m == 10) { return ('tien na ' + x); }
-    if (m >= 11 && m <= 14) { return ('bijna kwart na ' + x); }
-    if (m == 15) { return ('kwart na ' + x); }
-    if (m >= 16 && m <= 17) { return ('kwart na ' + x + ' en een beetje'); }
-    if (m >= 18 && m <= 19) { return ('bijna twintig na ' + x); }
-    if (m == 20) { return ('twintig na ' + x); }
-    if (m >= 21 && m <= 29) { return ('bijna half ' + x); }
-    if (m == 30) { return ('half ' + x); }
-    if (m >= 30 && m <= 35) { return ('een beetje na half ' + x); }
-    if (m >= 36 && m <= 39) { return ('bijna twintig voor ' + x); }
-    if (m == 40) { return ('twintig voor ' + x); }
-    if (m >= 41 && m <= 44) { return ('ongeveer kwart voor ' + x); }
-    if (m == 45) { return ('kwart voor ' + x); }
-    if (m >= 46 && m <= 49) { return ('bijna tien voor ' + x); }
-    if (m == 50) { return ('tien voor ' + x); }
-    if (m >= 51 && m <= 54) { return ('iets na tien voor ' + x); }
-    if (m == 55) { return ('vijf voor ' + x); }
-    if (m >= 56 && m <= 59) { return ('bijna ' + x + ' uur'); }
-}
-
-function updateFuzzyTime() {
-  const fuzzyTimeString = fuzzyTime();
-  const now = new Date();
-  const remainingTime = endDate - now;
-  const remainingCalendarDays = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
-  const remainingWorkdays = calculateWorkdays(now, endDate); // Function that calculates workdays
-
-// Calculate the total remaining hours based on 7.6 working hours per workday
-const totalRemainingHours = remainingWorkdays * 7.6;
-const days = Math.floor(totalRemainingHours / 24);
-const hours = Math.floor(totalRemainingHours % 24);
-const minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
-const seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
-  
-// Use the helper function to format the remaining time
-const remainingTimeText = formatRemainingTime(days, hours, minutes, seconds);
-
-  
-  const daysOfWeek = ['zondag', 'maandag', 'dinsdag', 'woensdag', 'donderdag', 'vrijdag', 'zaterdag'];
-  const months = ['januari', 'februari', 'maart', 'april', 'mei', 'juni', 'juli', 'augustus', 'september', 'oktober', 'november', 'december'];
-
-  const dayName = daysOfWeek[now.getDay()];
-  const date = now.getDate();
-  const monthName = months[now.getMonth()];
-  const year = now.getFullYear();
-
-  const fullHeading = `Het is ${fuzzyTimeString} op ${dayName} ${date} ${monthName} ${year}.<br />
-                       Nog ${remainingCalendarDays} kalender- en ${remainingWorkdays} werkdagen tot uw pensioen.<br />
-                       Dat is nog ${remainingTimeText} aan één stuk door werken.`;
-
-  document.getElementById('heading').innerHTML = fullHeading;
-}
-
-
 
 function updateCountdown() {
-  updateSecondCountdown();
-  updateMinuteCountdown();
-  updateHourCountdown();
   updateWorkdayCountdown();
   updateDayCountdown();
   updateWorkweekCountdown();
   updateWeekCountdown();
-  updateMonthCountdown();
-  updateYearCountdown();
-  updatePensionCountdown();
-  updateFuzzyTime();
 }
 
 createProgressBars();
-setInterval(updateCountdown, 10);
+setInterval(updateCountdown, 1000);
