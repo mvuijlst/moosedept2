@@ -53,6 +53,26 @@ function createProgressBars() {
   document.body.appendChild(countdownDiv);
 }
 
+function formatRemainingTime(days, hours, minutes, seconds) {
+  let formattedTime = 'nog ';
+
+  if (days > 0) {
+    formattedTime += days === 1 ? `${days} dag ` : `${days} dagen `;
+  }
+  if (hours > 0) {
+    formattedTime += `${hours} uur `;
+  }
+  if (minutes > 0) {
+    formattedTime += minutes === 1 ? `${minutes} minuut ` : `${minutes} minuten `;
+  }
+  if (seconds > 0) {
+    formattedTime += seconds === 1 ? `${seconds} seconde` : `${seconds} seconden`;
+  }
+
+  return formattedTime.trim();
+}
+
+
 function updateSecondCountdown() {
   const now = new Date();
   const remainingMillisecondsInSecond = 999 - now.getMilliseconds();
@@ -71,23 +91,24 @@ function updateMinuteCountdown() {
 
 function updateHourCountdown() {
   const now = new Date();
-  const remainingMinutes = 59 - now.getMinutes();
-  const remainingSeconds = 59 - now.getSeconds();
+  const startHour = new Date(now.getFullYear(), now.getMonth(), now.getDate(), now.getHours(), 0, 0);
+  const endHour = new Date(now.getFullYear(), now.getMonth(), now.getDate(), now.getHours() + 1, 0, 0);
+  
+  const hourDuration = endHour - startHour;
+  const elapsedTime = now - startHour;
+  
+  const percentage = (elapsedTime / hourDuration) * 100;
+  
+  // Calculate remaining time in the hour
+  const remainingTime = hourDuration - elapsedTime;
+  const remainingHours = Math.floor(remainingTime / (1000 * 60 * 60));
+  const remainingMinutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
+  const remainingSeconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
 
-  const hourProgress = (now.getMinutes() * 60 + now.getSeconds()) / 3600 * 100;
-  document.getElementById('hour-progress').style.width = hourProgress + '%';
-
-  let legendText;
-  if (remainingMinutes === 0) {
-    legendText = remainingSeconds === 1 ? `nog ${remainingSeconds} seconde` : `nog ${remainingSeconds} seconden`;
-  } else {
-    const minutesText = remainingMinutes === 1 ? 'minuut' : 'minuten';
-    const secondsText = remainingSeconds === 1 ? 'seconde' : 'seconden';
-    legendText = `nog ${remainingMinutes} ${minutesText} ${remainingSeconds} ${secondsText}`;
-  }
-
-  document.getElementById('hour-legend').textContent = legendText;
+  document.getElementById('hour-progress').style.width = percentage + '%';
+  document.getElementById('hour-legend').textContent = formatRemainingTime(0, remainingHours, remainingMinutes, remainingSeconds);
 }
+
 
 
 function updateDayCountdown() {
@@ -130,13 +151,8 @@ function updateWorkdayCountdown() {
   const remainingMinutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
   const remainingSeconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
 
-  // Format the legend text based on the remaining time
-  const hoursText = (remainingHours !== 0) ? `nog ${remainingHours} uur ` : 'nog ';
-  const minutesText = (remainingMinutes === 1) ? `${remainingMinutes} minuut ` : `${remainingMinutes} minuten `;
-  const secondsText = (remainingSeconds === 1) ? `${remainingSeconds} seconde` : `${remainingSeconds} seconden`;
-
   document.getElementById('workday-progress').style.width = percentage + '%';
-  document.getElementById('workday-legend').textContent = hoursText + minutesText + secondsText;
+  document.getElementById('workday-legend').textContent = formatRemainingTime(0, remainingHours, remainingMinutes, remainingSeconds);
 }
 
 
@@ -189,13 +205,9 @@ function updateWorkweekCountdown() {
   const remainingMinutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
   const remainingSeconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
 
-  // Format the legend text based on the remaining time
-  const hoursText = (totalRemainingHours !== 0) ? `nog ${totalRemainingHours} uur ` : 'nog ';
-  const minutesText = (remainingMinutes === 1) ? `${remainingMinutes} minuut ` : `${remainingMinutes} minuten `;
-  const secondsText = (remainingSeconds === 1) ? `${remainingSeconds} seconde` : `${remainingSeconds} seconden`;
-
   document.getElementById('workweek-progress').style.width = percentage + '%';
-  document.getElementById('workweek-legend').textContent = hoursText + minutesText + secondsText;
+  document.getElementById('workweek-legend').textContent = formatRemainingTime(0, totalRemainingHours, remainingMinutes, remainingSeconds);
+
 }
 
 
