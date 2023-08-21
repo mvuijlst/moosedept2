@@ -352,8 +352,8 @@ const remainingTimeText = formatRemainingTime(days, hours, minutes, seconds);
   const year = now.getFullYear();
 
   const fullHeading = `Het is ${fuzzyTimeString} op ${dayName} ${date} ${monthName} ${year}.<br />
-                       Nog ${remainingCalendarDays} kalender- en ${remainingWorkdays} werkdagen tot uw pensioen.<br />
-                       Dat is nog ${remainingTimeText} aan één stuk door werken.`;
+                       Nog ${remainingCalendarDays} kalender- en ${remainingWorkdays} werkdagen tot uw pensioen.<!--<br />
+                       Dat is nog ${remainingTimeText} aan één stuk door werken.-->`;
 
   document.getElementById('heading').innerHTML = fullHeading;
 }
