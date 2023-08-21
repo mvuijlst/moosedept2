@@ -1,0 +1,37 @@
+[debug] [2023-08-21T13:59:04.254Z] ----------------------------------------------------------------------
+[debug] [2023-08-21T13:59:04.256Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\mvuijlst\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2023-08-21T13:59:04.257Z] CLI Version:   11.16.1
+[debug] [2023-08-21T13:59:04.257Z] Platform:      win32
+[debug] [2023-08-21T13:59:04.257Z] Node Version:  v18.12.1
+[debug] [2023-08-21T13:59:04.259Z] Time:          Mon Aug 21 2023 15:59:04 GMT+0200 (Central European Summer Time)
+[debug] [2023-08-21T13:59:04.259Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-08-21T13:59:04.357Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-08-21T13:59:04.358Z] > authorizing via signed-in user (michel@zog.org)
+[debug] [2023-08-21T13:59:04.358Z] [iam] checking project todab-zog for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-08-21T13:59:04.360Z] > refreshing access token with scopes: []
+[debug] [2023-08-21T13:59:04.362Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-08-21T13:59:04.362Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-08-21T13:59:04.496Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 400
+[debug] [2023-08-21T13:59:04.497Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-08-21T13:59:04.497Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/todab-zog:testIamPermissions [none]
+[debug] [2023-08-21T13:59:04.497Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/todab-zog:testIamPermissions x-goog-quota-user=projects/todab-zog
+[debug] [2023-08-21T13:59:04.498Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/todab-zog:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-08-21T13:59:04.643Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/todab-zog:testIamPermissions 401
+[debug] [2023-08-21T13:59:04.644Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/todab-zog:testIamPermissions {"error":{"code":401,"message":"Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.","status":"UNAUTHENTICATED","details":[{"@type":"type.googleapis.com/google.rpc.ErrorInfo","reason":"ACCESS_TOKEN_TYPE_UNSUPPORTED","metadata":{"method":"google.cloudresourcemanager.v1.Projects.TestIamPermissions","service":"cloudresourcemanager.googleapis.com"}}]}}
+[debug] [2023-08-21T13:59:04.645Z] [iam] error while checking permissions, command may fail: FirebaseError: HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+[debug] [2023-08-21T13:59:04.645Z] > refreshing access token with scopes: []
+[debug] [2023-08-21T13:59:04.646Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-08-21T13:59:04.646Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-08-21T13:59:04.698Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 400
+[debug] [2023-08-21T13:59:04.698Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-08-21T13:59:04.699Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/todab-zog [none]
+[debug] [2023-08-21T13:59:04.770Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/todab-zog 401
+[debug] [2023-08-21T13:59:04.770Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/todab-zog {"error":{"code":401,"message":"Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.","status":"UNAUTHENTICATED"}}
+[debug] [2023-08-21T13:59:04.770Z] HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+[debug] [2023-08-21T13:59:04.821Z] FirebaseError: HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+    at responseToError (C:\Users\mvuijlst\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:49:12)
+    at RetryOperation._fn (C:\Users\mvuijlst\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:288:77)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[error] 
+[error] Error: Failed to get Firebase project todab-zog. Please make sure the project exists and your account has permission to access it.

@@ -105,21 +105,41 @@ function updateWorkdayCountdown() {
   const now = new Date();
   const startWork = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 9, 0, 0);
   const endWork = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 17, 0, 0);
+  const breakStart = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 12, 30, 0);
+  const breakEnd = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 12, 54, 0);
   
   if (now < startWork || now > endWork || now.getDay() === 0 || now.getDay() === 6) {
     document.getElementById('workday-progress').style.width = '0%';
-    document.getElementById('workday-legend').textContent = '0.000%';
+    document.getElementById('workday-legend').textContent = 'nog 0 uur 0 minuten 0 seconden';
     return;
   }
-  
-  const workdayDuration = endWork - startWork;
-  const elapsedTime = now - startWork;
-  
+
+  let elapsedTime = now - startWork;
+
+  // Subtract the break time if current time is past the break
+  if (now > breakEnd) {
+    elapsedTime -= (breakEnd - breakStart);
+  }
+
+  const workdayDuration = endWork - startWork - (breakEnd - breakStart);
   const percentage = (elapsedTime / workdayDuration) * 100;
-  
+
+  // Calculate remaining time in the workday
+  const remainingTime = workdayDuration - elapsedTime;
+  const remainingHours = Math.floor(remainingTime / (1000 * 60 * 60));
+  const remainingMinutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
+  const remainingSeconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
+
+  // Format the legend text based on the remaining time
+  const hoursText = (remainingHours !== 0) ? `nog ${remainingHours} uur ` : 'nog ';
+  const minutesText = (remainingMinutes === 1) ? `${remainingMinutes} minuut ` : `${remainingMinutes} minuten `;
+  const secondsText = (remainingSeconds === 1) ? `${remainingSeconds} seconde` : `${remainingSeconds} seconden`;
+
   document.getElementById('workday-progress').style.width = percentage + '%';
-  document.getElementById('workday-legend').textContent = percentage.toFixed(3) + '%';
+  document.getElementById('workday-legend').textContent = hoursText + minutesText + secondsText;
 }
+
+
 
 
 function updateWeekCountdown() {
@@ -139,40 +159,44 @@ function updateWorkweekCountdown() {
   const now = new Date();
   const startWork = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 9, 0, 0);
   const endWork = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 17, 0, 0);
-  
+  const breakStart = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 12, 30, 0);
+  const breakEnd = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 12, 54, 0);
+
   // If it's not between Monday and Friday or outside working hours, set progress to 0% and exit
   if (now.getDay() === 0 || now.getDay() === 6 || now < startWork || (now.getDay() === 5 && now > endWork)) {
     document.getElementById('workweek-progress').style.width = '0%';
     document.getElementById('workweek-legend').textContent = 'nog 0 uur 0 minuten 0 seconden';
     return;
   }
-  
-  // Calculate the progress for the entire workweek
-  const workdayDuration = endWork - startWork;
+
+  const workdayDuration = endWork - startWork - (breakEnd - breakStart);
   const totalWorkweekDuration = 5 * workdayDuration;
-  
-  const daysElapsed = (now.getDay() - 1) * workdayDuration;  // Subtract 1 from getDay() to start from Monday
-  const elapsedTimeToday = (now - startWork) < 0 ? 0 : now - startWork;
+
+  const daysElapsed = (now.getDay() - 1) * workdayDuration;
+  let elapsedTimeToday = (now - startWork) < 0 ? 0 : now - startWork;
+
+  // Subtract the break time if current time is past the break
+  if (now > breakEnd) {
+    elapsedTimeToday -= (breakEnd - breakStart);
+  }
+
   const totalElapsedTime = daysElapsed + elapsedTimeToday;
-  
   const percentage = (totalElapsedTime / totalWorkweekDuration) * 100;
-  
+
   // Calculate remaining time in the workweek
   const remainingTime = totalWorkweekDuration - totalElapsedTime;
-
-  const remainingHours = Math.floor(remainingTime / (1000 * 60 * 60));
+  const totalRemainingHours = Math.floor(remainingTime / (1000 * 60 * 60));
   const remainingMinutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
   const remainingSeconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
 
-  // Format the legend text
-  const hoursText = `nog ${remainingHours} uur `;
-  const minutesText = remainingMinutes === 1 ? `${remainingMinutes} minuut ` : `${remainingMinutes} minuten `;
-  const secondsText = `${remainingSeconds} seconden`;
+  // Format the legend text based on the remaining time
+  const hoursText = (totalRemainingHours !== 0) ? `nog ${totalRemainingHours} uur ` : 'nog ';
+  const minutesText = (remainingMinutes === 1) ? `${remainingMinutes} minuut ` : `${remainingMinutes} minuten `;
+  const secondsText = (remainingSeconds === 1) ? `${remainingSeconds} seconde` : `${remainingSeconds} seconden`;
 
   document.getElementById('workweek-progress').style.width = percentage + '%';
   document.getElementById('workweek-legend').textContent = hoursText + minutesText + secondsText;
 }
-
 
 
 function updateMonthCountdown() {
@@ -204,7 +228,7 @@ function updatePensionCountdown() {
   const progressPast = (1 - remainingTime / totalDuration) * 100;
   const progressRemaining = 100 - progressPast; 
   document.getElementById('progress').style.width = progressPast + '%';
-  document.getElementById('pension-legend').textContent = `nog ${progressRemaining.toFixed(10)}%`;
+  document.getElementById('pension-legend').textContent = `al ${progressPast.toFixed(10)}% gedaan`;
 }
 
 function calculateWorkdays(start, end) {
@@ -289,7 +313,7 @@ function updateFuzzyTime() {
 
   const fullHeading = `Het is ${fuzzyTimeString} op ${dayName} ${date} ${monthName} ${year}.<br />
                        Nog ${remainingCalendarDays} kalender- en ${remainingWorkdays} werkdagen tot uw pensioen.<br />
-                       Dat is nog ${remainingTimeText} werken.`;
+                       Dat is nog ${remainingTimeText} aan één stuk door werken.`;
 
   document.getElementById('heading').innerHTML = fullHeading;
 }
