@@ -3,7 +3,9 @@ const progressBars = [
   { title: "Seconde", legendId: "second-legend", progressId: "second-progress", legendText: "nog x ms" },
   { title: "Minuut", legendId: "minute-legend", progressId: "minute-progress", legendText: "nog x.y seconden" },
   { title: "Uur", legendId: "hour-legend", progressId: "hour-progress", legendText: "nog x minuten y seconden" },
+  { title: "Werkdag", legendId: "workday-legend", progressId: "workday-progress", legendText: "xx.yyy%" },
   { title: "Dag", legendId: "day-legend", progressId: "day-progress", legendText: "xx.yyy%" },
+  { title: "Werkweek", legendId: "workweek-legend", progressId: "workweek-progress", legendText: "nog x uur y minuten z seconden" },
   { title: "Week", legendId: "week-legend", progressId: "week-progress", legendText: "xx.yyy%" },
   { title: "Maand", legendId: "month-legend", progressId: "month-progress", legendText: "xx.yyy%" },
   { title: "Jaar", legendId: "year-legend", progressId: "year-progress", legendText: "nog xx.yyyyy%" },
@@ -99,6 +101,27 @@ function updateDayCountdown() {
   document.getElementById('day-legend').textContent = `${progress.toFixed(5)}%`;
 }
 
+function updateWorkdayCountdown() {
+  const now = new Date();
+  const startWork = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 9, 0, 0);
+  const endWork = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 17, 0, 0);
+  
+  if (now < startWork || now > endWork || now.getDay() === 0 || now.getDay() === 6) {
+    document.getElementById('workday-progress').style.width = '0%';
+    document.getElementById('workday-legend').textContent = '0.000%';
+    return;
+  }
+  
+  const workdayDuration = endWork - startWork;
+  const elapsedTime = now - startWork;
+  
+  const percentage = (elapsedTime / workdayDuration) * 100;
+  
+  document.getElementById('workday-progress').style.width = percentage + '%';
+  document.getElementById('workday-legend').textContent = percentage.toFixed(3) + '%';
+}
+
+
 function updateWeekCountdown() {
   const now = new Date();
   const startOfWeek = new Date(now);
@@ -111,6 +134,46 @@ function updateWeekCountdown() {
   document.getElementById('week-progress').style.width = progress + '%';
   document.getElementById('week-legend').textContent = `${progress.toFixed(5)}%`;
 }
+
+function updateWorkweekCountdown() {
+  const now = new Date();
+  const startWork = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 9, 0, 0);
+  const endWork = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 17, 0, 0);
+  
+  // If it's not between Monday and Friday or outside working hours, set progress to 0% and exit
+  if (now.getDay() === 0 || now.getDay() === 6 || now < startWork || (now.getDay() === 5 && now > endWork)) {
+    document.getElementById('workweek-progress').style.width = '0%';
+    document.getElementById('workweek-legend').textContent = 'nog 0 uur 0 minuten 0 seconden';
+    return;
+  }
+  
+  // Calculate the progress for the entire workweek
+  const workdayDuration = endWork - startWork;
+  const totalWorkweekDuration = 5 * workdayDuration;
+  
+  const daysElapsed = (now.getDay() - 1) * workdayDuration;  // Subtract 1 from getDay() to start from Monday
+  const elapsedTimeToday = (now - startWork) < 0 ? 0 : now - startWork;
+  const totalElapsedTime = daysElapsed + elapsedTimeToday;
+  
+  const percentage = (totalElapsedTime / totalWorkweekDuration) * 100;
+  
+  // Calculate remaining time in the workweek
+  const remainingTime = totalWorkweekDuration - totalElapsedTime;
+
+  const remainingHours = Math.floor(remainingTime / (1000 * 60 * 60));
+  const remainingMinutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
+  const remainingSeconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
+
+  // Format the legend text
+  const hoursText = `nog ${remainingHours} uur `;
+  const minutesText = remainingMinutes === 1 ? `${remainingMinutes} minuut ` : `${remainingMinutes} minuten `;
+  const secondsText = `${remainingSeconds} seconden`;
+
+  document.getElementById('workweek-progress').style.width = percentage + '%';
+  document.getElementById('workweek-legend').textContent = hoursText + minutesText + secondsText;
+}
+
+
 
 function updateMonthCountdown() {
   const now = new Date();
@@ -205,26 +268,41 @@ function updateFuzzyTime() {
   const remainingTime = endDate - now;
   const remainingCalendarDays = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
   const remainingWorkdays = calculateWorkdays(now, endDate); // Function that calculates workdays
+
+  // Calculate the total remaining hours based on 7.6 working hours per workday
+  const totalRemainingHours = remainingWorkdays * 7.6;
+  const days = Math.floor(totalRemainingHours / 24);
+  const hours = Math.floor(totalRemainingHours % 24);
+  const minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
   
-  const days = ['zondag', 'maandag', 'dinsdag', 'woensdag', 'donderdag', 'vrijdag', 'zaterdag'];
+  // Format the remaining time text
+  const remainingTimeText = `${days} dagen ${hours} uur ${minutes} minuten ${seconds} seconden`;
+  
+  const daysOfWeek = ['zondag', 'maandag', 'dinsdag', 'woensdag', 'donderdag', 'vrijdag', 'zaterdag'];
   const months = ['januari', 'februari', 'maart', 'april', 'mei', 'juni', 'juli', 'augustus', 'september', 'oktober', 'november', 'december'];
 
-  const dayName = days[now.getDay()];
+  const dayName = daysOfWeek[now.getDay()];
   const date = now.getDate();
   const monthName = months[now.getMonth()];
   const year = now.getFullYear();
 
-  const fullHeading = `Het is ${fuzzyTimeString} op ${dayName} ${date} ${monthName} ${year}.<br />Nog ${remainingCalendarDays} kalender- en ${remainingWorkdays} werkdagen tot uw pensioen.`;
+  const fullHeading = `Het is ${fuzzyTimeString} op ${dayName} ${date} ${monthName} ${year}.<br />
+                       Nog ${remainingCalendarDays} kalender- en ${remainingWorkdays} werkdagen tot uw pensioen.<br />
+                       Dat is nog ${remainingTimeText} werken.`;
 
   document.getElementById('heading').innerHTML = fullHeading;
 }
+
 
 
 function updateCountdown() {
   updateSecondCountdown();
   updateMinuteCountdown();
   updateHourCountdown();
+  updateWorkdayCountdown();
   updateDayCountdown();
+  updateWorkweekCountdown();
   updateWeekCountdown();
   updateMonthCountdown();
   updateYearCountdown();
