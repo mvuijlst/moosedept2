@@ -305,15 +305,16 @@ function updateFuzzyTime() {
   const remainingCalendarDays = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
   const remainingWorkdays = calculateWorkdays(now, endDate); // Function that calculates workdays
 
-  // Calculate the total remaining hours based on 7.6 working hours per workday
-  const totalRemainingHours = remainingWorkdays * 7.6;
-  const days = Math.floor(totalRemainingHours / 24);
-  const hours = Math.floor(totalRemainingHours % 24);
-  const minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
+// Calculate the total remaining hours based on 7.6 working hours per workday
+const totalRemainingHours = remainingWorkdays * 7.6;
+const days = Math.floor(totalRemainingHours / 24);
+const hours = Math.floor(totalRemainingHours % 24);
+const minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
+const seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
   
-  // Format the remaining time text
-  const remainingTimeText = `${days} dagen ${hours} uur ${minutes} minuten ${seconds} seconden`;
+// Use the helper function to format the remaining time
+const remainingTimeText = formatRemainingTime(days, hours, minutes, seconds);
+
   
   const daysOfWeek = ['zondag', 'maandag', 'dinsdag', 'woensdag', 'donderdag', 'vrijdag', 'zaterdag'];
   const months = ['januari', 'februari', 'maart', 'april', 'mei', 'juni', 'juli', 'augustus', 'september', 'oktober', 'november', 'december'];
