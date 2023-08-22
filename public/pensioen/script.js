@@ -267,7 +267,7 @@ function updatePensionCountdown() {
   const progressPast = (1 - remainingTime / totalDuration) * 100;
   const progressRemaining = 100 - progressPast; 
   document.getElementById('progress').style.width = progressPast + '%';
-  document.getElementById('pension-legend').textContent = `al ${progressPast.toFixed(10)}% gedaan`;
+  document.getElementById('pension-legend').textContent = `nog maar ${progressPast.toFixed(10)}% gedaan`;
 }
 
 function calculateWorkdays(start, end) {
