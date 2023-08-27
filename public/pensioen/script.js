@@ -129,6 +129,16 @@ function updateWorkdayCountdown() {
 
   const totalMinutesPerDay = 7.6 * 60;
 
+  const startOfWeek = new Date(now.getFullYear(), now.getMonth(), now.getDate() - now.getDay() + 1, 9, 0, 0);  // Monday 09:00
+  const endOfWeek = new Date(now.getFullYear(), now.getMonth(), now.getDate() - now.getDay() + 5, 17, 0, 0);  // Friday 17:00
+
+  // If it's before the start of the workweek or after the end, update the legend and exit
+  if (now < startOfWeek || now > endOfWeek) {
+    document.getElementById('workweek-legend').textContent = "weekend!";
+    return;
+  }
+
+
   // Update legend based on time
   if (now < startWork) {
     document.getElementById('workday-legend').textContent = "nog geen werkdag";
