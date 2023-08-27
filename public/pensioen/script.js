@@ -129,7 +129,7 @@ function updateWorkdayCountdown() {
 
   const totalMinutesPerDay = 7.6 * 60;
 
-  const startOfWeek = new Date(now.getFullYear(), now.getMonth(), now.getDate() - now.getDay() + 1, 0, 0, 0);  // Monday 09:00
+  const startOfWeek = new Date(now.getFullYear(), now.getMonth(), now.getDate() - now.getDay() + 1, 0, 0, 0);  // Monday 00:00
   const endOfWeek = new Date(now.getFullYear(), now.getMonth(), now.getDate() - now.getDay() + 5, 17, 0, 0);  // Friday 17:00
 
   // If it's before the start of the workweek or after the end, update the legend and exit
