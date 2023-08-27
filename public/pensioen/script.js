@@ -134,7 +134,7 @@ function updateWorkdayCountdown() {
 
   // If it's before the start of the workweek or after the end, update the legend and exit
   if (now < startOfWeek || now > endOfWeek) {
-    document.getElementById('workweek-legend').textContent = "weekend!";
+    document.getElementById('workday-legend').textContent = "weekend!";
     return;
   }
 
