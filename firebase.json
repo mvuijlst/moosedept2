@@ -2,6 +2,10 @@
   "hosting": {
     "site": "todab-zog",
     "public": "public",
+    "rewrites": [
+      { "source": "/404", "destination": "/404.html" }
+    ],
+    "error_page": "/404.html",
     "ignore": [
       "firebase.json",
       "**/.*",
