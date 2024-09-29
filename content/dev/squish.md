@@ -10,8 +10,9 @@ Meer info op de Githubs: https://github.com/mvuijlst/squish
 ![Squish v1.2.0](../squish.png "Squish v1.2.0, 2024-09-29")
 
 Wat ik mij herinner: 
-- Beesten proberen speler op te vreten
 - Er is een speelveld met verduwbare blokken en hier en daar een muur, en muren rondom 
+- Beesten proberen speler op te vreten
+- Beesten kunnen doodgedaan worden door ze tussen twee blokken te verpletteren
 - Vanaf een bepaald level waren er eieren die superbeesten werden
 - Vanaf een bepaald level waren er een andere soort superbeesten
 - Superbeest type 1 was alleen tegen een muur plat te duwen
