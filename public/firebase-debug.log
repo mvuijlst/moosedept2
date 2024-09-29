@@ -128,3 +128,56 @@
 [debug] [2024-09-29T14:37:42.077Z] HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
 [error] 
 [error] Error: Assertion failed: resolving hosting target of a site with no site name or target name. This should have caused an error earlier
+[debug] [2024-09-29T14:38:36.696Z] ----------------------------------------------------------------------
+[debug] [2024-09-29T14:38:36.702Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\mvuijlst\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2024-09-29T14:38:36.702Z] CLI Version:   13.20.1
+[debug] [2024-09-29T14:38:36.702Z] Platform:      win32
+[debug] [2024-09-29T14:38:36.702Z] Node Version:  v18.7.0
+[debug] [2024-09-29T14:38:36.703Z] Time:          Sun Sep 29 2024 16:38:36 GMT+0200 (Central European Summer Time)
+[debug] [2024-09-29T14:38:36.704Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-09-29T14:38:36.767Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-09-29T14:38:36.767Z] > authorizing via signed-in user (michel@zog.org)
+[debug] [2024-09-29T14:38:36.767Z] [iam] checking project todab-zog for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-09-29T14:38:36.769Z] Checked if tokens are valid: false, expires at: 1706129466989
+[debug] [2024-09-29T14:38:36.769Z] Checked if tokens are valid: false, expires at: 1706129466989
+[debug] [2024-09-29T14:38:36.769Z] > refreshing access token with scopes: []
+[debug] [2024-09-29T14:38:36.771Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-09-29T14:38:36.771Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-09-29T14:38:36.983Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 400
+[debug] [2024-09-29T14:38:36.984Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-09-29T14:38:36.984Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/todab-zog:testIamPermissions [none]
+[debug] [2024-09-29T14:38:36.984Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/todab-zog:testIamPermissions x-goog-quota-user=projects/todab-zog
+[debug] [2024-09-29T14:38:36.984Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/todab-zog:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-09-29T14:38:37.765Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/todab-zog:testIamPermissions 401
+[debug] [2024-09-29T14:38:37.766Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/todab-zog:testIamPermissions {"error":{"code":401,"message":"Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.","status":"UNAUTHENTICATED","details":[{"@type":"type.googleapis.com/google.rpc.ErrorInfo","reason":"ACCESS_TOKEN_TYPE_UNSUPPORTED","metadata":{"method":"google.cloudresourcemanager.v1.Projects.TestIamPermissions","service":"cloudresourcemanager.googleapis.com"}}]}}
+[debug] [2024-09-29T14:38:37.766Z] Got a 401 Unauthenticated error for a call that required authentication. Refreshing tokens.
+[debug] [2024-09-29T14:38:37.766Z] Checked if tokens are valid: false, expires at: 1706129466989
+[debug] [2024-09-29T14:38:37.766Z] Checked if tokens are valid: false, expires at: 1706129466989
+[debug] [2024-09-29T14:38:37.766Z] > refreshing access token with scopes: []
+[debug] [2024-09-29T14:38:37.766Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-09-29T14:38:37.766Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-09-29T14:38:37.918Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 400
+[debug] [2024-09-29T14:38:37.918Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-09-29T14:38:37.919Z] [iam] error while checking permissions, command may fail: FirebaseError: HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+[debug] [2024-09-29T14:38:37.919Z] Checked if tokens are valid: false, expires at: 1706129466989
+[debug] [2024-09-29T14:38:37.919Z] Checked if tokens are valid: false, expires at: 1706129466989
+[debug] [2024-09-29T14:38:37.919Z] > refreshing access token with scopes: []
+[debug] [2024-09-29T14:38:37.920Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-09-29T14:38:37.920Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-09-29T14:38:38.074Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 400
+[debug] [2024-09-29T14:38:38.074Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-09-29T14:38:38.074Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/todab-zog [none]
+[debug] [2024-09-29T14:38:38.231Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/todab-zog 401
+[debug] [2024-09-29T14:38:38.231Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/todab-zog {"error":{"code":401,"message":"Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.","status":"UNAUTHENTICATED"}}
+[debug] [2024-09-29T14:38:38.232Z] Got a 401 Unauthenticated error for a call that required authentication. Refreshing tokens.
+[debug] [2024-09-29T14:38:38.232Z] Checked if tokens are valid: false, expires at: 1706129466989
+[debug] [2024-09-29T14:38:38.232Z] Checked if tokens are valid: false, expires at: 1706129466989
+[debug] [2024-09-29T14:38:38.232Z] > refreshing access token with scopes: []
+[debug] [2024-09-29T14:38:38.232Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-09-29T14:38:38.232Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-09-29T14:38:38.396Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 400
+[debug] [2024-09-29T14:38:38.397Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-09-29T14:38:38.397Z] HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+[error] 
+[error] Error: Assertion failed: resolving hosting target of a site with no site name or target name. This should have caused an error earlier
