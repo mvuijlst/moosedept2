@@ -5,7 +5,7 @@ layout: page
 
 Gebaseerd op **Beast**, dat ooit in een ver verleden bij een versie van WordPerfect Office zat. Ik probeer het zo goed mogelijk te reconstrueren zoals ik het mij herinner, maar ik ga er denk ik ook wat aanpassingen aan doen. 
 
-![Squish v1.2.0](squish.png "Squish v1.2.0, 2024-09-29")
+![Squish v1.2.0](../squish.png "Squish v1.2.0, 2024-09-29")
 
 Wat ik mij herinner: 
 - Beesten proberen speler op te vreten
