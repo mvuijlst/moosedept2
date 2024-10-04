@@ -9,4 +9,4 @@ Gisteren een dakwerker aangeraden gekregen die eigenlijk een algemene aannemer i
 
 Het zou _zo_ enorm wijs zijn als het deze keer zou lukken. 
 
-(Update )
+(Update twee dagen later: contact met mens! Afspraak volgende week!)
