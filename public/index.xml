@@ -359,6 +359,16 @@ we houden ons aan het kleurenschema van wit en paarsik wil dat den hof ook pres
     </item>
     
     <item>
+      <title>save-links-extension</title>
+      <link>http://users.ugent.be/~mvuijlst/dev/save-links-extension/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://users.ugent.be/~mvuijlst/dev/save-links-extension/</guid>
+      <description>Er was vroeger del.icio.us om links te verzamelen, en dat had een extensie om links in een blog te plonken. En dan was er pinboard.in, en dat bestaat nog altijd, maar de link met WordPress (of beter, de link van WordPress naar pinboard) werk niet meer.
+En dus heb ik dan maar een Chrome extensie geschreven die doet wat ik wil hebben: links bijhouden tot ik ze op mijn weblog post.</description>
+    </item>
+    
+    <item>
       <title>Squish</title>
       <link>http://users.ugent.be/~mvuijlst/dev/squish/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
