@@ -20,9 +20,13 @@ $changedFiles = @()
 $newFiles = @()
 $files = Get-ChildItem -Path $sourceDir -Recurse -File
 
+# Get absolute path of the source directory for proper path manipulation
+$fullSourceDir = (Resolve-Path $sourceDir).Path
+
 # Calculate hashes and identify changed/new files
 foreach ($file in $files) {
-    $relativePath = $file.FullName.Substring($sourceDir.Length + 1)
+    # Extract the relative path correctly
+    $relativePath = $file.FullName.Substring($fullSourceDir.Length + 1)
     $hash = (Get-FileHash -Path $file.FullName -Algorithm MD5).Hash
     $currentHashes[$relativePath] = $hash
     
@@ -46,13 +50,13 @@ foreach ($oldFile in $previousHashes.Keys) {
 # Copy new and changed files
 Write-Host "Copying new and changed files..."
 foreach ($file in ($changedFiles + $newFiles)) {
-    $sourcePath = Join-Path -Path $sourceDir -ChildPath $file
+    $sourcePath = Join-Path -Path $fullSourceDir -ChildPath $file
     $destPath = Join-Path -Path $destDir -ChildPath $file
     
     # Create directory structure if it doesn't exist
-    $destDir = Split-Path -Path $destPath -Parent
-    if (-not (Test-Path $destDir)) {
-        New-Item -ItemType Directory -Path $destDir -Force | Out-Null
+    $destDirForFile = Split-Path -Path $destPath -Parent
+    if (-not (Test-Path $destDirForFile)) {
+        New-Item -ItemType Directory -Path $destDirForFile -Force | Out-Null
     }
     
     # Copy the file
