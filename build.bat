@@ -7,4 +7,4 @@ git add *
 git commit -m "build"
 git push
 REM xcopy public \\files\mvuijlst\www\users /s /y
-robocopy public \\files\mvuijlst\www\users /E /Z /W:5 /R:2 /COPY:D /DCOPY:D /XC /XN /FFT
+robocopy public \\files\mvuijlst\www\users /MIR /Z /W:5 /R:2 /COPY:DT /FFT
