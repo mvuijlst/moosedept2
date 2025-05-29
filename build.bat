@@ -6,5 +6,5 @@ cd ..
 git add *
 git commit -m "build"
 git push
-xcopy public \\files\mvuijlst\www\users /s /y
-REM robocopy public \\files\mvuijlst\www\users /MIR /Z /W:5 /COPY:DT /XC
+REM xcopy public \\files\mvuijlst\www\users /s /y
+robocopy public \\files\mvuijlst\www\users /E /Z /W:5 /R:2 /COPY:D /DCOPY:D /XC /XN /FFT
