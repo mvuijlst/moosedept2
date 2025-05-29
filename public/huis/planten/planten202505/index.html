@@ -325,7 +325,14 @@
 
         </div><footer>&copy; 2025 Michel Vuijlsteke, tralala. Niet dat er iets te copyrighten is maar hey.</footer>
 <script>
+    const isPlantPage = window.location.href.includes('planten/planten');
+    
     for (let img of document.getElementsByTagName('img')) {
+        
+        if (isPlantPage && img.src.toLowerCase().endsWith('.svg')) {
+            continue;
+        }
+        
         let a = document.createElement('a');
         let parent = img.parentElement;
         a.href = img.src;
