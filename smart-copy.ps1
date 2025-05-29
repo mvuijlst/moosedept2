@@ -2,6 +2,29 @@ $sourceDir = "public"
 $destDir = "\\files\mvuijlst\www\users"
 $hashFile = "file-hashes.json"
 
+# Function to calculate MD5 hash that works in older PowerShell versions
+function Calculate-FileHash {
+    param(
+        [string]$FilePath
+    )
+    
+    try {
+        $md5 = [System.Security.Cryptography.MD5]::Create()
+        $stream = [System.IO.File]::OpenRead($FilePath)
+        $hashBytes = $md5.ComputeHash($stream)
+        $stream.Close()
+        $md5.Dispose()
+        
+        # Convert bytes to hex string
+        $hashString = [System.BitConverter]::ToString($hashBytes).Replace("-", "")
+        return $hashString
+    }
+    catch {
+        Write-Host "Error calculating hash for $FilePath : $_" -ForegroundColor Red
+        return "ERROR"
+    }
+}
+
 # Create directories if they don't exist
 if (-not (Test-Path $destDir)) {
     New-Item -ItemType Directory -Path $destDir -Force
@@ -27,7 +50,7 @@ $fullSourceDir = (Resolve-Path $sourceDir).Path
 foreach ($file in $files) {
     # Extract the relative path correctly
     $relativePath = $file.FullName.Substring($fullSourceDir.Length + 1)
-    $hash = (Get-FileHash -Path $file.FullName -Algorithm MD5).Hash
+    $hash = Calculate-FileHash -FilePath $file.FullName
     $currentHashes[$relativePath] = $hash
     
     if ($previousHashes.ContainsKey($relativePath)) {
