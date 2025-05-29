@@ -33,8 +33,14 @@ if (-not (Test-Path $destDir)) {
 # Load previous hashes if the file exists
 $previousHashes = @{}
 if (Test-Path $hashFile) {
-    $previousHashes = Get-Content $hashFile | ConvertFrom-Json -AsHashtable
-    if ($null -eq $previousHashes) { $previousHashes = @{} }
+    # Use a method compatible with older PowerShell versions
+    $jsonContent = Get-Content $hashFile | ConvertFrom-Json
+    # Convert PSObject to hashtable manually
+    if ($jsonContent) {
+        $jsonContent.PSObject.Properties | ForEach-Object {
+            $previousHashes[$_.Name] = $_.Value
+        }
+    }
 }
 
 # Get current file hashes
