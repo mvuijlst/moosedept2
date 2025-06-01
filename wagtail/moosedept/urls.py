@@ -7,12 +7,15 @@ from wagtail import urls as wagtail_urls
 from wagtail.documents import urls as wagtaildocs_urls
 
 from search import views as search_views
+from nieuws.views import tag_index, paginated_index
 
 urlpatterns = [
     path("django-admin/", admin.site.urls),
     path("admin/", include(wagtailadmin_urls)),
     path("documents/", include(wagtaildocs_urls)),
     path("search/", search_views.search, name="search"),
+    path('tags/<slug:tag>/', tag_index, name='tag_index'),
+    path('nieuws/page/<int:page_number>/', paginated_index, name='paginated_news'),
 ]
 
 

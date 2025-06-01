@@ -9,10 +9,49 @@
 
     <div class="intro">{{ page.intro|richtext }}</div>
 
-    {% for post in newspages %}
-        <h2><a href="{% pageurl post %}">{{ post.title }}</a></h2>
-        {{ post.specific.intro }}
-        {{ post.specific.body|richtext }}
-    {% endfor %}
+    {% if request.GET.tag %}
+    <div class="current-filter">
+        <p>Gefiltreerd op tag: <strong>{{ request.GET.tag }}</strong> <a href="/nieuws/">(Filter wissen)</a></p>
+    </div>
+    {% endif %}
 
+
+    <div class="news-listing">
+        {% for post in newspages %}
+            <article class="news-item">
+                <div><a class="title" href="/nieuws/{{ post.slug }}/">{{ post.title }}</a></div>
+                <div class="meta">
+                    <time datetime="{{ post.specific.date|date:'Y-m-d' }}">{{ post.specific.date|date:"j F Y" }}</time>
+                    
+                    {% with tags=post.specific.tags.all %}
+                        {% if tags %}
+                            {% for tag in tags %}
+                                {% with tag_slug=tag.name|slugify %}
+                                <a class="tag" href="/tags/{{ tag_slug }}/">{{ tag }}</a>
+                                {% endwith %}
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                </div>
+            </article>
+        {% empty %}
+            <p>Geen nieuwsberichten gevonden.</p>
+        {% endfor %}
+    </div>
+
+    {% if newspages.paginator %}
+    <div class="pagination">
+        <ul>
+            {% if newspages.has_previous %}
+                <li><a href="/nieuws/page/{{ newspages.previous_page_number }}/{% if request.GET.tag %}?tag={{ request.GET.tag }}{% endif %}">&laquo; Vorige</a></li>
+            {% endif %}
+            
+            <li>Pagina {{ newspages.number }} van {{ newspages.paginator.num_pages }}</li>
+            
+            {% if newspages.has_next %}
+                <li><a href="/nieuws/page/{{ newspages.next_page_number }}/{% if request.GET.tag %}?tag={{ request.GET.tag }}{% endif %}">Volgende &raquo;</a></li>
+            {% endif %}
+        </ul>
+    </div>
+    {% endif %}
 {% endblock %}

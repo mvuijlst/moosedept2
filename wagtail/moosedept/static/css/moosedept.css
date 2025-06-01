@@ -107,3 +107,7 @@ tr>td:nth-child(2) {
         font-size: 0.8em;
     }
 }
+
+article {
+    margin-bottom: 1em;
+}

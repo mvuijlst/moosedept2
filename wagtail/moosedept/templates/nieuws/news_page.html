@@ -6,10 +6,20 @@
 
 {% block content %}
     <h1>{{ page.title }}</h1>
-    <p class="meta">{{ page.date }}</p>
+    <time datetime="{{ page.date|date:'Y-m-d' }}">{{ page.date|date:"j F Y" }}</time>
+    
+    {% if page.tags.all %}
+    <div class="tags">
+        {% for tag in page.tags.all %}
+            {% with tag_slug=tag.name|slugify %}
+            <a class="tag" href="/tags/{{ tag_slug }}/">{{ tag }}</a>
+            {% endwith %}
+        {% endfor %}
+    </div>
+    {% endif %}
 
     {{ page.body|richtext }}
 
-    <p><a href="{{ page.get_parent.url }}">Meer nieuws</a></p>
+    <p><a href="/nieuws/">Meer nieuws</a></p>
 
 {% endblock %}
