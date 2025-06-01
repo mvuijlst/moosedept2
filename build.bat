@@ -1,7 +1,7 @@
 @echo off
 REM Build script for Moose Department website
-REM Usage: build.bat [/copy]
-REM   /copy - Optional parameter to copy files to network share
+REM Usage: build.bat [/force]
+REM   /force - Force copy all files (not just changed ones)
 
 ..\hugo.exe --baseURL "https://moosedept.org" 
 cd public 
@@ -9,12 +9,14 @@ call firebase deploy
 cd ..
 ..\hugo.exe --baseURL "http://users.ugent.be/~mvuijlst/" 
 
-REM Check if /copy parameter was provided
-IF "%1"=="/copy" (
-    echo Copying files to network share...
-    powershell -ExecutionPolicy Bypass -File smart-copy.ps1
+REM Always copy files to network share
+echo Copying files to network share...
+IF "%1"=="/force" (
+    echo Force copying all files...
+    powershell -ExecutionPolicy Bypass -File smart-copy.ps1 -Force
 ) ELSE (
-    echo Skipping network copy. Use /copy parameter to copy files to network share.
+    echo Copying only changed files...
+    powershell -ExecutionPolicy Bypass -File smart-copy.ps1
 )
 
 git add *
