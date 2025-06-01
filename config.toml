@@ -3,6 +3,8 @@ defaultContentLanguage = 'nl'
 title = 'Moose Dept.'
 theme = 'moose'
 
+buildFuture = true
+
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
