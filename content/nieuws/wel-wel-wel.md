@@ -1,5 +1,5 @@
 ---
-date: '2025-06-01T22:05:00'
+date: 2025-06-01T22:05:00
 draft: false
 tags:
 - site
