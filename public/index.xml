@@ -5,11 +5,11 @@
     <link>http://users.ugent.be/~mvuijlst/</link>
     <description>Recent content on Moose Dept.</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 30 May 2025 06:42:00 -0500</lastBuildDate><atom:link href="http://users.ugent.be/~mvuijlst/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 30 May 2025 06:42:00 +0000</lastBuildDate><atom:link href="http://users.ugent.be/~mvuijlst/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Wagtail</title>
       <link>http://users.ugent.be/~mvuijlst/nieuws/wagtail/</link>
-      <pubDate>Fri, 30 May 2025 06:42:00 -0500</pubDate>
+      <pubDate>Fri, 30 May 2025 06:42:00 +0000</pubDate>
       
       <guid>http://users.ugent.be/~mvuijlst/nieuws/wagtail/</guid>
       <description>All the hip kids are doing it, dus ik dacht: eens kijken wat het geeft als ik de nieuwsinhoud hier met Wagtail beheer?
@@ -19,7 +19,7 @@ Eerst aanmaken met Django en Wagtail (op mijn lokale computer), ontsluiten met e
     <item>
       <title>Nog maar eens een poging</title>
       <link>http://users.ugent.be/~mvuijlst/nieuws/nogeenpoging/</link>
-      <pubDate>Wed, 02 Oct 2024 19:18:40 -0500</pubDate>
+      <pubDate>Wed, 02 Oct 2024 19:18:40 +0000</pubDate>
       
       <guid>http://users.ugent.be/~mvuijlst/nieuws/nogeenpoging/</guid>
       <description>Gisteren een dakwerker aangeraden gekregen die eigenlijk een algemene aannemer is met een groot netwerk van stielmannen. Vandaag een mail gestuurd, en nu zijn al mijn ledematen gekruisd.
@@ -30,7 +30,7 @@ Het zou zo enorm wijs zijn als het deze keer zou lukken.
     <item>
       <title>Hoop doet leven</title>
       <link>http://users.ugent.be/~mvuijlst/nieuws/hoop/</link>
-      <pubDate>Sun, 13 Aug 2023 15:40:08 -0500</pubDate>
+      <pubDate>Sun, 13 Aug 2023 15:40:08 +0000</pubDate>
       
       <guid>http://users.ugent.be/~mvuijlst/nieuws/hoop/</guid>
       <description>Er is enige hoop voor wat het nog te doen werk in huis betreft: er is een mens die allerlei werk in huis doet en daar allemaal onderaannemers voor heeft, en die zou ons ergens na het einde vna het bouwverlof een offerte sturen voor zo ongeveer alles dat er nog te doen is in huis.
@@ -40,7 +40,7 @@ We zijn ook nog altijd in blije afwachting van een schrijnwerker om de veluxen a
     <item>
       <title>Build, vervolg</title>
       <link>http://users.ugent.be/~mvuijlst/nieuws/build2/</link>
-      <pubDate>Sat, 03 Jun 2023 07:07:28 -0500</pubDate>
+      <pubDate>Sat, 03 Jun 2023 07:07:28 +0000</pubDate>
       
       <guid>http://users.ugent.be/~mvuijlst/nieuws/build2/</guid>
       <description>&amp;rsquo;t Is nog altijd geen échte build of zo, maar xcopy public \\files\mvuijlst\www\users /s /y is weg en vervangen door robocopy public \\files\mvuijlst\www\users /MIR /Z /W:5 /COPY:DT /XC.
@@ -51,7 +51,7 @@ Ik weet wel niet of het echt de moeite waard is, met de kleine kleine bestandjes
     <item>
       <title>Dak, binnenkort</title>
       <link>http://users.ugent.be/~mvuijlst/nieuws/dak/</link>
-      <pubDate>Fri, 19 May 2023 07:07:28 -0500</pubDate>
+      <pubDate>Fri, 19 May 2023 07:07:28 +0000</pubDate>
       
       <guid>http://users.ugent.be/~mvuijlst/nieuws/dak/</guid>
       <description>De mens van het dak komt! Er is een vergunning om met een kraan en een container voor de deur te staan van 16/6 tot 30/6. Ik vind dat ikweetniethoespannend.</description>
@@ -60,7 +60,7 @@ Ik weet wel niet of het echt de moeite waard is, met de kleine kleine bestandjes
     <item>
       <title>Gevel gedaan!</title>
       <link>http://users.ugent.be/~mvuijlst/nieuws/gevelgereed/</link>
-      <pubDate>Tue, 28 Feb 2023 14:01:19 -0600</pubDate>
+      <pubDate>Tue, 28 Feb 2023 14:01:19 +0000</pubDate>
       
       <guid>http://users.ugent.be/~mvuijlst/nieuws/gevelgereed/</guid>
       <description>De gevel is klaar, hoera hoezee. Het heeft wat langer geduurd dan ik had gedacht, maar het is absoluut verklaarbaar waarom: te koud om te werken, te nat om te drogen, dat soort dingen.
@@ -71,7 +71,7 @@ Nu nog de deur. En het dak. En de rest.</description>
     <item>
       <title>Herbegonnen</title>
       <link>http://users.ugent.be/~mvuijlst/nieuws/herbegonnen/</link>
-      <pubDate>Thu, 26 Jan 2023 07:56:51 -0600</pubDate>
+      <pubDate>Thu, 26 Jan 2023 07:56:51 +0000</pubDate>
       
       <guid>http://users.ugent.be/~mvuijlst/nieuws/herbegonnen/</guid>
       <description>Er staat as we speak een mens aan de muur te schrapen buiten. Dat wil zeggen dat ze na een maand of zo stil liggen wegens feesten en slecht weer, herbegonnen zijn.
@@ -83,7 +83,7 @@ En dan nog eens kijken of ze iets doen aan de afvoerbuizen en of het houten gedo
     <item>
       <title>Deur, poging zoveel</title>
       <link>http://users.ugent.be/~mvuijlst/nieuws/deur/</link>
-      <pubDate>Thu, 19 Jan 2023 05:53:11 -0600</pubDate>
+      <pubDate>Thu, 19 Jan 2023 05:53:11 +0000</pubDate>
       
       <guid>http://users.ugent.be/~mvuijlst/nieuws/deur/</guid>
       <description>Nog maar eens de gegevens van de deur aan een aantal mogelijke deurmakers gestuurd.
@@ -94,7 +94,7 @@ Van de mensen van Stedenbouw moeten we iets hebben dat er aan de buitenkant uitz
     <item>
       <title>Voornemens 2023</title>
       <link>http://users.ugent.be/~mvuijlst/nieuws/voornemens/</link>
-      <pubDate>Sun, 01 Jan 2023 11:31:07 -0600</pubDate>
+      <pubDate>Sun, 01 Jan 2023 11:31:07 +0000</pubDate>
       
       <guid>http://users.ugent.be/~mvuijlst/nieuws/voornemens/</guid>
       <description>Een nieuw jaar, dus tijd voor voornemens.
@@ -105,7 +105,7 @@ Daarnaast: meer boeken lezen. Het steekt, dat ik zo weinig gelezen heb in 2022.<
     <item>
       <title>Bezig aan de gevel</title>
       <link>http://users.ugent.be/~mvuijlst/nieuws/bezigte/</link>
-      <pubDate>Sun, 18 Dec 2022 12:53:14 -0600</pubDate>
+      <pubDate>Sun, 18 Dec 2022 12:53:14 +0000</pubDate>
       
       <guid>http://users.ugent.be/~mvuijlst/nieuws/bezigte/</guid>
       <description>Er staat nog altijd een stelling tegen de gevel, en er zijn al heelder stukken pleisterwerk van gehaald. Op dit moment is het te koud om verder te werken, denk ik, en dus list het wat stil. Tot waarschijnlijk ergens na nieuwjaar, vermoed ik. En dan moet er geverfd worden.
@@ -115,7 +115,7 @@ De kleur moet nog duidelijk gemaakt worden, en ook dat het eigenlijk twee kleure
     <item>
       <title>Geveldegijniet g&#39;een hebt gij niet</title>
       <link>http://users.ugent.be/~mvuijlst/nieuws/gevel/</link>
-      <pubDate>Tue, 13 Dec 2022 06:10:11 -0600</pubDate>
+      <pubDate>Tue, 13 Dec 2022 06:10:11 +0000</pubDate>
       
       <guid>http://users.ugent.be/~mvuijlst/nieuws/gevel/</guid>
       <description>Ze zijn begonnen aan de gevel hoeri hoera. Werken voorzien:
@@ -125,7 +125,7 @@ Beschermen van ramen en vloeren Plaatsen en verwijderen van stellingen Verwijder
     <item>
       <title>Deploy, v1</title>
       <link>http://users.ugent.be/~mvuijlst/nieuws/deploy/</link>
-      <pubDate>Mon, 05 Dec 2022 15:58:00 -0600</pubDate>
+      <pubDate>Mon, 05 Dec 2022 15:58:00 +0000</pubDate>
       
       <guid>http://users.ugent.be/~mvuijlst/nieuws/deploy/</guid>
       <description>Czech it out: zowel hier (user.ugent.be/~mvuijlst) als elders (moosedept.org) staat dezelfde inhoud. Alletwee met hugo, maar de ene met firebase gesynct en de andere met xcopy naar een share.
@@ -135,7 +135,7 @@ Beschermen van ramen en vloeren Plaatsen en verwijderen van stellingen Verwijder
     <item>
       <title>Children of Memory</title>
       <link>http://users.ugent.be/~mvuijlst/nieuws/memory/</link>
-      <pubDate>Mon, 05 Dec 2022 15:27:28 -0600</pubDate>
+      <pubDate>Mon, 05 Dec 2022 15:27:28 +0000</pubDate>
       
       <guid>http://users.ugent.be/~mvuijlst/nieuws/memory/</guid>
       <description>Tralala, het volgende boek in de Children of Time -serie is uit: Children of Memory. Het begint denk ik als een prequel (ik lees nooit verder dan &amp;ldquo;Earth is failing&amp;rdquo; en dat de bewoners van de aarde wanhopig proberen te vluchten in een ruimteschip); ik hoop dat het verder gaat dan het tweede boek.
@@ -145,7 +145,7 @@ Dat tweede boek was namelijk geëindigd op een punt waar ik van zou content gewe
     <item>
       <title>Build, min of meer</title>
       <link>http://users.ugent.be/~mvuijlst/nieuws/build/</link>
-      <pubDate>Mon, 05 Dec 2022 03:09:27 -0600</pubDate>
+      <pubDate>Mon, 05 Dec 2022 03:09:27 +0000</pubDate>
       
       <guid>http://users.ugent.be/~mvuijlst/nieuws/build/</guid>
       <description>Ik zou eens moeten zoeken op een beter systeem om die site hier te deployen. Een xcopy public \\files\mvuijlst\www\users /s /y vanuit de folder op mijn computer is misschien niet de ideale manier, maar ik heb de indruk dat ik geen github actions kan hebben op de github van het werk. Denk ik.</description>
@@ -154,7 +154,7 @@ Dat tweede boek was namelijk geëindigd op een punt waar ik van zou content gewe
     <item>
       <title>De slechte vrienden</title>
       <link>http://users.ugent.be/~mvuijlst/nieuws/slechtevrienden/</link>
-      <pubDate>Sun, 04 Dec 2022 05:25:40 -0600</pubDate>
+      <pubDate>Sun, 04 Dec 2022 05:25:40 +0000</pubDate>
       
       <guid>http://users.ugent.be/~mvuijlst/nieuws/slechtevrienden/</guid>
       <description>Alsmaar minder dingen die via decentrale backup bekeken worden, maar soms kan het niet anders. &amp;rsquo;t Is azo.</description>
@@ -163,7 +163,7 @@ Dat tweede boek was namelijk geëindigd op een punt waar ik van zou content gewe
     <item>
       <title>Huis: gevel! dak!</title>
       <link>http://users.ugent.be/~mvuijlst/nieuws/hoera/</link>
-      <pubDate>Thu, 01 Dec 2022 04:36:06 -0600</pubDate>
+      <pubDate>Thu, 01 Dec 2022 04:36:06 +0000</pubDate>
       
       <guid>http://users.ugent.be/~mvuijlst/nieuws/hoera/</guid>
       <description>De kogel is door de kerk: de gevel gaat ververst worden midden-december, en het dak gaat ververst worden als de dakmens de dakpannen binnenkrijgt die hij besteld heeft maanden geleden.</description>
@@ -172,7 +172,7 @@ Dat tweede boek was namelijk geëindigd op een punt waar ik van zou content gewe
     <item>
       <title>Tiens een site met Hugo</title>
       <link>http://users.ugent.be/~mvuijlst/nieuws/allo/</link>
-      <pubDate>Tue, 22 Nov 2022 04:36:06 -0600</pubDate>
+      <pubDate>Tue, 22 Nov 2022 04:36:06 +0000</pubDate>
       
       <guid>http://users.ugent.be/~mvuijlst/nieuws/allo/</guid>
       <description>Als wij op het werk Hugo gaan gebruiken, is het misschien geen slecht idee om dat zelf ook eens allemaal op te frissen.
@@ -182,7 +182,7 @@ Dus bij dezen.</description>
     <item>
       <title>Stekelnoten deels om zeep</title>
       <link>http://users.ugent.be/~mvuijlst/nieuws/dedju/</link>
-      <pubDate>Fri, 28 Oct 2022 05:36:06 -0500</pubDate>
+      <pubDate>Fri, 28 Oct 2022 05:36:06 +0000</pubDate>
       
       <guid>http://users.ugent.be/~mvuijlst/nieuws/dedju/</guid>
       <description>De kuisvrouw heeft de inhoud van een pot vol zeiknatte aarde over de stekelnoten gakapt. De stekelnoten aan de rechterkant aan de kant van het huis zijn volledig bedolven en dus waarschijnlijk dood. Dedju.

@@ -66,13 +66,24 @@ def html_to_markdown(html):
         return ""
     return HTML_CONVERTER.handle(html)
 
+def format_date(date_str):
+    """Format date string to Hugo compatible format without timezone."""
+    try:
+        # Parse the date
+        date_obj = datetime.fromisoformat(date_str.replace('Z', '+00:00'))
+        # Format it without timezone
+        return date_obj.strftime('%Y-%m-%dT%H:%M:%S')
+    except (ValueError, AttributeError):
+        return date_str
+
 def create_markdown_file(news_page):
     """Convert a news page to Markdown and save it."""
     title = news_page['title']
     slug = news_page['meta']['slug']
     
-    # Handle missing fields
+    # Handle missing fields and format date
     date_str = news_page.get('date', datetime.now().isoformat())
+    date_str = format_date(date_str)
     body_html = news_page.get('body', '')
     
     # Handle tags - might be missing or null

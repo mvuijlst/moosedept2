@@ -1,5 +1,5 @@
 ---
-date: '2022-12-04T05:25:40-06:00'
+date: '2022-12-04T05:25:40'
 draft: false
 tags:
 - gekeken

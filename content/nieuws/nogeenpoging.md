@@ -1,5 +1,5 @@
 ---
-date: '2024-10-02T19:18:40-05:00'
+date: '2024-10-02T19:18:40'
 draft: false
 tags:
 - verbouwingen

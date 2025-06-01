@@ -1,5 +1,5 @@
 ---
-date: '2022-12-05T15:27:28-06:00'
+date: '2022-12-05T15:27:28'
 draft: false
 tags:
 - gelezen

@@ -1,5 +1,5 @@
 ---
-date: '2023-01-01T11:31:07-06:00'
+date: '2023-01-01T11:31:07'
 draft: false
 tags:
 - gelezen
