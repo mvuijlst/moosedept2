@@ -35,11 +35,11 @@ REM Check if the 'github_public' remote exists and add it if not
 git remote get-url github_public >nul 2>&1
 IF ERRORLEVEL 1 (
     echo Adding new remote 'github_public' for public GitHub...
-    git remote add github_public https://github.com/mvuijlst/moosedept.git
+    git remote add github_public https://github.com/mvuijlst/moosedept2.git
 ) ELSE (
     echo Remote 'github_public' already exists.
     REM Optionally, ensure the URL is correct if it might change
-    git remote set-url github_public https://github.com/mvuijlst/moosedept.git
+    git remote set-url github_public https://github.com/mvuijlst/moosedept2.git
 )
 
 echo Pushing to github_public (Public GitHub)...
