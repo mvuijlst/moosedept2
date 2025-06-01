@@ -5,11 +5,21 @@
     <link>http://users.ugent.be/~mvuijlst/tags/site/</link>
     <description>Recent content in site on Moose Dept.</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 03 Jun 2023 12:07:28 +0000</lastBuildDate><atom:link href="http://users.ugent.be/~mvuijlst/tags/site/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 30 May 2025 06:42:00 -0500</lastBuildDate><atom:link href="http://users.ugent.be/~mvuijlst/tags/site/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Wagtail</title>
+      <link>http://users.ugent.be/~mvuijlst/nieuws/wagtail/</link>
+      <pubDate>Fri, 30 May 2025 06:42:00 -0500</pubDate>
+      
+      <guid>http://users.ugent.be/~mvuijlst/nieuws/wagtail/</guid>
+      <description>All the hip kids are doing it, dus ik dacht: eens kijken wat het geeft als ik de nieuwsinhoud hier met Wagtail beheer?
+Eerst aanmaken met Django en Wagtail (op mijn lokale computer), ontsluiten met een API, en dan hugo de inhoud laten ophalen en genereren. Hoe moeilijk kan dat zijn?</description>
+    </item>
+    
     <item>
       <title>Build, vervolg</title>
       <link>http://users.ugent.be/~mvuijlst/nieuws/build2/</link>
-      <pubDate>Sat, 03 Jun 2023 12:07:28 +0000</pubDate>
+      <pubDate>Sat, 03 Jun 2023 07:07:28 -0500</pubDate>
       
       <guid>http://users.ugent.be/~mvuijlst/nieuws/build2/</guid>
       <description>&amp;rsquo;t Is nog altijd geen échte build of zo, maar xcopy public \\files\mvuijlst\www\users /s /y is weg en vervangen door robocopy public \\files\mvuijlst\www\users /MIR /Z /W:5 /COPY:DT /XC.
@@ -20,7 +30,7 @@ Ik weet wel niet of het echt de moeite waard is, met de kleine kleine bestandjes
     <item>
       <title>Deploy, v1</title>
       <link>http://users.ugent.be/~mvuijlst/nieuws/deploy/</link>
-      <pubDate>Mon, 05 Dec 2022 21:58:00 +0000</pubDate>
+      <pubDate>Mon, 05 Dec 2022 15:58:00 -0600</pubDate>
       
       <guid>http://users.ugent.be/~mvuijlst/nieuws/deploy/</guid>
       <description>Czech it out: zowel hier (user.ugent.be/~mvuijlst) als elders (moosedept.org) staat dezelfde inhoud. Alletwee met hugo, maar de ene met firebase gesynct en de andere met xcopy naar een share.
@@ -30,7 +40,7 @@ Ik weet wel niet of het echt de moeite waard is, met de kleine kleine bestandjes
     <item>
       <title>Build, min of meer</title>
       <link>http://users.ugent.be/~mvuijlst/nieuws/build/</link>
-      <pubDate>Mon, 05 Dec 2022 09:09:27 +0000</pubDate>
+      <pubDate>Mon, 05 Dec 2022 03:09:27 -0600</pubDate>
       
       <guid>http://users.ugent.be/~mvuijlst/nieuws/build/</guid>
       <description>Ik zou eens moeten zoeken op een beter systeem om die site hier te deployen. Een xcopy public \\files\mvuijlst\www\users /s /y vanuit de folder op mijn computer is misschien niet de ideale manier, maar ik heb de indruk dat ik geen github actions kan hebben op de github van het werk. Denk ik.</description>
@@ -39,7 +49,7 @@ Ik weet wel niet of het echt de moeite waard is, met de kleine kleine bestandjes
     <item>
       <title>Tiens een site met Hugo</title>
       <link>http://users.ugent.be/~mvuijlst/nieuws/allo/</link>
-      <pubDate>Tue, 22 Nov 2022 11:36:06 +0100</pubDate>
+      <pubDate>Tue, 22 Nov 2022 04:36:06 -0600</pubDate>
       
       <guid>http://users.ugent.be/~mvuijlst/nieuws/allo/</guid>
       <description>Als wij op het werk Hugo gaan gebruiken, is het misschien geen slecht idee om dat zelf ook eens allemaal op te frissen.

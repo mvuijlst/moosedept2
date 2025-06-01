@@ -1,8 +1,10 @@
 ---
-title: "Bezig aan de gevel"
-date: 2022-12-18T18:53:14Z
+date: '2022-12-18T12:53:14-06:00'
 draft: false
-tags: ['huis','gevel']
+tags:
+- gevel
+- huis
+title: Bezig aan de gevel
 ---
 
 Er staat nog altijd een stelling tegen de gevel, en er zijn al heelder stukken pleisterwerk van gehaald. Op dit moment is het te koud om verder te werken, denk ik, en dus list het wat stil. Tot waarschijnlijk ergens na nieuwjaar, vermoed ik. En dan moet er geverfd worden. 

@@ -10,6 +10,8 @@ from wagtail.admin.panels import FieldPanel
 from modelcluster.fields import ParentalKey
 from modelcluster.contrib.taggit import ClusterTaggableManager
 from taggit.models import TaggedItemBase
+from wagtail.api import APIField
+from rest_framework import fields as api_fields
 
 
 class NewsPageTag(TaggedItemBase):
@@ -77,6 +79,13 @@ class NewsPage(Page):
 
     search_fields = Page.search_fields + [
         index.SearchField('body'),
+    ]
+
+    # Add API configuration
+    api_fields = [
+        APIField('date'),
+        APIField('body'),
+        APIField('tags'),
     ]
 
     content_panels = Page.content_panels + [

@@ -1,8 +1,10 @@
 ---
-title: Gevel gedaan!
-date: 2023-02-28T20:01:19Z
+date: '2023-02-28T14:01:19-06:00'
 draft: false
-tags: ['huis','gevel']
+tags:
+- gevel
+- huis
+title: Gevel gedaan!
 ---
 
 De gevel is klaar, hoera hoezee. Het heeft wat langer geduurd dan ik had gedacht, maar het is absoluut verklaarbaar waarom: te koud om te werken, te nat om te drogen, dat soort dingen. 

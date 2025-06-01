@@ -8,6 +8,7 @@ from wagtail.documents import urls as wagtaildocs_urls
 
 from search import views as search_views
 from nieuws.views import tag_index, paginated_index
+from .api import api_router
 
 urlpatterns = [
     path("django-admin/", admin.site.urls),
@@ -16,6 +17,8 @@ urlpatterns = [
     path("search/", search_views.search, name="search"),
     path('tags/<slug:tag>/', tag_index, name='tag_index'),
     path('nieuws/page/<int:page_number>/', paginated_index, name='paginated_news'),
+    # API endpoint
+    path('api/v2/', api_router.urls),
 ]
 
 

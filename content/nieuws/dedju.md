@@ -1,8 +1,9 @@
 ---
-title: "Stekelnoten deels om zeep"
-date: 2022-10-28T11:36:06+01:00
+date: '2022-10-28T05:36:06-05:00'
 draft: false
-tags: ['hof']
+tags:
+- hof
+title: Stekelnoten deels om zeep
 ---
 
 De kuisvrouw heeft de inhoud van een pot vol zeiknatte aarde over de stekelnoten gakapt. De stekelnoten aan de rechterkant aan de kant van het huis zijn volledig bedolven en dus waarschijnlijk dood. Dedju. 

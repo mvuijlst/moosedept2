@@ -1,8 +1,9 @@
 ---
-title: "Build, vervolg"
-date: 2023-06-03T12:07:28Z
+date: '2023-06-03T07:07:28-05:00'
 draft: false
-tags: ['site']
+tags:
+- site
+title: Build, vervolg
 ---
 
 't Is nog altijd geen échte build of zo, maar `xcopy public \\files\mvuijlst\www\users /s /y` is weg en vervangen door `robocopy public \\files\mvuijlst\www\users /MIR /Z /W:5 /COPY:DT /XC`. 
