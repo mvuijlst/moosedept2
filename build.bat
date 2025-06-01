@@ -3,6 +3,10 @@ REM Build script for Moose Department website
 REM Usage: build.bat [/force]
 REM   /force - Force copy all files (not just changed ones)
 
+REM get the latest news
+python getnews.py
+
+REM Build the website
 ..\hugo.exe --baseURL "https://moosedept.org" 
 cd public 
 call firebase deploy
