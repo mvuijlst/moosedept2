@@ -94,19 +94,27 @@
 
     td {
         border-bottom: 1px solid #444;
-        vertical-align: top;
     }
 
     table {
         margin: auto;
     }
 
-    .plus {
-        color: #99ff99;
+    tr>td:nth-child(1) {
+        text-transform: capitalize;
+        font-size: 0.8em;
     }
 
-    .min {
-        color: #f7941d;
+    tr>td:nth-child(3) {
+        font-style: italic;
+    }
+
+    .minus {
+        color: red;
+    }
+
+    .plus {
+        color: #99ff99;
     }
 
     @media only screen and (max-width: 600px) {
