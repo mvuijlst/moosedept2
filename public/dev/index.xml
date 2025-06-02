@@ -4,28 +4,22 @@
     <title>Dingen die ik geprogrammeerd heb on Moose Dept.</title>
     <link>http://users.ugent.be/~mvuijlst/dev/</link>
     <description>Recent content in Dingen die ik geprogrammeerd heb on Moose Dept.</description>
-    <generator>Hugo -- gohugo.io</generator><atom:link href="http://users.ugent.be/~mvuijlst/dev/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo</generator>
+    <language>nl</language>
+    <atom:link href="http://users.ugent.be/~mvuijlst/dev/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>save-links-extension</title>
       <link>http://users.ugent.be/~mvuijlst/dev/save-links-extension/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>http://users.ugent.be/~mvuijlst/dev/save-links-extension/</guid>
-      <description>Er was vroeger del.icio.us om links te verzamelen, en dat had een extensie om links in een blog te plonken. En dan was er pinboard.in, en dat bestaat nog altijd, maar de link met WordPress (of beter, de link van WordPress naar pinboard) werk niet meer.
-En dus heb ik dan maar een Chrome extensie gemaakt die doet wat ik wil hebben: links bijhouden tot ik ze op mijn weblog post.</description>
+      <description>&lt;p&gt;Er was vroeger del.icio.us om links te verzamelen, en dat had een extensie om links in een blog te plonken. En dan was er pinboard.in, en dat bestaat nog altijd, maar de link met WordPress (of beter, de link van WordPress naar pinboard) werk niet meer.&lt;/p&gt;&#xA;&lt;p&gt;En dus heb ik dan maar een Chrome extensie gemaakt die doet wat ik wil hebben: links bijhouden tot ik ze op mijn weblog post. &amp;rsquo;t Is niet ideaal, &amp;rsquo;t is in &amp;rsquo;t beste geval semi-manueel, maar hey. It scratches my itch, en zo werken die dingen.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Squish</title>
       <link>http://users.ugent.be/~mvuijlst/dev/squish/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>http://users.ugent.be/~mvuijlst/dev/squish/</guid>
-      <description>Gebaseerd op Beast, dat ooit in een ver verleden bij een versie van WordPerfect Office zat. Ik probeer het zo goed mogelijk te reconstrueren zoals ik het mij herinner, maar ik ga er denk ik ook wat aanpassingen aan doen.
-Meer info op de Githubs: https://github.com/mvuijlst/squish
-Wat ik mij herinner:
-Er is een speelveld met verduwbare blokken en hier en daar een muur, en muren rondom Beesten proberen speler op te vreten Beesten kunnen doodgedaan worden door ze tussen twee blokken te verpletteren Vanaf een bepaald level waren er eieren die superbeesten werden Vanaf een bepaald level waren er een andere soort superbeesten Superbeest type 1 was alleen tegen een muur plat te duwen Superbeest type 2 probeerde de speler plat te duwen Wat mij herinner maar niet ga houden:</description>
+      <description>&lt;p&gt;Gebaseerd op &lt;strong&gt;Beast&lt;/strong&gt;, dat ooit in een ver verleden bij een versie van WordPerfect Office zat. Ik probeer het zo goed mogelijk te reconstrueren zoals ik het mij herinner, maar ik ga er denk ik ook wat aanpassingen aan doen.&lt;/p&gt;&#xA;&lt;p&gt;Meer info op de Githubs: &lt;a href=&#34;https://github.com/mvuijlst/squish&#34;&gt;https://github.com/mvuijlst/squish&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;../squish.png&#34; alt=&#34;Squish v1.2.0&#34; title=&#34;Squish v1.2.0, 2024-09-29&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Wat ik mij herinner:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Er is een speelveld met verduwbare blokken en hier en daar een muur, en muren rondom&lt;/li&gt;&#xA;&lt;li&gt;Beesten proberen speler op te vreten&lt;/li&gt;&#xA;&lt;li&gt;Beesten kunnen doodgedaan worden door ze tussen twee blokken te verpletteren&lt;/li&gt;&#xA;&lt;li&gt;Vanaf een bepaald level waren er eieren die superbeesten werden&lt;/li&gt;&#xA;&lt;li&gt;Vanaf een bepaald level waren er een andere soort superbeesten&lt;/li&gt;&#xA;&lt;li&gt;Superbeest type 1 was alleen tegen een muur plat te duwen&lt;/li&gt;&#xA;&lt;li&gt;Superbeest type 2 probeerde de speler plat te duwen&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Wat mij herinner maar niet ga houden:&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

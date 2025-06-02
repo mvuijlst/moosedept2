@@ -4,106 +4,86 @@
     <title>Tags on Moose Dept.</title>
     <link>http://users.ugent.be/~mvuijlst/tags/</link>
     <description>Recent content in Tags on Moose Dept.</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 01 Jun 2025 22:05:00 +0000</lastBuildDate><atom:link href="http://users.ugent.be/~mvuijlst/tags/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo</generator>
+    <language>nl</language>
+    <lastBuildDate>Sun, 01 Jun 2025 22:05:00 +0000</lastBuildDate>
+    <atom:link href="http://users.ugent.be/~mvuijlst/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>site</title>
+      <title>Site</title>
       <link>http://users.ugent.be/~mvuijlst/tags/site/</link>
       <pubDate>Sun, 01 Jun 2025 22:05:00 +0000</pubDate>
-      
       <guid>http://users.ugent.be/~mvuijlst/tags/site/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>verbouwingen</title>
+      <title>Verbouwingen</title>
       <link>http://users.ugent.be/~mvuijlst/tags/verbouwingen/</link>
       <pubDate>Wed, 02 Oct 2024 19:18:40 +0000</pubDate>
-      
       <guid>http://users.ugent.be/~mvuijlst/tags/verbouwingen/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>huis</title>
+      <title>Huis</title>
       <link>http://users.ugent.be/~mvuijlst/tags/huis/</link>
       <pubDate>Sun, 13 Aug 2023 15:40:08 +0000</pubDate>
-      
       <guid>http://users.ugent.be/~mvuijlst/tags/huis/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>werk</title>
+      <title>Werk</title>
       <link>http://users.ugent.be/~mvuijlst/tags/werk/</link>
       <pubDate>Sun, 13 Aug 2023 15:40:08 +0000</pubDate>
-      
       <guid>http://users.ugent.be/~mvuijlst/tags/werk/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>dak</title>
+      <title>Dak</title>
       <link>http://users.ugent.be/~mvuijlst/tags/dak/</link>
       <pubDate>Fri, 19 May 2023 07:07:28 +0000</pubDate>
-      
       <guid>http://users.ugent.be/~mvuijlst/tags/dak/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>gevel</title>
+      <title>Gevel</title>
       <link>http://users.ugent.be/~mvuijlst/tags/gevel/</link>
       <pubDate>Tue, 28 Feb 2023 14:01:19 +0000</pubDate>
-      
       <guid>http://users.ugent.be/~mvuijlst/tags/gevel/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>deur</title>
+      <title>Deur</title>
       <link>http://users.ugent.be/~mvuijlst/tags/deur/</link>
       <pubDate>Thu, 19 Jan 2023 05:53:11 +0000</pubDate>
-      
       <guid>http://users.ugent.be/~mvuijlst/tags/deur/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>gelezen</title>
+      <title>Gelezen</title>
       <link>http://users.ugent.be/~mvuijlst/tags/gelezen/</link>
       <pubDate>Sun, 01 Jan 2023 11:31:07 +0000</pubDate>
-      
       <guid>http://users.ugent.be/~mvuijlst/tags/gelezen/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>leven</title>
+      <title>Leven</title>
       <link>http://users.ugent.be/~mvuijlst/tags/leven/</link>
       <pubDate>Sun, 01 Jan 2023 11:31:07 +0000</pubDate>
-      
       <guid>http://users.ugent.be/~mvuijlst/tags/leven/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>gekeken</title>
+      <title>Gekeken</title>
       <link>http://users.ugent.be/~mvuijlst/tags/gekeken/</link>
       <pubDate>Sun, 04 Dec 2022 05:25:40 +0000</pubDate>
-      
       <guid>http://users.ugent.be/~mvuijlst/tags/gekeken/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>hof</title>
+      <title>Hof</title>
       <link>http://users.ugent.be/~mvuijlst/tags/hof/</link>
       <pubDate>Fri, 28 Oct 2022 05:36:06 +0000</pubDate>
-      
       <guid>http://users.ugent.be/~mvuijlst/tags/hof/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>

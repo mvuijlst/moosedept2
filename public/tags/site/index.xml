@@ -1,71 +1,54 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>site on Moose Dept.</title>
+    <title>Site on Moose Dept.</title>
     <link>http://users.ugent.be/~mvuijlst/tags/site/</link>
-    <description>Recent content in site on Moose Dept.</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 01 Jun 2025 22:05:00 +0000</lastBuildDate><atom:link href="http://users.ugent.be/~mvuijlst/tags/site/index.xml" rel="self" type="application/rss+xml" />
+    <description>Recent content in Site on Moose Dept.</description>
+    <generator>Hugo</generator>
+    <language>nl</language>
+    <lastBuildDate>Sun, 01 Jun 2025 22:05:00 +0000</lastBuildDate>
+    <atom:link href="http://users.ugent.be/~mvuijlst/tags/site/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Wel wel wel</title>
       <link>http://users.ugent.be/~mvuijlst/nieuws/wel-wel-wel/</link>
       <pubDate>Sun, 01 Jun 2025 22:05:00 +0000</pubDate>
-      
       <guid>http://users.ugent.be/~mvuijlst/nieuws/wel-wel-wel/</guid>
-      <description>Kijk nu, &amp;rsquo;t is een nieuwspagina die ik in Wagtail geschreven heb en die uit de API geprutst wordt en dan naar markdown geschreven en dan via Hugo naar statische html geschreven wordt.
-Dingen die ik mij afvraag:
-komt er wel degelijke markdown uit, en wordt dat wel degelijke html? [ja] wat zou er gebeuren als ik afbeeldingen zou doen? [voorlopig niets, want ik doe er niets mee in het maak-markdown-met-api-gegevens-script] zou ik eens moeten een echte pipeline opzetten in plaats van manueel scriptjes te draaien?</description>
+      <description>&lt;p&gt;Kijk nu, &amp;rsquo;t is een nieuwspagina die ik in Wagtail geschreven heb en die uit de API geprutst wordt en dan naar markdown geschreven en dan via Hugo naar statische html geschreven wordt.&lt;/p&gt;&#xA;&lt;p&gt;Dingen die ik mij afvraag:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;komt er wel degelijke markdown uit, en wordt dat wel degelijke html? [ja]&lt;/li&gt;&#xA;&lt;li&gt;wat zou er gebeuren als ik afbeeldingen zou doen? [voorlopig niets, want ik doe er niets mee in het maak-markdown-met-api-gegevens-script]&lt;/li&gt;&#xA;&lt;li&gt;zou ik eens moeten een echte pipeline opzetten in plaats van manueel scriptjes te draaien? [dán eens]&lt;/li&gt;&#xA;&lt;li&gt;zou ik eens dit op een echte server zetten in plaats van op mijn computer lokaal? [ook dán eens]&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
-    
     <item>
       <title>Wagtail</title>
       <link>http://users.ugent.be/~mvuijlst/nieuws/wagtail/</link>
       <pubDate>Fri, 30 May 2025 06:42:00 +0000</pubDate>
-      
       <guid>http://users.ugent.be/~mvuijlst/nieuws/wagtail/</guid>
-      <description>All the hip kids are doing it, dus ik dacht: eens kijken wat het geeft als ik de nieuwsinhoud hier met Wagtail beheer?
-Eerst aanmaken met Django en Wagtail (op mijn lokale computer), ontsluiten met een API, en dan hugo de inhoud laten ophalen en genereren. Hoe moeilijk kan dat zijn?</description>
+      <description>&lt;p&gt;All the hip kids are doing it, dus ik dacht: eens kijken wat het geeft als ik de nieuwsinhoud hier met &lt;a href=&#34;https://wagtail.org&#34;&gt;Wagtail&lt;/a&gt; beheer?&lt;/p&gt;&#xA;&lt;p&gt;Eerst aanmaken met Django en Wagtail (op mijn lokale computer), ontsluiten met een API, en dan hugo de inhoud laten ophalen en genereren. Hoe moeilijk kan dat zijn?&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Build, vervolg</title>
       <link>http://users.ugent.be/~mvuijlst/nieuws/build2/</link>
       <pubDate>Sat, 03 Jun 2023 07:07:28 +0000</pubDate>
-      
       <guid>http://users.ugent.be/~mvuijlst/nieuws/build2/</guid>
-      <description>&amp;rsquo;t Is nog altijd geen échte build of zo, maar xcopy public \\files\mvuijlst\www\users /s /y is weg en vervangen door robocopy public \\files\mvuijlst\www\users /MIR /Z /W:5 /COPY:DT /XC.
-Ik had er nog nooit van gehoord, maar Robust File Copy zit blijkbaar al sinds Windows NT 4.0 in de NT Resource Kit, en sinds 2008 in alle Windows. Zot.
-Ik weet wel niet of het echt de moeite waard is, met de kleine kleine bestandjes hier, maar toch.</description>
+      <description>&lt;p&gt;&amp;rsquo;t Is nog altijd geen échte build of zo, maar &lt;code&gt;xcopy public \\files\mvuijlst\www\users /s /y&lt;/code&gt; is weg en vervangen door &lt;code&gt;robocopy public \\files\mvuijlst\www\users /MIR /Z /W:5 /COPY:DT /XC&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Ik had er nog nooit van gehoord, maar Robust File Copy zit blijkbaar al sinds Windows NT 4.0 in de NT Resource Kit, en sinds 2008 in alle Windows. Zot.&lt;/p&gt;&#xA;&lt;p&gt;Ik weet wel niet of het echt de moeite waard is, met de kleine kleine bestandjes hier, maar toch. &amp;rsquo;t Is het gedacht dat telt.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Deploy, v1</title>
       <link>http://users.ugent.be/~mvuijlst/nieuws/deploy/</link>
       <pubDate>Mon, 05 Dec 2022 15:58:00 +0000</pubDate>
-      
       <guid>http://users.ugent.be/~mvuijlst/nieuws/deploy/</guid>
-      <description>Czech it out: zowel hier (user.ugent.be/~mvuijlst) als elders (moosedept.org) staat dezelfde inhoud. Alletwee met hugo, maar de ene met firebase gesynct en de andere met xcopy naar een share.
-&amp;rsquo;t Is een beetje stom dat ik voor de paragraaf hierboven speciaal een shortcode heb moeten maken, maar hey.</description>
+      <description>&lt;p&gt;Czech it out: zowel&#xA;hier (&lt;a href=&#34;http://users.ugent.be/~mvuijlst/&#34;&gt;user.ugent.be/~mvuijlst&lt;/a&gt;) als elders (&lt;a href=&#34;https://moosedept.org&#34;&gt;moosedept.org&lt;/a&gt;)&#xA;staat dezelfde inhoud. Alletwee met hugo, maar de ene met firebase gesynct en de andere met xcopy naar een share.&lt;/p&gt;&#xA;&lt;p&gt;&amp;rsquo;t Is een beetje stom dat ik voor de paragraaf hierboven speciaal een shortcode heb moeten maken, maar hey.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Build, min of meer</title>
       <link>http://users.ugent.be/~mvuijlst/nieuws/build/</link>
       <pubDate>Mon, 05 Dec 2022 03:09:27 +0000</pubDate>
-      
       <guid>http://users.ugent.be/~mvuijlst/nieuws/build/</guid>
-      <description>Ik zou eens moeten zoeken op een beter systeem om die site hier te deployen. Een xcopy public \\files\mvuijlst\www\users /s /y vanuit de folder op mijn computer is misschien niet de ideale manier, maar ik heb de indruk dat ik geen github actions kan hebben op de github van het werk. Denk ik.</description>
+      <description>&lt;p&gt;Ik zou eens moeten zoeken op een beter systeem om die site hier te deployen. Een &lt;code&gt;xcopy public \\files\mvuijlst\www\users /s /y&lt;/code&gt; vanuit de folder op mijn computer is misschien niet de ideale manier, maar ik heb de indruk dat ik geen github actions kan hebben op de github van het werk. Denk ik.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Tiens een site met Hugo</title>
       <link>http://users.ugent.be/~mvuijlst/nieuws/allo/</link>
       <pubDate>Tue, 22 Nov 2022 04:36:06 +0000</pubDate>
-      
       <guid>http://users.ugent.be/~mvuijlst/nieuws/allo/</guid>
-      <description>Als wij op het werk Hugo gaan gebruiken, is het misschien geen slecht idee om dat zelf ook eens allemaal op te frissen.
-Dus bij dezen.</description>
+      <description>&lt;p&gt;Als wij &lt;a href=&#34;https://ugent.be&#34;&gt;op het werk&lt;/a&gt; Hugo gaan gebruiken, is het misschien geen slecht idee om dat zelf ook eens allemaal op te frissen.&lt;/p&gt;&#xA;&lt;p&gt;Dus bij dezen.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

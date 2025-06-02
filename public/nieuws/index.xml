@@ -4,202 +4,142 @@
     <title>Nieuws on Moose Dept.</title>
     <link>http://users.ugent.be/~mvuijlst/nieuws/</link>
     <description>Recent content in Nieuws on Moose Dept.</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 01 Jun 2025 22:05:00 +0000</lastBuildDate><atom:link href="http://users.ugent.be/~mvuijlst/nieuws/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo</generator>
+    <language>nl</language>
+    <lastBuildDate>Sun, 01 Jun 2025 22:05:00 +0000</lastBuildDate>
+    <atom:link href="http://users.ugent.be/~mvuijlst/nieuws/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Wel wel wel</title>
       <link>http://users.ugent.be/~mvuijlst/nieuws/wel-wel-wel/</link>
       <pubDate>Sun, 01 Jun 2025 22:05:00 +0000</pubDate>
-      
       <guid>http://users.ugent.be/~mvuijlst/nieuws/wel-wel-wel/</guid>
-      <description>Kijk nu, &amp;rsquo;t is een nieuwspagina die ik in Wagtail geschreven heb en die uit de API geprutst wordt en dan naar markdown geschreven en dan via Hugo naar statische html geschreven wordt.
-Dingen die ik mij afvraag:
-komt er wel degelijke markdown uit, en wordt dat wel degelijke html? [ja] wat zou er gebeuren als ik afbeeldingen zou doen? [voorlopig niets, want ik doe er niets mee in het maak-markdown-met-api-gegevens-script] zou ik eens moeten een echte pipeline opzetten in plaats van manueel scriptjes te draaien?</description>
+      <description>&lt;p&gt;Kijk nu, &amp;rsquo;t is een nieuwspagina die ik in Wagtail geschreven heb en die uit de API geprutst wordt en dan naar markdown geschreven en dan via Hugo naar statische html geschreven wordt.&lt;/p&gt;&#xA;&lt;p&gt;Dingen die ik mij afvraag:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;komt er wel degelijke markdown uit, en wordt dat wel degelijke html? [ja]&lt;/li&gt;&#xA;&lt;li&gt;wat zou er gebeuren als ik afbeeldingen zou doen? [voorlopig niets, want ik doe er niets mee in het maak-markdown-met-api-gegevens-script]&lt;/li&gt;&#xA;&lt;li&gt;zou ik eens moeten een echte pipeline opzetten in plaats van manueel scriptjes te draaien? [dán eens]&lt;/li&gt;&#xA;&lt;li&gt;zou ik eens dit op een echte server zetten in plaats van op mijn computer lokaal? [ook dán eens]&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
-    
     <item>
       <title>Wagtail</title>
       <link>http://users.ugent.be/~mvuijlst/nieuws/wagtail/</link>
       <pubDate>Fri, 30 May 2025 06:42:00 +0000</pubDate>
-      
       <guid>http://users.ugent.be/~mvuijlst/nieuws/wagtail/</guid>
-      <description>All the hip kids are doing it, dus ik dacht: eens kijken wat het geeft als ik de nieuwsinhoud hier met Wagtail beheer?
-Eerst aanmaken met Django en Wagtail (op mijn lokale computer), ontsluiten met een API, en dan hugo de inhoud laten ophalen en genereren. Hoe moeilijk kan dat zijn?</description>
+      <description>&lt;p&gt;All the hip kids are doing it, dus ik dacht: eens kijken wat het geeft als ik de nieuwsinhoud hier met &lt;a href=&#34;https://wagtail.org&#34;&gt;Wagtail&lt;/a&gt; beheer?&lt;/p&gt;&#xA;&lt;p&gt;Eerst aanmaken met Django en Wagtail (op mijn lokale computer), ontsluiten met een API, en dan hugo de inhoud laten ophalen en genereren. Hoe moeilijk kan dat zijn?&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Nog maar eens een poging</title>
       <link>http://users.ugent.be/~mvuijlst/nieuws/nogeenpoging/</link>
       <pubDate>Wed, 02 Oct 2024 19:18:40 +0000</pubDate>
-      
       <guid>http://users.ugent.be/~mvuijlst/nieuws/nogeenpoging/</guid>
-      <description>Gisteren een dakwerker aangeraden gekregen die eigenlijk een algemene aannemer is met een groot netwerk van stielmannen. Vandaag een mail gestuurd, en nu zijn al mijn ledematen gekruisd.
-Het zou zo enorm wijs zijn als het deze keer zou lukken.
-(Update twee dagen later: contact met mens! Afspraak volgende week!)</description>
+      <description>&lt;p&gt;Gisteren een dakwerker aangeraden gekregen die eigenlijk een algemene aannemer is met een groot netwerk van stielmannen. Vandaag een mail gestuurd, en nu zijn al mijn ledematen gekruisd.&lt;/p&gt;&#xA;&lt;p&gt;Het zou &lt;em&gt;zo&lt;/em&gt; enorm wijs zijn als het deze keer zou lukken.&lt;/p&gt;&#xA;&lt;p&gt;(Update twee dagen later: contact met mens! Afspraak volgende week!)&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Hoop doet leven</title>
       <link>http://users.ugent.be/~mvuijlst/nieuws/hoop/</link>
       <pubDate>Sun, 13 Aug 2023 15:40:08 +0000</pubDate>
-      
       <guid>http://users.ugent.be/~mvuijlst/nieuws/hoop/</guid>
-      <description>Er is enige hoop voor wat het nog te doen werk in huis betreft: er is een mens die allerlei werk in huis doet en daar allemaal onderaannemers voor heeft, en die zou ons ergens na het einde vna het bouwverlof een offerte sturen voor zo ongeveer alles dat er nog te doen is in huis.
-We zijn ook nog altijd in blije afwachting van een schrijnwerker om de veluxen af te werken.</description>
+      <description>&lt;p&gt;Er is enige hoop voor wat het &lt;a href=&#34;http://users.ugent.be/~mvuijlst/huis/todo&#34;&gt;nog te doen werk in huis&lt;/a&gt; betreft: er is een mens die allerlei werk in huis doet en daar allemaal onderaannemers voor heeft, en die zou ons ergens na het einde vna het bouwverlof een offerte sturen voor zo ongeveer alles dat er nog te doen is in huis.&lt;/p&gt;&#xA;&lt;p&gt;We zijn ook nog altijd in blije afwachting van een schrijnwerker om de veluxen af te werken. Hoop doet leven, maar ik moet toegeven dat ik er niet enorm hard op reken dat het snel zal zijn.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Build, vervolg</title>
       <link>http://users.ugent.be/~mvuijlst/nieuws/build2/</link>
       <pubDate>Sat, 03 Jun 2023 07:07:28 +0000</pubDate>
-      
       <guid>http://users.ugent.be/~mvuijlst/nieuws/build2/</guid>
-      <description>&amp;rsquo;t Is nog altijd geen échte build of zo, maar xcopy public \\files\mvuijlst\www\users /s /y is weg en vervangen door robocopy public \\files\mvuijlst\www\users /MIR /Z /W:5 /COPY:DT /XC.
-Ik had er nog nooit van gehoord, maar Robust File Copy zit blijkbaar al sinds Windows NT 4.0 in de NT Resource Kit, en sinds 2008 in alle Windows. Zot.
-Ik weet wel niet of het echt de moeite waard is, met de kleine kleine bestandjes hier, maar toch.</description>
+      <description>&lt;p&gt;&amp;rsquo;t Is nog altijd geen échte build of zo, maar &lt;code&gt;xcopy public \\files\mvuijlst\www\users /s /y&lt;/code&gt; is weg en vervangen door &lt;code&gt;robocopy public \\files\mvuijlst\www\users /MIR /Z /W:5 /COPY:DT /XC&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Ik had er nog nooit van gehoord, maar Robust File Copy zit blijkbaar al sinds Windows NT 4.0 in de NT Resource Kit, en sinds 2008 in alle Windows. Zot.&lt;/p&gt;&#xA;&lt;p&gt;Ik weet wel niet of het echt de moeite waard is, met de kleine kleine bestandjes hier, maar toch. &amp;rsquo;t Is het gedacht dat telt.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Dak, binnenkort</title>
       <link>http://users.ugent.be/~mvuijlst/nieuws/dak/</link>
       <pubDate>Fri, 19 May 2023 07:07:28 +0000</pubDate>
-      
       <guid>http://users.ugent.be/~mvuijlst/nieuws/dak/</guid>
-      <description>De mens van het dak komt! Er is een vergunning om met een kraan en een container voor de deur te staan van 16/6 tot 30/6. Ik vind dat ikweetniethoespannend.</description>
+      <description>&lt;p&gt;De mens van het dak komt! Er is een vergunning om met een kraan en een container voor de deur te staan van 16/6 tot 30/6. Ik vind dat ikweetniethoespannend.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Gevel gedaan!</title>
       <link>http://users.ugent.be/~mvuijlst/nieuws/gevelgereed/</link>
       <pubDate>Tue, 28 Feb 2023 14:01:19 +0000</pubDate>
-      
       <guid>http://users.ugent.be/~mvuijlst/nieuws/gevelgereed/</guid>
-      <description>De gevel is klaar, hoera hoezee. Het heeft wat langer geduurd dan ik had gedacht, maar het is absoluut verklaarbaar waarom: te koud om te werken, te nat om te drogen, dat soort dingen.
-Maar nu is het klaar. En ik ben er zeer content van.
-Nu nog de deur. En het dak. En de rest.</description>
+      <description>&lt;p&gt;De gevel is klaar, hoera hoezee. Het heeft wat langer geduurd dan ik had gedacht, maar het is absoluut verklaarbaar waarom: te koud om te werken, te nat om te drogen, dat soort dingen.&lt;/p&gt;&#xA;&lt;p&gt;Maar nu is het klaar. En ik ben er zeer content van.&lt;/p&gt;&#xA;&lt;p&gt;Nu nog de deur. En het dak. En de rest.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Herbegonnen</title>
       <link>http://users.ugent.be/~mvuijlst/nieuws/herbegonnen/</link>
       <pubDate>Thu, 26 Jan 2023 07:56:51 +0000</pubDate>
-      
       <guid>http://users.ugent.be/~mvuijlst/nieuws/herbegonnen/</guid>
-      <description>Er staat as we speak een mens aan de muur te schrapen buiten. Dat wil zeggen dat ze na een maand of zo stil liggen wegens feesten en slecht weer, herbegonnen zijn.
-Nog een laag die dan afgevlakt wordt, dan nog een laag die afgevlakt wordt, en dan schilderen en nog eens schilderen.
-Of misschien komt dat schilderen tussen twee lagen, geen idee.
-En dan nog eens kijken of ze iets doen aan de afvoerbuizen en of het houten gedoe bovenaan de gevel in orde komt.</description>
+      <description>&lt;p&gt;Er staat &lt;em&gt;as we speak&lt;/em&gt; een mens aan de muur te schrapen buiten. Dat wil zeggen dat ze na een maand of zo stil liggen wegens feesten en slecht weer, herbegonnen zijn.&lt;/p&gt;&#xA;&lt;p&gt;Nog een laag die dan afgevlakt wordt, dan nog een laag die afgevlakt wordt, en dan schilderen en nog eens schilderen.&lt;/p&gt;&#xA;&lt;p&gt;Of misschien komt dat schilderen tussen twee lagen, geen idee.&lt;/p&gt;&#xA;&lt;p&gt;En dan nog eens kijken of ze iets doen aan de afvoerbuizen en of het houten gedoe bovenaan de gevel in orde komt.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Deur, poging zoveel</title>
       <link>http://users.ugent.be/~mvuijlst/nieuws/deur/</link>
       <pubDate>Thu, 19 Jan 2023 05:53:11 +0000</pubDate>
-      
       <guid>http://users.ugent.be/~mvuijlst/nieuws/deur/</guid>
-      <description>Nog maar eens de gegevens van de deur aan een aantal mogelijke deurmakers gestuurd.
-Ik kan de mail gewoon copypasten van al de vorige keren:
-Van de mensen van Stedenbouw moeten we iets hebben dat er aan de buitenkant uitziet zoals het nu is: een houten deur, met glas, met smeedwerk ervoor. Dit is wat we onze architect jaren geleden had geschreven (maar misschien is de techniek ondertussen al verder gevorderd): - Hoogte: 240cm.</description>
+      <description>&lt;p&gt;Nog maar eens de gegevens van de deur aan een aantal mogelijke deurmakers gestuurd.&lt;/p&gt;&#xA;&lt;p&gt;Ik kan de mail gewoon copypasten van al de vorige keren:&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Van de mensen van Stedenbouw moeten we iets hebben dat er aan de buitenkant uitziet zoals het nu is: een houten deur, met glas, met smeedwerk ervoor. Dit is wat we onze architect jaren geleden had geschreven (maar misschien is de techniek ondertussen al verder gevorderd): - Hoogte: 240cm. Breedte: 207cm (buiten); 223cm (afstand tussen muren binnen) - Dubbele voordeur met 3-puntsluiting met haken en aanslag onderaan (blauwe hardsteen, max 20mm) - Kruk binnenzijde, trekker buitenzijde (in smeedwerk ingewerkt) - Brievenbus links (in zelfde afwerking als smeedwerk) - Naar binnen opendraaiende ramen. We hadden staan: “superisolerende, gelaagde beglazing GGG Thermobel Top N+; Stratobel 33.2 met opaalfilm”, maar van als het goed isoleert en doorschijnend maar niet doorzichtig is (bvb gezandstraald), is het goed. - De kleur van de deur zelf is NCS S 3040-B. Voor het smeedwerk waren we al gaan spreken met Peter De Bruyn (&lt;a href=&#34;https://www.smederijdebruyn.be/)&#34;&gt;https://www.smederijdebruyn.be/)&lt;/a&gt;. Het smeedwerk moet in twee delen, en we zouden graag een tekening hebben die in de twee deurpanelen doorloopt, dus zoals op het beeld met de blauwe deuren, in een art nouveau-achtige stijl &amp;ndash; maar dat is werk voor een smid, natuurlijk.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Voornemens 2023</title>
       <link>http://users.ugent.be/~mvuijlst/nieuws/voornemens/</link>
       <pubDate>Sun, 01 Jan 2023 11:31:07 +0000</pubDate>
-      
       <guid>http://users.ugent.be/~mvuijlst/nieuws/voornemens/</guid>
-      <description>Een nieuw jaar, dus tijd voor voornemens.
-Ik ga dit jaar wat extra dingen bijhouden, naast waar ik naar kijk en wat ik lees en hoe lang de kat op mijn schoot zit. Ik ga proberen bij te houden welk eten we klaarmaken. Ik heb de indruk dat we nogal veel hetzelfde eten: tijd om dat eens hard te maken.
-Daarnaast: meer boeken lezen. Het steekt, dat ik zo weinig gelezen heb in 2022.</description>
+      <description>&lt;p&gt;Een nieuw jaar, dus tijd voor voornemens.&lt;/p&gt;&#xA;&lt;p&gt;Ik ga dit jaar wat extra dingen bijhouden, naast waar ik naar kijk en wat ik lees en hoe lang de kat op mijn schoot zit. Ik ga proberen bij te houden welk eten we klaarmaken. Ik heb de &lt;em&gt;indruk&lt;/em&gt; dat we nogal veel hetzelfde eten: tijd om dat eens hard te maken.&lt;/p&gt;&#xA;&lt;p&gt;Daarnaast: meer boeken lezen. Het steekt, dat ik &lt;a href=&#34;../../gelezen/2022gelezen&#34;&gt;zo weinig gelezen heb in 2022&lt;/a&gt;. Ik ga de lijsten van wat goed was in 2022 afgaan, en daar wat van op mijn Kindle zetten. En daarnaast ook een nieuwe selectie Audible doen.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Bezig aan de gevel</title>
       <link>http://users.ugent.be/~mvuijlst/nieuws/bezigte/</link>
       <pubDate>Sun, 18 Dec 2022 12:53:14 +0000</pubDate>
-      
       <guid>http://users.ugent.be/~mvuijlst/nieuws/bezigte/</guid>
-      <description>Er staat nog altijd een stelling tegen de gevel, en er zijn al heelder stukken pleisterwerk van gehaald. Op dit moment is het te koud om verder te werken, denk ik, en dus list het wat stil. Tot waarschijnlijk ergens na nieuwjaar, vermoed ik. En dan moet er geverfd worden.
-De kleur moet nog duidelijk gemaakt worden, en ook dat het eigenlijk twee kleuren zijn: een heel heel lichtblauw vanboven en een wat donkerder lichtbluaw dat meer naar het grijs gaat vanonder.</description>
+      <description>&lt;p&gt;Er staat nog altijd een stelling tegen de gevel, en er zijn al heelder stukken pleisterwerk van gehaald. Op dit moment is het te koud om verder te werken, denk ik, en dus list het wat stil. Tot waarschijnlijk ergens na nieuwjaar, vermoed ik. En dan moet er geverfd worden.&lt;/p&gt;&#xA;&lt;p&gt;De kleur moet nog duidelijk gemaakt worden, en ook dat het eigenlijk twee kleuren zijn: een heel heel lichtblauw vanboven en een wat donkerder lichtbluaw dat meer naar het grijs gaat vanonder. En zien dat het allemaal in dezelfde tint is als de vensters.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Geveldegijniet g&#39;een hebt gij niet</title>
       <link>http://users.ugent.be/~mvuijlst/nieuws/gevel/</link>
       <pubDate>Tue, 13 Dec 2022 06:10:11 +0000</pubDate>
-      
       <guid>http://users.ugent.be/~mvuijlst/nieuws/gevel/</guid>
-      <description>Ze zijn begonnen aan de gevel hoeri hoera. Werken voorzien:
-Beschermen van ramen en vloeren Plaatsen en verwijderen van stellingen Verwijderen van oude verflaag Herstellen van beschadigd pleisterwerk Herstellen van de gevellijst Uitvlakken, schuren en schilderen Opkitten met acrylkit van alle binnenhoeken Afbranden verf van de dakgoot, opkitten, primen en schilderen in 2 lagen Vernieuwen van de afvoerbuis in zink Schilderen van plint Opkuis en meenemen van alle werfvuil ’t Zal zeker niet meer allemaal klaar zijn in 2022, maar we leven in hoop.</description>
+      <description>&lt;p&gt;Ze zijn begonnen aan de gevel hoeri hoera. Werken voorzien:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Beschermen van ramen en vloeren&lt;/li&gt;&#xA;&lt;li&gt;Plaatsen en verwijderen van stellingen&lt;/li&gt;&#xA;&lt;li&gt;Verwijderen van oude verflaag&lt;/li&gt;&#xA;&lt;li&gt;Herstellen van beschadigd pleisterwerk&lt;/li&gt;&#xA;&lt;li&gt;Herstellen van de gevellijst&lt;/li&gt;&#xA;&lt;li&gt;Uitvlakken, schuren en schilderen&lt;/li&gt;&#xA;&lt;li&gt;Opkitten met acrylkit van alle binnenhoeken&lt;/li&gt;&#xA;&lt;li&gt;Afbranden verf van de dakgoot, opkitten, primen en schilderen in 2 lagen&lt;/li&gt;&#xA;&lt;li&gt;Vernieuwen van de afvoerbuis in zink&lt;/li&gt;&#xA;&lt;li&gt;Schilderen van plint&lt;/li&gt;&#xA;&lt;li&gt;Opkuis en meenemen van alle werfvuil&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;’t Zal zeker niet meer allemaal klaar zijn in 2022, maar we leven in hoop.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Deploy, v1</title>
       <link>http://users.ugent.be/~mvuijlst/nieuws/deploy/</link>
       <pubDate>Mon, 05 Dec 2022 15:58:00 +0000</pubDate>
-      
       <guid>http://users.ugent.be/~mvuijlst/nieuws/deploy/</guid>
-      <description>Czech it out: zowel hier (user.ugent.be/~mvuijlst) als elders (moosedept.org) staat dezelfde inhoud. Alletwee met hugo, maar de ene met firebase gesynct en de andere met xcopy naar een share.
-&amp;rsquo;t Is een beetje stom dat ik voor de paragraaf hierboven speciaal een shortcode heb moeten maken, maar hey.</description>
+      <description>&lt;p&gt;Czech it out: zowel&#xA;hier (&lt;a href=&#34;http://users.ugent.be/~mvuijlst/&#34;&gt;user.ugent.be/~mvuijlst&lt;/a&gt;) als elders (&lt;a href=&#34;https://moosedept.org&#34;&gt;moosedept.org&lt;/a&gt;)&#xA;staat dezelfde inhoud. Alletwee met hugo, maar de ene met firebase gesynct en de andere met xcopy naar een share.&lt;/p&gt;&#xA;&lt;p&gt;&amp;rsquo;t Is een beetje stom dat ik voor de paragraaf hierboven speciaal een shortcode heb moeten maken, maar hey.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Children of Memory</title>
       <link>http://users.ugent.be/~mvuijlst/nieuws/memory/</link>
       <pubDate>Mon, 05 Dec 2022 15:27:28 +0000</pubDate>
-      
       <guid>http://users.ugent.be/~mvuijlst/nieuws/memory/</guid>
-      <description>Tralala, het volgende boek in de Children of Time -serie is uit: Children of Memory. Het begint denk ik als een prequel (ik lees nooit verder dan &amp;ldquo;Earth is failing&amp;rdquo; en dat de bewoners van de aarde wanhopig proberen te vluchten in een ruimteschip); ik hoop dat het verder gaat dan het tweede boek.
-Dat tweede boek was namelijk geëindigd op een punt waar ik van zou content geweest zijn als dat het einde van het hele verhaal was &amp;ndash; een einde waarbij de mensheid zowat een Culture-niveau haalt maar dan op sommige vlakken nog een eind verder.</description>
+      <description>&lt;p&gt;Tralala, het volgende boek in de &lt;em&gt;Children of Time&lt;/em&gt; -serie is uit: &lt;em&gt;Children of Memory&lt;/em&gt;. Het begint denk ik als een prequel (ik lees nooit verder dan &amp;ldquo;Earth is failing&amp;rdquo; en dat de bewoners van de aarde wanhopig proberen te vluchten in een ruimteschip); ik hoop dat het verder gaat dan het tweede boek.&lt;/p&gt;&#xA;&lt;p&gt;Dat tweede boek was namelijk geëindigd op een punt waar ik van zou content geweest zijn als dat het einde van het hele verhaal was &amp;ndash; een einde waarbij de mensheid zowat een Culture-niveau haalt maar dan op sommige vlakken nog een eind verder. Als we weer terugkeren naar vóór de gebeurtenissen in het tweede boek en niet verder gaan, zou ik teleurgesteld zijn.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Build, min of meer</title>
       <link>http://users.ugent.be/~mvuijlst/nieuws/build/</link>
       <pubDate>Mon, 05 Dec 2022 03:09:27 +0000</pubDate>
-      
       <guid>http://users.ugent.be/~mvuijlst/nieuws/build/</guid>
-      <description>Ik zou eens moeten zoeken op een beter systeem om die site hier te deployen. Een xcopy public \\files\mvuijlst\www\users /s /y vanuit de folder op mijn computer is misschien niet de ideale manier, maar ik heb de indruk dat ik geen github actions kan hebben op de github van het werk. Denk ik.</description>
+      <description>&lt;p&gt;Ik zou eens moeten zoeken op een beter systeem om die site hier te deployen. Een &lt;code&gt;xcopy public \\files\mvuijlst\www\users /s /y&lt;/code&gt; vanuit de folder op mijn computer is misschien niet de ideale manier, maar ik heb de indruk dat ik geen github actions kan hebben op de github van het werk. Denk ik.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>De slechte vrienden</title>
       <link>http://users.ugent.be/~mvuijlst/nieuws/slechtevrienden/</link>
       <pubDate>Sun, 04 Dec 2022 05:25:40 +0000</pubDate>
-      
       <guid>http://users.ugent.be/~mvuijlst/nieuws/slechtevrienden/</guid>
-      <description>Alsmaar minder dingen die via decentrale backup bekeken worden, maar soms kan het niet anders. &amp;rsquo;t Is azo.</description>
+      <description>&lt;p&gt;Alsmaar minder dingen die via decentrale backup bekeken worden, maar soms kan het niet anders. &amp;rsquo;t Is azo.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Huis: gevel! dak!</title>
       <link>http://users.ugent.be/~mvuijlst/nieuws/hoera/</link>
       <pubDate>Thu, 01 Dec 2022 04:36:06 +0000</pubDate>
-      
       <guid>http://users.ugent.be/~mvuijlst/nieuws/hoera/</guid>
-      <description>De kogel is door de kerk: de gevel gaat ververst worden midden-december, en het dak gaat ververst worden als de dakmens de dakpannen binnenkrijgt die hij besteld heeft maanden geleden.</description>
+      <description>&lt;p&gt;De kogel is door de kerk: de gevel gaat ververst worden midden-december, en het dak gaat ververst worden als de dakmens de dakpannen binnenkrijgt die hij besteld heeft maanden geleden.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Tiens een site met Hugo</title>
       <link>http://users.ugent.be/~mvuijlst/nieuws/allo/</link>
       <pubDate>Tue, 22 Nov 2022 04:36:06 +0000</pubDate>
-      
       <guid>http://users.ugent.be/~mvuijlst/nieuws/allo/</guid>
-      <description>Als wij op het werk Hugo gaan gebruiken, is het misschien geen slecht idee om dat zelf ook eens allemaal op te frissen.
-Dus bij dezen.</description>
+      <description>&lt;p&gt;Als wij &lt;a href=&#34;https://ugent.be&#34;&gt;op het werk&lt;/a&gt; Hugo gaan gebruiken, is het misschien geen slecht idee om dat zelf ook eens allemaal op te frissen.&lt;/p&gt;&#xA;&lt;p&gt;Dus bij dezen.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Stekelnoten deels om zeep</title>
       <link>http://users.ugent.be/~mvuijlst/nieuws/dedju/</link>
       <pubDate>Fri, 28 Oct 2022 05:36:06 +0000</pubDate>
-      
       <guid>http://users.ugent.be/~mvuijlst/nieuws/dedju/</guid>
-      <description>De kuisvrouw heeft de inhoud van een pot vol zeiknatte aarde over de stekelnoten gakapt. De stekelnoten aan de rechterkant aan de kant van het huis zijn volledig bedolven en dus waarschijnlijk dood. Dedju.
-En de kat heeft ook aan de rechterkant maar dan aan de kant van het achterhuis de stekelnoten kapotgpist. Of -gekakt, ik wil er van af zijn. Ook dedju.
-Hopen dat het goed komt tegen volgend jaar.</description>
+      <description>&lt;p&gt;De kuisvrouw heeft de inhoud van een pot vol zeiknatte aarde over de stekelnoten gakapt. De stekelnoten aan de rechterkant aan de kant van het huis zijn volledig bedolven en dus waarschijnlijk dood. Dedju.&lt;/p&gt;&#xA;&lt;p&gt;En de kat heeft ook aan de rechterkant maar dan aan de kant van het achterhuis de stekelnoten kapotgpist. Of -gekakt, ik wil er van af zijn. Ook dedju.&lt;/p&gt;&#xA;&lt;p&gt;Hopen dat het goed komt tegen volgend jaar.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>
