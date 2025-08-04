@@ -9,7 +9,19 @@ python getnews.py
 REM Build the website
 ..\hugo.exe --baseURL "https://moosedept.org" 
 cd public 
-call firebase deploy
+echo Deploying to VPS...
+echo Cleaning destination directory...
+ssh yusupov "rm -rf /home/django/moosedept/* /home/django/moosedept/.*[^.]*"
+echo Uploading files...
+scp -r * yusupov:/home/django/moosedept/
+IF ERRORLEVEL 1 (
+    echo ERROR: Deployment to VPS failed!
+    cd ..
+    pause
+    exit /b 1
+) ELSE (
+    echo Deployment to VPS completed successfully!
+)
 cd ..
 ..\hugo.exe --baseURL "http://users.ugent.be/~mvuijlst/" 
 
