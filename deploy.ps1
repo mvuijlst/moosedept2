@@ -3,10 +3,14 @@ param(
     [switch]$VPSOnly = $false,
     [switch]$UGentOnly = $false,
     [switch]$SkipNews = $false,
-    [switch]$Verbose = $true,
-    [switch]$Interactive = $true,
+    [switch]$Verbose,
+    [switch]$Interactive,
     [switch]$Quiet = $false
 )
+
+# Set defaults
+if (-not $PSBoundParameters.ContainsKey('Verbose')) { $Verbose = $true }
+if (-not $PSBoundParameters.ContainsKey('Interactive')) { $Interactive = $true }
 
 # Configuration
 $sourceDir = "public"
@@ -14,6 +18,12 @@ $ugentDestDir = "\\files\mvuijlst\www\users"
 $vpsHost = "yusupov"
 $vpsPath = "/home/django/moosedept"
 $hashFile = "file-hashes.json"
+
+# Override verbose setting if Quiet is specified
+if ($Quiet) {
+    $Verbose = $false
+    $Interactive = $false
+}
 
 # Color scheme
 $colors = @{
@@ -109,9 +119,9 @@ function Get-CustomFileHash {
 # Interactive menu function
 function Show-InteractiveMenu {
     Write-Host ""
-    Write-Host "╔════════════════════════════════════════════════╗" -ForegroundColor Cyan
+    Write-Host "╔═══════════════════════════════════════════════╗" -ForegroundColor Cyan
     Write-Host "║           Hugo Deployment Options             ║" -ForegroundColor Cyan
-    Write-Host "╠════════════════════════════════════════════════╣" -ForegroundColor Cyan
+    Write-Host "╠═══════════════════════════════════════════════╣" -ForegroundColor Cyan
     Write-Host "║  1. Deploy to both VPS and UGent              ║" -ForegroundColor White
     Write-Host "║  2. Deploy to VPS only                        ║" -ForegroundColor White
     Write-Host "║  3. Deploy to UGent only                      ║" -ForegroundColor White
@@ -121,7 +131,7 @@ function Show-InteractiveMenu {
     Write-Host "║  7. Test connectivity only                    ║" -ForegroundColor Gray
     Write-Host "║  8. Show deployment status                    ║" -ForegroundColor Gray
     Write-Host "║  q. Quit                                      ║" -ForegroundColor Red
-    Write-Host "╚════════════════════════════════════════════════╝" -ForegroundColor Cyan
+    Write-Host "╚═══════════════════════════════════════════════╝" -ForegroundColor Cyan
     Write-Host ""
 }
 
@@ -129,7 +139,7 @@ function Show-InteractiveMenu {
 function Get-UserChoice {
     do {
         Show-InteractiveMenu
-        $choice = Read-Host "Please select an option (1-8, q)"
+        $choice = Read-Host "Please select an option (1-8 or q)"
         
         switch ($choice.ToLower()) {
             "1" { 
@@ -196,7 +206,9 @@ function Test-ConnectivityOnly {
     }
     
     Write-Host ""
-    Read-Host "Press Enter to continue"
+    if (-not $Quiet) {
+        Read-Host "Press Enter to continue"
+    }
 }
 
 # Function to show deployment status
@@ -312,7 +324,9 @@ function Show-DeploymentStatus {
     }
     
     Write-Host ""
-    Read-Host "Press Enter to continue"
+    if (-not $Quiet) {
+        Read-Host "Press Enter to continue"
+    }
 }
 
 # Function to deploy to VPS
@@ -591,11 +605,6 @@ function Start-Deployment {
     return ($vpsSuccess -and $ugentSuccess)
 }
 
-# Override verbose setting if Quiet is specified
-if ($Quiet) {
-    $Verbose = $false
-}
-
 # Display help if requested
 if ($args -contains "-h" -or $args -contains "--help") {
     Write-Host @"
@@ -646,7 +655,7 @@ if ($Interactive -and -not $Quiet) {
         Clear-Host
     } while ($true)
     
-    Write-Log "Ready!" -Type "Success"
+    Write-Log "Done." -Type "Success"
 } else {
     # Non-interactive mode - use command line parameters
     $success = Start-Deployment
