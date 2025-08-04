@@ -40,7 +40,8 @@ def get_all_news_pages(index_id):
     """Get all news pages from the API."""
     all_pages = []
     # Use the correct format for requesting fields in Wagtail API
-    next_url = f"{PAGES_ENDPOINT}?type=nieuws.NewsPage&child_of={index_id}&fields=date,body,tags"
+    # Add order=-date to ensure we get the newest items first within the 20-item limit
+    next_url = f"{PAGES_ENDPOINT}?type=nieuws.NewsPage&child_of={index_id}&fields=date,body,tags&order=-date"
     
     while next_url:
         print(f"Requesting: {next_url}")
@@ -69,11 +70,12 @@ def html_to_markdown(html):
 def format_date(date_str):
     """Format date string to Hugo compatible format without timezone."""
     try:
-        # Parse the date
+        # Parse the date - handles both UTC 'Z' format and timezone offsets like '-05:00'
         date_obj = datetime.fromisoformat(date_str.replace('Z', '+00:00'))
-        # Format it without timezone
+        # Format it without timezone for Hugo
         return date_obj.strftime('%Y-%m-%dT%H:%M:%S')
     except (ValueError, AttributeError):
+        # If parsing fails, return the original string
         return date_str
 
 def create_markdown_file(news_page):

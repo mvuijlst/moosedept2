@@ -5,7 +5,18 @@
     <link>http://users.ugent.be/~mvuijlst/tags/site/</link>
     <description>Recent content in site on Moose Dept.</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 01 Jun 2025 22:05:00 +0000</lastBuildDate><atom:link href="http://users.ugent.be/~mvuijlst/tags/site/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 04 Aug 2025 14:00:00 +0000</lastBuildDate><atom:link href="http://users.ugent.be/~mvuijlst/tags/site/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Verhuisd</title>
+      <link>http://users.ugent.be/~mvuijlst/nieuws/verhuisd/</link>
+      <pubDate>Mon, 04 Aug 2025 14:00:00 +0000</pubDate>
+      
+      <guid>http://users.ugent.be/~mvuijlst/nieuws/verhuisd/</guid>
+      <description>Ik was al vergeten dat ik een wagtaildink had geschreven om nieuwsitems hier te beheren. En ik ben helemaal vergeten hoe het juist werkt om dat van die wagtail naar markdown te krijgen zodat Hugo er verder mee kan.
+Maar bon, dat zien we dan wel later eens.
+Het nieuws van de dag is dat de server verhuisd is naar mijn eigen vps, voor het gemak van de ingen bij mekaar te zetten en niet altijd afhankelijk te zijn van wat er op welke hostingpartij al dan niet kan.</description>
+    </item>
+    
     <item>
       <title>Wel wel wel</title>
       <link>http://users.ugent.be/~mvuijlst/nieuws/wel-wel-wel/</link>
