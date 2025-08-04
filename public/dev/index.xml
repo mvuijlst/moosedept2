@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Dingen die ik geprogrammeerd heb on Moose Dept.</title>
-    <link>http://users.ugent.be/~mvuijlst/dev/</link>
+    <link>https://moosedept.org/dev/</link>
     <description>Recent content in Dingen die ik geprogrammeerd heb on Moose Dept.</description>
-    <generator>Hugo -- gohugo.io</generator><atom:link href="http://users.ugent.be/~mvuijlst/dev/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://moosedept.org/dev/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>save-links-extension</title>
-      <link>http://users.ugent.be/~mvuijlst/dev/save-links-extension/</link>
+      <link>https://moosedept.org/dev/save-links-extension/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://users.ugent.be/~mvuijlst/dev/save-links-extension/</guid>
+      <guid>https://moosedept.org/dev/save-links-extension/</guid>
       <description>Er was vroeger del.icio.us om links te verzamelen, en dat had een extensie om links in een blog te plonken. En dan was er pinboard.in, en dat bestaat nog altijd, maar de link met WordPress (of beter, de link van WordPress naar pinboard) werk niet meer.
 En dus heb ik dan maar een Chrome extensie gemaakt die doet wat ik wil hebben: links bijhouden tot ik ze op mijn weblog post.</description>
     </item>
     
     <item>
       <title>Squish</title>
-      <link>http://users.ugent.be/~mvuijlst/dev/squish/</link>
+      <link>https://moosedept.org/dev/squish/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://users.ugent.be/~mvuijlst/dev/squish/</guid>
+      <guid>https://moosedept.org/dev/squish/</guid>
       <description>Gebaseerd op Beast, dat ooit in een ver verleden bij een versie van WordPerfect Office zat. Ik probeer het zo goed mogelijk te reconstrueren zoals ik het mij herinner, maar ik ga er denk ik ook wat aanpassingen aan doen.
 Meer info op de Githubs: https://github.com/mvuijlst/squish
 Wat ik mij herinner:

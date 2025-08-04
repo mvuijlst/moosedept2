@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>site on Moose Dept.</title>
-    <link>http://users.ugent.be/~mvuijlst/tags/site/</link>
+    <link>https://moosedept.org/tags/site/</link>
     <description>Recent content in site on Moose Dept.</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 04 Aug 2025 14:00:00 +0000</lastBuildDate><atom:link href="http://users.ugent.be/~mvuijlst/tags/site/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 04 Aug 2025 14:00:00 +0000</lastBuildDate><atom:link href="https://moosedept.org/tags/site/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Verhuisd</title>
-      <link>http://users.ugent.be/~mvuijlst/nieuws/verhuisd/</link>
+      <link>https://moosedept.org/nieuws/verhuisd/</link>
       <pubDate>Mon, 04 Aug 2025 14:00:00 +0000</pubDate>
       
-      <guid>http://users.ugent.be/~mvuijlst/nieuws/verhuisd/</guid>
+      <guid>https://moosedept.org/nieuws/verhuisd/</guid>
       <description>Ik was al vergeten dat ik een wagtaildink had geschreven om nieuwsitems hier te beheren. En ik ben helemaal vergeten hoe het juist werkt om dat van die wagtail naar markdown te krijgen zodat Hugo er verder mee kan.
 Maar bon, dat zien we dan wel later eens.
 Het nieuws van de dag is dat de server verhuisd is naar mijn eigen vps, voor het gemak van de ingen bij mekaar te zetten en niet altijd afhankelijk te zijn van wat er op welke hostingpartij al dan niet kan.</description>
@@ -19,10 +19,10 @@ Het nieuws van de dag is dat de server verhuisd is naar mijn eigen vps, voor het
     
     <item>
       <title>Wel wel wel</title>
-      <link>http://users.ugent.be/~mvuijlst/nieuws/wel-wel-wel/</link>
+      <link>https://moosedept.org/nieuws/wel-wel-wel/</link>
       <pubDate>Sun, 01 Jun 2025 22:05:00 +0000</pubDate>
       
-      <guid>http://users.ugent.be/~mvuijlst/nieuws/wel-wel-wel/</guid>
+      <guid>https://moosedept.org/nieuws/wel-wel-wel/</guid>
       <description>Kijk nu, &amp;rsquo;t is een nieuwspagina die ik in Wagtail geschreven heb en die uit de API geprutst wordt en dan naar markdown geschreven en dan via Hugo naar statische html geschreven wordt.
 Dingen die ik mij afvraag:
 komt er wel degelijke markdown uit, en wordt dat wel degelijke html? [ja] wat zou er gebeuren als ik afbeeldingen zou doen? [voorlopig niets, want ik doe er niets mee in het maak-markdown-met-api-gegevens-script] zou ik eens moeten een echte pipeline opzetten in plaats van manueel scriptjes te draaien?</description>
@@ -30,20 +30,20 @@ komt er wel degelijke markdown uit, en wordt dat wel degelijke html? [ja] wat zo
     
     <item>
       <title>Wagtail</title>
-      <link>http://users.ugent.be/~mvuijlst/nieuws/wagtail/</link>
+      <link>https://moosedept.org/nieuws/wagtail/</link>
       <pubDate>Fri, 30 May 2025 06:42:00 +0000</pubDate>
       
-      <guid>http://users.ugent.be/~mvuijlst/nieuws/wagtail/</guid>
+      <guid>https://moosedept.org/nieuws/wagtail/</guid>
       <description>All the hip kids are doing it, dus ik dacht: eens kijken wat het geeft als ik de nieuwsinhoud hier met Wagtail beheer?
 Eerst aanmaken met Django en Wagtail (op mijn lokale computer), ontsluiten met een API, en dan hugo de inhoud laten ophalen en genereren. Hoe moeilijk kan dat zijn?</description>
     </item>
     
     <item>
       <title>Build, vervolg</title>
-      <link>http://users.ugent.be/~mvuijlst/nieuws/build2/</link>
+      <link>https://moosedept.org/nieuws/build2/</link>
       <pubDate>Sat, 03 Jun 2023 07:07:28 +0000</pubDate>
       
-      <guid>http://users.ugent.be/~mvuijlst/nieuws/build2/</guid>
+      <guid>https://moosedept.org/nieuws/build2/</guid>
       <description>&amp;rsquo;t Is nog altijd geen échte build of zo, maar xcopy public \\files\mvuijlst\www\users /s /y is weg en vervangen door robocopy public \\files\mvuijlst\www\users /MIR /Z /W:5 /COPY:DT /XC.
 Ik had er nog nooit van gehoord, maar Robust File Copy zit blijkbaar al sinds Windows NT 4.0 in de NT Resource Kit, en sinds 2008 in alle Windows. Zot.
 Ik weet wel niet of het echt de moeite waard is, met de kleine kleine bestandjes hier, maar toch.</description>
@@ -51,29 +51,29 @@ Ik weet wel niet of het echt de moeite waard is, met de kleine kleine bestandjes
     
     <item>
       <title>Deploy, v1</title>
-      <link>http://users.ugent.be/~mvuijlst/nieuws/deploy/</link>
+      <link>https://moosedept.org/nieuws/deploy/</link>
       <pubDate>Mon, 05 Dec 2022 15:58:00 +0000</pubDate>
       
-      <guid>http://users.ugent.be/~mvuijlst/nieuws/deploy/</guid>
-      <description>Czech it out: zowel hier (user.ugent.be/~mvuijlst) als elders (moosedept.org) staat dezelfde inhoud. Alletwee met hugo, maar de ene met firebase gesynct en de andere met xcopy naar een share.
+      <guid>https://moosedept.org/nieuws/deploy/</guid>
+      <description>Czech it out: zowel hier (moosedept.org) als elders (user.ugent.be/~mvuijlst) staat dezelfde inhoud. Alletwee met hugo, maar de ene met firebase gesynct en de andere met xcopy naar een share.
 &amp;rsquo;t Is een beetje stom dat ik voor de paragraaf hierboven speciaal een shortcode heb moeten maken, maar hey.</description>
     </item>
     
     <item>
       <title>Build, min of meer</title>
-      <link>http://users.ugent.be/~mvuijlst/nieuws/build/</link>
+      <link>https://moosedept.org/nieuws/build/</link>
       <pubDate>Mon, 05 Dec 2022 03:09:27 +0000</pubDate>
       
-      <guid>http://users.ugent.be/~mvuijlst/nieuws/build/</guid>
+      <guid>https://moosedept.org/nieuws/build/</guid>
       <description>Ik zou eens moeten zoeken op een beter systeem om die site hier te deployen. Een xcopy public \\files\mvuijlst\www\users /s /y vanuit de folder op mijn computer is misschien niet de ideale manier, maar ik heb de indruk dat ik geen github actions kan hebben op de github van het werk. Denk ik.</description>
     </item>
     
     <item>
       <title>Tiens een site met Hugo</title>
-      <link>http://users.ugent.be/~mvuijlst/nieuws/allo/</link>
+      <link>https://moosedept.org/nieuws/allo/</link>
       <pubDate>Tue, 22 Nov 2022 04:36:06 +0000</pubDate>
       
-      <guid>http://users.ugent.be/~mvuijlst/nieuws/allo/</guid>
+      <guid>https://moosedept.org/nieuws/allo/</guid>
       <description>Als wij op het werk Hugo gaan gebruiken, is het misschien geen slecht idee om dat zelf ook eens allemaal op te frissen.
 Dus bij dezen.</description>
     </item>
