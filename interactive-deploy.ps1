@@ -624,7 +624,7 @@ function Start-Deployment {
 # Help
 if ($args -contains "-h" -or $args -contains "--help") {
     Write-Host @"
-Enhanced Hugo Deployment Script
+Enhanced Hugo Deployment Script with Git Integration
 
 USAGE:
     .\interactive-deploy.ps1 [OPTIONS]
@@ -636,9 +636,20 @@ OPTIONS:
     -Quiet          Suppress verbose output and run non-interactively
     -h, --help      Show this help message
 
+INTERACTIVE FEATURES:
+    1. Deploy to both VPS and UGent + Git commit/push
+    2. Deploy to VPS only
+    3. Deploy to UGent only  
+    4. Force deploy all files to both + Git commit/push
+    5. Force deploy all files to VPS only
+    6. Force deploy all files to UGent only
+    7. Test connectivity only
+    8. Show deployment status
+    9. Git commit and push only
+
 EXAMPLES:
     .\interactive-deploy.ps1                    # Interactive mode with menu
-    .\interactive-deploy.ps1 -Quiet -Force     # Force deploy all files silently
+    .\interactive-deploy.ps1 -Quiet -Force     # Force deploy all files silently (no git)
     .\interactive-deploy.ps1 -VPSOnly          # Interactive VPS deployment
     .\interactive-deploy.ps1 -Quiet -UGentOnly # Deploy to UGent silently
 
