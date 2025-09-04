@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+.pytest_cache/
+.mypy_cache/
+.dmypy.json
+.pytype/
+
+# Virtual envs
+.venv/
+venv/
+.env/
+env/
+
+# Editors/OS (optional)
+.vscode/
+.idea/
+.DS_Store
