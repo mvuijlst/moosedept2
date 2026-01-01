@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Nieuws on Moose Dept.</title>
-    <link>http://users.ugent.be/~mvuijlst/nieuws/</link>
+    <link>https://moosedept.org/nieuws/</link>
     <description>Recent content in Nieuws on Moose Dept.</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 04 Aug 2025 14:00:00 +0000</lastBuildDate><atom:link href="http://users.ugent.be/~mvuijlst/nieuws/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 04 Aug 2025 14:00:00 +0000</lastBuildDate><atom:link href="https://moosedept.org/nieuws/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Verhuisd</title>
-      <link>http://users.ugent.be/~mvuijlst/nieuws/verhuisd/</link>
+      <link>https://moosedept.org/nieuws/verhuisd/</link>
       <pubDate>Mon, 04 Aug 2025 14:00:00 +0000</pubDate>
       
-      <guid>http://users.ugent.be/~mvuijlst/nieuws/verhuisd/</guid>
+      <guid>https://moosedept.org/nieuws/verhuisd/</guid>
       <description>Ik was al vergeten dat ik een wagtaildink had geschreven om nieuwsitems hier te beheren. En ik ben helemaal vergeten hoe het juist werkt om dat van die wagtail naar markdown te krijgen zodat Hugo er verder mee kan.
 Maar bon, dat zien we dan wel later eens.
 Het nieuws van de dag is dat de server verhuisd is naar mijn eigen vps, voor het gemak van de ingen bij mekaar te zetten en niet altijd afhankelijk te zijn van wat er op welke hostingpartij al dan niet kan.</description>
@@ -19,20 +19,20 @@ Het nieuws van de dag is dat de server verhuisd is naar mijn eigen vps, voor het
     
     <item>
       <title>Een nieuw elan</title>
-      <link>http://users.ugent.be/~mvuijlst/nieuws/een-nieuw-elan/</link>
+      <link>https://moosedept.org/nieuws/een-nieuw-elan/</link>
       <pubDate>Sun, 08 Jun 2025 21:18:00 +0000</pubDate>
       
-      <guid>http://users.ugent.be/~mvuijlst/nieuws/een-nieuw-elan/</guid>
+      <guid>https://moosedept.org/nieuws/een-nieuw-elan/</guid>
       <description>We hebben een voorschot betaald voor een aannemer. Dat wil dus zeggen dat er wellicht een aannemer zal beginnen werken &amp;ndash; om te beginnen aan de Gelukstraat, maar hopelijk ook aan de Sint-Katelijnestraat, misschien in het vervolg daarvan.
 Ik ga misschien eens een bijkomende lijst van dingen te doen in andere huizen moeten bijhouden. Of ook niet, natuurlijk.</description>
     </item>
     
     <item>
       <title>Wel wel wel</title>
-      <link>http://users.ugent.be/~mvuijlst/nieuws/wel-wel-wel/</link>
+      <link>https://moosedept.org/nieuws/wel-wel-wel/</link>
       <pubDate>Sun, 01 Jun 2025 22:05:00 +0000</pubDate>
       
-      <guid>http://users.ugent.be/~mvuijlst/nieuws/wel-wel-wel/</guid>
+      <guid>https://moosedept.org/nieuws/wel-wel-wel/</guid>
       <description>Kijk nu, &amp;rsquo;t is een nieuwspagina die ik in Wagtail geschreven heb en die uit de API geprutst wordt en dan naar markdown geschreven en dan via Hugo naar statische html geschreven wordt.
 Dingen die ik mij afvraag:
 komt er wel degelijke markdown uit, en wordt dat wel degelijke html? [ja] wat zou er gebeuren als ik afbeeldingen zou doen? [voorlopig niets, want ik doe er niets mee in het maak-markdown-met-api-gegevens-script] zou ik eens moeten een echte pipeline opzetten in plaats van manueel scriptjes te draaien?</description>
@@ -40,20 +40,20 @@ komt er wel degelijke markdown uit, en wordt dat wel degelijke html? [ja] wat zo
     
     <item>
       <title>Wagtail</title>
-      <link>http://users.ugent.be/~mvuijlst/nieuws/wagtail/</link>
+      <link>https://moosedept.org/nieuws/wagtail/</link>
       <pubDate>Fri, 30 May 2025 06:42:00 +0000</pubDate>
       
-      <guid>http://users.ugent.be/~mvuijlst/nieuws/wagtail/</guid>
+      <guid>https://moosedept.org/nieuws/wagtail/</guid>
       <description>All the hip kids are doing it, dus ik dacht: eens kijken wat het geeft als ik de nieuwsinhoud hier met Wagtail beheer?
 Eerst aanmaken met Django en Wagtail (op mijn lokale computer), ontsluiten met een API, en dan hugo de inhoud laten ophalen en genereren. Hoe moeilijk kan dat zijn?</description>
     </item>
     
     <item>
       <title>Nog maar eens een poging</title>
-      <link>http://users.ugent.be/~mvuijlst/nieuws/nogeenpoging/</link>
+      <link>https://moosedept.org/nieuws/nogeenpoging/</link>
       <pubDate>Wed, 02 Oct 2024 19:18:40 +0000</pubDate>
       
-      <guid>http://users.ugent.be/~mvuijlst/nieuws/nogeenpoging/</guid>
+      <guid>https://moosedept.org/nieuws/nogeenpoging/</guid>
       <description>Gisteren een dakwerker aangeraden gekregen die eigenlijk een algemene aannemer is met een groot netwerk van stielmannen. Vandaag een mail gestuurd, en nu zijn al mijn ledematen gekruisd.
 Het zou zo enorm wijs zijn als het deze keer zou lukken.
 (Update twee dagen later: contact met mens! Afspraak volgende week!)</description>
@@ -61,20 +61,20 @@ Het zou zo enorm wijs zijn als het deze keer zou lukken.
     
     <item>
       <title>Hoop doet leven</title>
-      <link>http://users.ugent.be/~mvuijlst/nieuws/hoop/</link>
+      <link>https://moosedept.org/nieuws/hoop/</link>
       <pubDate>Sun, 13 Aug 2023 15:40:08 +0000</pubDate>
       
-      <guid>http://users.ugent.be/~mvuijlst/nieuws/hoop/</guid>
+      <guid>https://moosedept.org/nieuws/hoop/</guid>
       <description>Er is enige hoop voor wat het nog te doen werk in huis betreft: er is een mens die allerlei werk in huis doet en daar allemaal onderaannemers voor heeft, en die zou ons ergens na het einde vna het bouwverlof een offerte sturen voor zo ongeveer alles dat er nog te doen is in huis.
 We zijn ook nog altijd in blije afwachting van een schrijnwerker om de veluxen af te werken.</description>
     </item>
     
     <item>
       <title>Build, vervolg</title>
-      <link>http://users.ugent.be/~mvuijlst/nieuws/build2/</link>
+      <link>https://moosedept.org/nieuws/build2/</link>
       <pubDate>Sat, 03 Jun 2023 07:07:28 +0000</pubDate>
       
-      <guid>http://users.ugent.be/~mvuijlst/nieuws/build2/</guid>
+      <guid>https://moosedept.org/nieuws/build2/</guid>
       <description>&amp;rsquo;t Is nog altijd geen échte build of zo, maar xcopy public \\files\mvuijlst\www\users /s /y is weg en vervangen door robocopy public \\files\mvuijlst\www\users /MIR /Z /W:5 /COPY:DT /XC.
 Ik had er nog nooit van gehoord, maar Robust File Copy zit blijkbaar al sinds Windows NT 4.0 in de NT Resource Kit, en sinds 2008 in alle Windows. Zot.
 Ik weet wel niet of het echt de moeite waard is, met de kleine kleine bestandjes hier, maar toch.</description>
@@ -82,19 +82,19 @@ Ik weet wel niet of het echt de moeite waard is, met de kleine kleine bestandjes
     
     <item>
       <title>Dak, binnenkort</title>
-      <link>http://users.ugent.be/~mvuijlst/nieuws/dak/</link>
+      <link>https://moosedept.org/nieuws/dak/</link>
       <pubDate>Fri, 19 May 2023 07:07:28 +0000</pubDate>
       
-      <guid>http://users.ugent.be/~mvuijlst/nieuws/dak/</guid>
+      <guid>https://moosedept.org/nieuws/dak/</guid>
       <description>De mens van het dak komt! Er is een vergunning om met een kraan en een container voor de deur te staan van 16/6 tot 30/6. Ik vind dat ikweetniethoespannend.</description>
     </item>
     
     <item>
       <title>Gevel gedaan!</title>
-      <link>http://users.ugent.be/~mvuijlst/nieuws/gevelgereed/</link>
+      <link>https://moosedept.org/nieuws/gevelgereed/</link>
       <pubDate>Tue, 28 Feb 2023 14:01:19 +0000</pubDate>
       
-      <guid>http://users.ugent.be/~mvuijlst/nieuws/gevelgereed/</guid>
+      <guid>https://moosedept.org/nieuws/gevelgereed/</guid>
       <description>De gevel is klaar, hoera hoezee. Het heeft wat langer geduurd dan ik had gedacht, maar het is absoluut verklaarbaar waarom: te koud om te werken, te nat om te drogen, dat soort dingen.
 Maar nu is het klaar. En ik ben er zeer content van.
 Nu nog de deur. En het dak. En de rest.</description>
@@ -102,10 +102,10 @@ Nu nog de deur. En het dak. En de rest.</description>
     
     <item>
       <title>Herbegonnen</title>
-      <link>http://users.ugent.be/~mvuijlst/nieuws/herbegonnen/</link>
+      <link>https://moosedept.org/nieuws/herbegonnen/</link>
       <pubDate>Thu, 26 Jan 2023 07:56:51 +0000</pubDate>
       
-      <guid>http://users.ugent.be/~mvuijlst/nieuws/herbegonnen/</guid>
+      <guid>https://moosedept.org/nieuws/herbegonnen/</guid>
       <description>Er staat as we speak een mens aan de muur te schrapen buiten. Dat wil zeggen dat ze na een maand of zo stil liggen wegens feesten en slecht weer, herbegonnen zijn.
 Nog een laag die dan afgevlakt wordt, dan nog een laag die afgevlakt wordt, en dan schilderen en nog eens schilderen.
 Of misschien komt dat schilderen tussen twee lagen, geen idee.
@@ -114,10 +114,10 @@ En dan nog eens kijken of ze iets doen aan de afvoerbuizen en of het houten gedo
     
     <item>
       <title>Deur, poging zoveel</title>
-      <link>http://users.ugent.be/~mvuijlst/nieuws/deur/</link>
+      <link>https://moosedept.org/nieuws/deur/</link>
       <pubDate>Thu, 19 Jan 2023 05:53:11 +0000</pubDate>
       
-      <guid>http://users.ugent.be/~mvuijlst/nieuws/deur/</guid>
+      <guid>https://moosedept.org/nieuws/deur/</guid>
       <description>Nog maar eens de gegevens van de deur aan een aantal mogelijke deurmakers gestuurd.
 Ik kan de mail gewoon copypasten van al de vorige keren:
 Van de mensen van Stedenbouw moeten we iets hebben dat er aan de buitenkant uitziet zoals het nu is: een houten deur, met glas, met smeedwerk ervoor. Dit is wat we onze architect jaren geleden had geschreven (maar misschien is de techniek ondertussen al verder gevorderd): - Hoogte: 240cm.</description>
@@ -125,10 +125,10 @@ Van de mensen van Stedenbouw moeten we iets hebben dat er aan de buitenkant uitz
     
     <item>
       <title>Voornemens 2023</title>
-      <link>http://users.ugent.be/~mvuijlst/nieuws/voornemens/</link>
+      <link>https://moosedept.org/nieuws/voornemens/</link>
       <pubDate>Sun, 01 Jan 2023 11:31:07 +0000</pubDate>
       
-      <guid>http://users.ugent.be/~mvuijlst/nieuws/voornemens/</guid>
+      <guid>https://moosedept.org/nieuws/voornemens/</guid>
       <description>Een nieuw jaar, dus tijd voor voornemens.
 Ik ga dit jaar wat extra dingen bijhouden, naast waar ik naar kijk en wat ik lees en hoe lang de kat op mijn schoot zit. Ik ga proberen bij te houden welk eten we klaarmaken. Ik heb de indruk dat we nogal veel hetzelfde eten: tijd om dat eens hard te maken.
 Daarnaast: meer boeken lezen. Het steekt, dat ik zo weinig gelezen heb in 2022.</description>
@@ -136,87 +136,87 @@ Daarnaast: meer boeken lezen. Het steekt, dat ik zo weinig gelezen heb in 2022.<
     
     <item>
       <title>Bezig aan de gevel</title>
-      <link>http://users.ugent.be/~mvuijlst/nieuws/bezigte/</link>
+      <link>https://moosedept.org/nieuws/bezigte/</link>
       <pubDate>Sun, 18 Dec 2022 12:53:14 +0000</pubDate>
       
-      <guid>http://users.ugent.be/~mvuijlst/nieuws/bezigte/</guid>
+      <guid>https://moosedept.org/nieuws/bezigte/</guid>
       <description>Er staat nog altijd een stelling tegen de gevel, en er zijn al heelder stukken pleisterwerk van gehaald. Op dit moment is het te koud om verder te werken, denk ik, en dus list het wat stil. Tot waarschijnlijk ergens na nieuwjaar, vermoed ik. En dan moet er geverfd worden.
 De kleur moet nog duidelijk gemaakt worden, en ook dat het eigenlijk twee kleuren zijn: een heel heel lichtblauw vanboven en een wat donkerder lichtbluaw dat meer naar het grijs gaat vanonder.</description>
     </item>
     
     <item>
       <title>Geveldegijniet g&#39;een hebt gij niet</title>
-      <link>http://users.ugent.be/~mvuijlst/nieuws/gevel/</link>
+      <link>https://moosedept.org/nieuws/gevel/</link>
       <pubDate>Tue, 13 Dec 2022 06:10:11 +0000</pubDate>
       
-      <guid>http://users.ugent.be/~mvuijlst/nieuws/gevel/</guid>
+      <guid>https://moosedept.org/nieuws/gevel/</guid>
       <description>Ze zijn begonnen aan de gevel hoeri hoera. Werken voorzien:
 Beschermen van ramen en vloeren Plaatsen en verwijderen van stellingen Verwijderen van oude verflaag Herstellen van beschadigd pleisterwerk Herstellen van de gevellijst Uitvlakken, schuren en schilderen Opkitten met acrylkit van alle binnenhoeken Afbranden verf van de dakgoot, opkitten, primen en schilderen in 2 lagen Vernieuwen van de afvoerbuis in zink Schilderen van plint Opkuis en meenemen van alle werfvuil ’t Zal zeker niet meer allemaal klaar zijn in 2022, maar we leven in hoop.</description>
     </item>
     
     <item>
       <title>Deploy, v1</title>
-      <link>http://users.ugent.be/~mvuijlst/nieuws/deploy/</link>
+      <link>https://moosedept.org/nieuws/deploy/</link>
       <pubDate>Mon, 05 Dec 2022 15:58:00 +0000</pubDate>
       
-      <guid>http://users.ugent.be/~mvuijlst/nieuws/deploy/</guid>
-      <description>Czech it out: zowel hier (user.ugent.be/~mvuijlst) als elders (moosedept.org) staat dezelfde inhoud. Alletwee met hugo, maar de ene met firebase gesynct en de andere met xcopy naar een share.
+      <guid>https://moosedept.org/nieuws/deploy/</guid>
+      <description>Czech it out: zowel hier (moosedept.org) als elders (user.ugent.be/~mvuijlst) staat dezelfde inhoud. Alletwee met hugo, maar de ene met firebase gesynct en de andere met xcopy naar een share.
 &amp;rsquo;t Is een beetje stom dat ik voor de paragraaf hierboven speciaal een shortcode heb moeten maken, maar hey.</description>
     </item>
     
     <item>
       <title>Children of Memory</title>
-      <link>http://users.ugent.be/~mvuijlst/nieuws/memory/</link>
+      <link>https://moosedept.org/nieuws/memory/</link>
       <pubDate>Mon, 05 Dec 2022 15:27:28 +0000</pubDate>
       
-      <guid>http://users.ugent.be/~mvuijlst/nieuws/memory/</guid>
+      <guid>https://moosedept.org/nieuws/memory/</guid>
       <description>Tralala, het volgende boek in de Children of Time -serie is uit: Children of Memory. Het begint denk ik als een prequel (ik lees nooit verder dan &amp;ldquo;Earth is failing&amp;rdquo; en dat de bewoners van de aarde wanhopig proberen te vluchten in een ruimteschip); ik hoop dat het verder gaat dan het tweede boek.
 Dat tweede boek was namelijk geëindigd op een punt waar ik van zou content geweest zijn als dat het einde van het hele verhaal was &amp;ndash; een einde waarbij de mensheid zowat een Culture-niveau haalt maar dan op sommige vlakken nog een eind verder.</description>
     </item>
     
     <item>
       <title>Build, min of meer</title>
-      <link>http://users.ugent.be/~mvuijlst/nieuws/build/</link>
+      <link>https://moosedept.org/nieuws/build/</link>
       <pubDate>Mon, 05 Dec 2022 03:09:27 +0000</pubDate>
       
-      <guid>http://users.ugent.be/~mvuijlst/nieuws/build/</guid>
+      <guid>https://moosedept.org/nieuws/build/</guid>
       <description>Ik zou eens moeten zoeken op een beter systeem om die site hier te deployen. Een xcopy public \\files\mvuijlst\www\users /s /y vanuit de folder op mijn computer is misschien niet de ideale manier, maar ik heb de indruk dat ik geen github actions kan hebben op de github van het werk. Denk ik.</description>
     </item>
     
     <item>
       <title>De slechte vrienden</title>
-      <link>http://users.ugent.be/~mvuijlst/nieuws/slechtevrienden/</link>
+      <link>https://moosedept.org/nieuws/slechtevrienden/</link>
       <pubDate>Sun, 04 Dec 2022 05:25:40 +0000</pubDate>
       
-      <guid>http://users.ugent.be/~mvuijlst/nieuws/slechtevrienden/</guid>
+      <guid>https://moosedept.org/nieuws/slechtevrienden/</guid>
       <description>Alsmaar minder dingen die via decentrale backup bekeken worden, maar soms kan het niet anders. &amp;rsquo;t Is azo.</description>
     </item>
     
     <item>
       <title>Huis: gevel! dak!</title>
-      <link>http://users.ugent.be/~mvuijlst/nieuws/hoera/</link>
+      <link>https://moosedept.org/nieuws/hoera/</link>
       <pubDate>Thu, 01 Dec 2022 04:36:06 +0000</pubDate>
       
-      <guid>http://users.ugent.be/~mvuijlst/nieuws/hoera/</guid>
+      <guid>https://moosedept.org/nieuws/hoera/</guid>
       <description>De kogel is door de kerk: de gevel gaat ververst worden midden-december, en het dak gaat ververst worden als de dakmens de dakpannen binnenkrijgt die hij besteld heeft maanden geleden.</description>
     </item>
     
     <item>
       <title>Tiens een site met Hugo</title>
-      <link>http://users.ugent.be/~mvuijlst/nieuws/allo/</link>
+      <link>https://moosedept.org/nieuws/allo/</link>
       <pubDate>Tue, 22 Nov 2022 04:36:06 +0000</pubDate>
       
-      <guid>http://users.ugent.be/~mvuijlst/nieuws/allo/</guid>
+      <guid>https://moosedept.org/nieuws/allo/</guid>
       <description>Als wij op het werk Hugo gaan gebruiken, is het misschien geen slecht idee om dat zelf ook eens allemaal op te frissen.
 Dus bij dezen.</description>
     </item>
     
     <item>
       <title>Stekelnoten deels om zeep</title>
-      <link>http://users.ugent.be/~mvuijlst/nieuws/dedju/</link>
+      <link>https://moosedept.org/nieuws/dedju/</link>
       <pubDate>Fri, 28 Oct 2022 05:36:06 +0000</pubDate>
       
-      <guid>http://users.ugent.be/~mvuijlst/nieuws/dedju/</guid>
+      <guid>https://moosedept.org/nieuws/dedju/</guid>
       <description>De kuisvrouw heeft de inhoud van een pot vol zeiknatte aarde over de stekelnoten gakapt. De stekelnoten aan de rechterkant aan de kant van het huis zijn volledig bedolven en dus waarschijnlijk dood. Dedju.
 En de kat heeft ook aan de rechterkant maar dan aan de kant van het achterhuis de stekelnoten kapotgpist. Of -gekakt, ik wil er van af zijn. Ook dedju.
 Hopen dat het goed komt tegen volgend jaar.</description>
