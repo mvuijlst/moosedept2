@@ -3,14 +3,11 @@ param(
     [switch]$VPSOnly = $false,
     [switch]$UGentOnly = $false,
     [switch]$SkipNews = $false,
-    [switch]$Verbose,
-    [switch]$Interactive,
-    [switch]$Quiet = $false
+    [switch]$Verbose = $true,
+    [switch]$Interactive = $true,
+    [switch]$Quiet = $false,
+    [switch]$SkipGit = $false
 )
-
-# Set defaults
-if (-not $PSBoundParameters.ContainsKey('Verbose')) { $Verbose = $true }
-if (-not $PSBoundParameters.ContainsKey('Interactive')) { $Interactive = $true }
 
 # Configuration
 $sourceDir = "public"
@@ -18,12 +15,6 @@ $ugentDestDir = "\\files\mvuijlst\www\users"
 $vpsHost = "yusupov"
 $vpsPath = "/home/django/moosedept"
 $hashFile = "file-hashes.json"
-
-# Override verbose setting if Quiet is specified
-if ($Quiet) {
-    $Verbose = $false
-    $Interactive = $false
-}
 
 # Color scheme
 $colors = @{
@@ -116,22 +107,82 @@ function Get-CustomFileHash {
     }
 }
 
+# Git commit and push
+function Invoke-GitCommitAndPush {
+    param(
+        [string]$CommitMessage = "Auto-deploy: $(Get-Date -Format 'yyyy-MM-dd HH:mm')"
+    )
+    
+    Write-Log "Starting Git operations..." -Type "Header"
+    
+    try {
+        # Check git status
+        $status = git status --porcelain 2>&1
+        if ($LASTEXITCODE -ne 0) {
+            Write-Log "Git status check failed: $status" -Type "Error"
+            return $false
+        }
+        
+        # Commit if there are changes
+        if ($status) {
+            Write-Log "Adding all changes to git..." -Type "Info"
+            git add . 2>&1 | Out-Null
+            if ($LASTEXITCODE -ne 0) {
+                Write-Log "Git add failed" -Type "Error"
+                return $false
+            }
+            
+            Write-Log "Committing changes: $CommitMessage" -Type "Info"
+            git commit -m $CommitMessage 2>&1 | Out-Null
+            if ($LASTEXITCODE -ne 0) {
+                Write-Log "Git commit failed" -Type "Error"
+                return $false
+            }
+            Write-Log "Changes committed successfully" -Type "Success"
+        } else {
+            Write-Log "No changes to commit" -Type "Info"
+        }
+        
+        # Push if ahead of origin
+        $ahead = git rev-list --count origin/master..master 2>&1
+        if ($LASTEXITCODE -eq 0 -and [int]$ahead -gt 0) {
+            Write-Log "Pushing $ahead commit(s) to GitHub..." -Type "Info"
+            git push origin master 2>&1 | Out-Null
+            if ($LASTEXITCODE -eq 0) {
+                Write-Log "Successfully pushed to GitHub" -Type "Success"
+                return $true
+            } else {
+                Write-Log "Git push failed" -Type "Error"
+                return $false
+            }
+        } else {
+            Write-Log "No commits to push to GitHub" -Type "Info"
+            return $true
+        }
+    }
+    catch {
+        Write-Log "Git operation failed: $($_.Exception.Message)" -Type "Error"
+        return $false
+    }
+}
+
 # Interactive menu function
 function Show-InteractiveMenu {
     Write-Host ""
-    Write-Host "╔═══════════════════════════════════════════════╗" -ForegroundColor Cyan
+    Write-Host "╔════════════════════════════════════════════════╗" -ForegroundColor Cyan
     Write-Host "║           Hugo Deployment Options             ║" -ForegroundColor Cyan
-    Write-Host "╠═══════════════════════════════════════════════╣" -ForegroundColor Cyan
-    Write-Host "║  1. Deploy to both VPS and UGent              ║" -ForegroundColor White
+    Write-Host "╠════════════════════════════════════════════════╣" -ForegroundColor Cyan
+    Write-Host "║  1. Deploy to both VPS and UGent + Git        ║" -ForegroundColor White
     Write-Host "║  2. Deploy to VPS only                        ║" -ForegroundColor White
     Write-Host "║  3. Deploy to UGent only                      ║" -ForegroundColor White
-    Write-Host "║  4. Force deploy all files to both            ║" -ForegroundColor Yellow
+    Write-Host "║  4. Force deploy all files to both + Git      ║" -ForegroundColor Yellow
     Write-Host "║  5. Force deploy all files to VPS only        ║" -ForegroundColor Yellow
     Write-Host "║  6. Force deploy all files to UGent only      ║" -ForegroundColor Yellow
     Write-Host "║  7. Test connectivity only                    ║" -ForegroundColor Gray
     Write-Host "║  8. Show deployment status                    ║" -ForegroundColor Gray
+    Write-Host "║  9. Git commit and push only                  ║" -ForegroundColor Magenta
     Write-Host "║  q. Quit                                      ║" -ForegroundColor Red
-    Write-Host "╚═══════════════════════════════════════════════╝" -ForegroundColor Cyan
+    Write-Host "╚════════════════════════════════════════════════╝" -ForegroundColor Cyan
     Write-Host ""
 }
 
@@ -139,47 +190,51 @@ function Show-InteractiveMenu {
 function Get-UserChoice {
     do {
         Show-InteractiveMenu
-        $choice = Read-Host "Please select an option (1-8 or q)"
+        $choice = Read-Host "Please select an option (1-9, q)"
         
         switch ($choice.ToLower()) {
             "1" { 
-                Write-Log "Selected: Deploy to both VPS and UGent" -Type "Info"
-                return @{ VPSOnly = $false; UGentOnly = $false; Force = $false; TestOnly = $false; StatusOnly = $false }
+                Write-Log "Selected: Deploy to both VPS and UGent + Git" -Type "Info"
+                return @{ VPSOnly = $false; UGentOnly = $false; Force = $false; TestOnly = $false; StatusOnly = $false; IncludeGit = $true; GitOnly = $false }
             }
             "2" { 
                 Write-Log "Selected: Deploy to VPS only" -Type "Info"
-                return @{ VPSOnly = $true; UGentOnly = $false; Force = $false; TestOnly = $false; StatusOnly = $false }
+                return @{ VPSOnly = $true; UGentOnly = $false; Force = $false; TestOnly = $false; StatusOnly = $false; IncludeGit = $false; GitOnly = $false }
             }
             "3" { 
                 Write-Log "Selected: Deploy to UGent only" -Type "Info"
-                return @{ VPSOnly = $false; UGentOnly = $true; Force = $false; TestOnly = $false; StatusOnly = $false }
+                return @{ VPSOnly = $false; UGentOnly = $true; Force = $false; TestOnly = $false; StatusOnly = $false; IncludeGit = $false; GitOnly = $false }
             }
             "4" { 
-                Write-Log "Selected: Force deploy all files to both" -Type "Warning"
-                return @{ VPSOnly = $false; UGentOnly = $false; Force = $true; TestOnly = $false; StatusOnly = $false }
+                Write-Log "Selected: Force deploy all files to both + Git" -Type "Warning"
+                return @{ VPSOnly = $false; UGentOnly = $false; Force = $true; TestOnly = $false; StatusOnly = $false; IncludeGit = $true; GitOnly = $false }
             }
             "5" { 
                 Write-Log "Selected: Force deploy all files to VPS only" -Type "Warning"
-                return @{ VPSOnly = $true; UGentOnly = $false; Force = $true; TestOnly = $false; StatusOnly = $false }
+                return @{ VPSOnly = $true; UGentOnly = $false; Force = $true; TestOnly = $false; StatusOnly = $false; IncludeGit = $false; GitOnly = $false }
             }
             "6" { 
                 Write-Log "Selected: Force deploy all files to UGent only" -Type "Warning"
-                return @{ VPSOnly = $false; UGentOnly = $true; Force = $true; TestOnly = $false; StatusOnly = $false }
+                return @{ VPSOnly = $false; UGentOnly = $true; Force = $true; TestOnly = $false; StatusOnly = $false; IncludeGit = $false; GitOnly = $false }
             }
             "7" { 
                 Write-Log "Selected: Test connectivity only" -Type "Info"
-                return @{ VPSOnly = $false; UGentOnly = $false; Force = $false; TestOnly = $true; StatusOnly = $false }
+                return @{ VPSOnly = $false; UGentOnly = $false; Force = $false; TestOnly = $true; StatusOnly = $false; IncludeGit = $false; GitOnly = $false }
             }
             "8" { 
                 Write-Log "Selected: Show deployment status" -Type "Info"
-                return @{ VPSOnly = $false; UGentOnly = $false; Force = $false; TestOnly = $false; StatusOnly = $true }
+                return @{ VPSOnly = $false; UGentOnly = $false; Force = $false; TestOnly = $false; StatusOnly = $true; IncludeGit = $false; GitOnly = $false }
+            }
+            "9" { 
+                Write-Log "Selected: Git commit and push only" -Type "Info"
+                return @{ VPSOnly = $false; UGentOnly = $false; Force = $false; TestOnly = $false; StatusOnly = $false; IncludeGit = $true; GitOnly = $true }
             }
             "q" { 
                 Write-Log "Exiting..." -Type "Info"
                 exit 0
             }
             default { 
-                Write-Log "Invalid choice. Please select 1-8 or q." -Type "Error"
+                Write-Log "Invalid choice. Please select 1-9 or q." -Type "Error"
             }
         }
     } while ($true)
@@ -206,9 +261,7 @@ function Test-ConnectivityOnly {
     }
     
     Write-Host ""
-    if (-not $Quiet) {
-        Read-Host "Press Enter to continue"
-    }
+    Read-Host "Press Enter to continue"
 }
 
 # Function to show deployment status
@@ -324,9 +377,7 @@ function Show-DeploymentStatus {
     }
     
     Write-Host ""
-    if (-not $Quiet) {
-        Read-Host "Press Enter to continue"
-    }
+    Read-Host "Press Enter to continue"
 }
 
 # Function to deploy to VPS
@@ -482,8 +533,19 @@ function Start-Deployment {
         return $true
     }
     
+    # Determine whether to run git
+    $includeGit = (-not $SkipGit)
+    $gitOnly = $false
+    if ($Options.ContainsKey("IncludeGit")) { $includeGit = $Options.IncludeGit }
+    if ($Options.ContainsKey("GitOnly")) { $gitOnly = $Options.GitOnly }
+    
+    # Git-only mode
+    if ($gitOnly) {
+        return Invoke-GitCommitAndPush
+    }
+    
     Write-Host ""
-    Write-Log "Enhanced Hugo Deployment Script" -Type "Header"
+    Write-Log "Hugo Deployment Script" -Type "Header"
     Write-Log "Source: $sourceDir" -Type "Info"
     if ($Force) {
         Write-Log "Mode: Force deployment (all files)" -Type "Warning"
@@ -585,6 +647,13 @@ function Start-Deployment {
         Write-Log "Warning: Could not save hash file: $($_.Exception.Message)" -Type "Warning"
     }
     
+    # Git commit and push
+    $gitSuccess = $true
+    if ($includeGit) {
+        Write-Host ""
+        $gitSuccess = Invoke-GitCommitAndPush
+    }
+    
     # Final summary
     if (-not $Quiet) {
         Write-Host ""
@@ -599,35 +668,45 @@ function Start-Deployment {
             $ugentColor = if ($ugentSuccess) { "Success" } else { "Error" }
             Write-Log "UGent Deployment: $ugentStatus" -Type $ugentColor
         }
+        if ($includeGit) {
+            $gitStatus = if ($gitSuccess) { "[OK] SUCCESS" } else { "[ERR] FAILED" }
+            $gitColor = if ($gitSuccess) { "Success" } else { "Error" }
+            Write-Log "Git Operations: $gitStatus" -Type $gitColor
+        }
         Write-Host ""
     }
     
-    return ($vpsSuccess -and $ugentSuccess)
+    return ($vpsSuccess -and $ugentSuccess -and $gitSuccess)
+}
+
+# Override verbose setting if Quiet is specified
+if ($Quiet) {
+    $Verbose = $false
 }
 
 # Display help if requested
 if ($args -contains "-h" -or $args -contains "--help") {
     Write-Host @"
-Enhanced Hugo Deployment Script
+Hugo Deployment Script
 
 USAGE:
-    .\enhanced-deploy.ps1 [OPTIONS]
+    .\deploy.ps1 [OPTIONS]
 
 OPTIONS:
     -Force          Deploy all files regardless of changes
     -VPSOnly        Deploy only to VPS (skip UGent)
     -UGentOnly      Deploy only to UGent share (skip VPS)
-    -SkipNews       Skip news fetching (not implemented yet)
+    -SkipGit        Skip git commit and push
     -Verbose        Show detailed file operations (default: true)
     -Quiet          Suppress verbose output and run non-interactively
     -Interactive    Show interactive menu (default: true)
     -h, --help      Show this help message
 
 EXAMPLES:
-    .\enhanced-deploy.ps1                    # Interactive mode with menu
-    .\enhanced-deploy.ps1 -Quiet -Force     # Force deploy all files silently
-    .\enhanced-deploy.ps1 -VPSOnly          # Interactive menu for VPS deployment
-    .\enhanced-deploy.ps1 -Quiet -UGentOnly # Deploy to UGent silently
+    .\deploy.ps1                         # Interactive mode with menu
+    .\deploy.ps1 -Quiet -Force          # Force deploy all files + git push
+    .\deploy.ps1 -Quiet -SkipGit        # Deploy without git operations
+    .\deploy.ps1 -VPSOnly               # Interactive menu for VPS deployment
 
 "@ -ForegroundColor Cyan
     exit 0
@@ -655,7 +734,7 @@ if ($Interactive -and -not $Quiet) {
         Clear-Host
     } while ($true)
     
-    Write-Log "Done." -Type "Success"
+    Write-Log "Ready!" -Type "Success"
 } else {
     # Non-interactive mode - use command line parameters
     $success = Start-Deployment
