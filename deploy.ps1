@@ -15,6 +15,8 @@ $ugentDestDir = "\\files\mvuijlst\www\users"
 $vpsHost = "yusupov"
 $vpsPath = "/home/django/moosedept"
 $hashFile = "file-hashes.json"
+$vpsBaseURL = "https://moosedept.org"
+$ugentBaseURL = "http://users.ugent.be/~mvuijlst/"
 
 # Color scheme
 $colors = @{
@@ -65,8 +67,21 @@ function Test-NetworkConnectivity {
         if ($Target.StartsWith("\\")) {
             $result = Test-Path $Target -ErrorAction Stop
         } else {
-            # Test SSH connectivity
-            $result = (ssh -o ConnectTimeout=5 -o BatchMode=yes $Target "echo 'connected'" 2>$null) -eq "connected"
+            # Test SSH connectivity via a background job with a hard timeout
+            # (ConnectTimeout SSH option is unreliable on Windows)
+            $job = Start-Job -ScriptBlock {
+                param($t)
+                ssh -o ConnectTimeout=5 -o BatchMode=yes -o StrictHostKeyChecking=no $t "echo connected" 2>&1
+            } -ArgumentList $Target
+            $completed = Wait-Job $job -Timeout 10
+            if ($completed) {
+                $output = Receive-Job $job
+                $result = ($output -join "") -match "connected"
+            } else {
+                Write-Log "$Description connectivity check timed out" -Type "Warning"
+                $result = $false
+            }
+            Remove-Job $job -Force
         }
         
         if ($result) {
@@ -104,6 +119,47 @@ function Get-CustomFileHash {
             Write-Log "Error calculating hash for $FilePath : $_" -Type "Error"
         }
         return "ERROR"
+    }
+}
+
+# Fetch latest news
+function Invoke-FetchNews {
+    Write-Log "Fetching latest news..." -Type "Info"
+    try {
+        $python = if (Test-Path ".venv\Scripts\python.exe") { ".venv\Scripts\python.exe" } else { "python" }
+        & $python getnews.py 2>&1 | ForEach-Object { Write-Log $_ -Type "Detail" }
+        if ($LASTEXITCODE -eq 0) {
+            Write-Log "News fetched successfully" -Type "Success"
+        } else {
+            Write-Log "News fetch had issues (continuing anyway)" -Type "Warning"
+        }
+    }
+    catch {
+        Write-Log "News fetch failed: $($_.Exception.Message) (continuing anyway)" -Type "Warning"
+    }
+}
+
+# Build Hugo with a specific baseURL
+function Invoke-HugoBuild {
+    param(
+        [string]$BaseURL
+    )
+    
+    Write-Log "Building Hugo site with baseURL: $BaseURL" -Type "Info"
+    try {
+        $hugoExe = if (Test-Path "..\hugo.exe") { "..\hugo.exe" } else { "hugo" }
+        & $hugoExe --baseURL $BaseURL 2>&1 | ForEach-Object { Write-Log $_ -Type "Detail" }
+        if ($LASTEXITCODE -eq 0) {
+            Write-Log "Hugo build completed successfully" -Type "Success"
+            return $true
+        } else {
+            Write-Log "Hugo build failed" -Type "Error"
+            return $false
+        }
+    }
+    catch {
+        Write-Log "Hugo build error: $($_.Exception.Message)" -Type "Error"
+        return $false
     }
 }
 
@@ -172,12 +228,13 @@ function Show-InteractiveMenu {
     Write-Host "╔════════════════════════════════════════════════╗" -ForegroundColor Cyan
     Write-Host "║           Hugo Deployment Options             ║" -ForegroundColor Cyan
     Write-Host "╠════════════════════════════════════════════════╣" -ForegroundColor Cyan
-    Write-Host "║  1. Deploy to both VPS and UGent + Git        ║" -ForegroundColor White
+    Write-Host "║  1. Deploy to both VPS and UGent              ║" -ForegroundColor White
     Write-Host "║  2. Deploy to VPS only                        ║" -ForegroundColor White
     Write-Host "║  3. Deploy to UGent only                      ║" -ForegroundColor White
-    Write-Host "║  4. Force deploy all files to both + Git      ║" -ForegroundColor Yellow
+    Write-Host "║  4. Force deploy all files to both            ║" -ForegroundColor Yellow
     Write-Host "║  5. Force deploy all files to VPS only        ║" -ForegroundColor Yellow
     Write-Host "║  6. Force deploy all files to UGent only      ║" -ForegroundColor Yellow
+    Write-Host "║     (git commit+push included with 1-6)       ║" -ForegroundColor DarkGray
     Write-Host "║  7. Test connectivity only                    ║" -ForegroundColor Gray
     Write-Host "║  8. Show deployment status                    ║" -ForegroundColor Gray
     Write-Host "║  9. Git commit and push only                  ║" -ForegroundColor Magenta
@@ -533,10 +590,9 @@ function Start-Deployment {
         return $true
     }
     
-    # Determine whether to run git
+    # Determine whether to run git — always on unless -SkipGit is passed
     $includeGit = (-not $SkipGit)
     $gitOnly = $false
-    if ($Options.ContainsKey("IncludeGit")) { $includeGit = $Options.IncludeGit }
     if ($Options.ContainsKey("GitOnly")) { $gitOnly = $Options.GitOnly }
     
     # Git-only mode
@@ -629,11 +685,29 @@ function Start-Deployment {
     $ugentSuccess = $true
     
     if (-not $UGentOnly) {
-        $vpsSuccess = Deploy-ToVPS -FilesToDeploy $files -CleanFirst (-not $Force)
+        # Fetch news and build for VPS
+        if (-not $SkipNews) { Invoke-FetchNews }
+        $buildOk = Invoke-HugoBuild -BaseURL $vpsBaseURL
+        if (-not $buildOk) {
+            Write-Log "Skipping VPS deployment due to build failure" -Type "Error"
+            $vpsSuccess = $false
+        } else {
+            $vpsSuccess = Deploy-ToVPS -FilesToDeploy $files -CleanFirst (-not $Force)
+        }
     }
     
     if (-not $VPSOnly) {
-        $ugentSuccess = Deploy-ToUGent -ChangedFiles $changedFiles -NewFiles $newFiles -DeletedFiles $deletedFiles -ForceAll:$Force
+        # Build for UGent (news already fetched above if both targets)
+        if ($UGentOnly -and -not $SkipNews) { Invoke-FetchNews }
+        $buildOk = Invoke-HugoBuild -BaseURL $ugentBaseURL
+        if (-not $buildOk) {
+            Write-Log "Skipping UGent deployment due to build failure" -Type "Error"
+            $ugentSuccess = $false
+        } else {
+            # After a fresh Hugo build, always force-copy all files to UGent
+            # (the VPS build produced different content in public/, so hash comparisons are unreliable)
+            $ugentSuccess = Deploy-ToUGent -ChangedFiles @() -NewFiles @() -DeletedFiles $deletedFiles -ForceAll:$true
+        }
     }
     
     # Save updated hashes
