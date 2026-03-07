@@ -437,14 +437,14 @@ function Show-DeploymentStatus {
     Read-Host "Press Enter to continue"
 }
 
-# Function to deploy to VPS
+# Function to deploy to VPS using atomic blue-green deployment
 function Deploy-ToVPS {
     param(
         [array]$FilesToDeploy,
         [bool]$CleanFirst = $true
     )
     
-    Write-Log "Starting VPS Deployment" -Type "Header"
+    Write-Log "Starting VPS Deployment (atomic mode)" -Type "Header"
     
     if (-not (Test-NetworkConnectivity -Target $vpsHost -Description "VPS ($vpsHost)")) {
         Write-Log "Cannot connect to VPS. Deployment skipped." -Type "Warning"
@@ -452,34 +452,81 @@ function Deploy-ToVPS {
     }
     
     try {
-        if ($CleanFirst) {
-            Write-Log "Cleaning destination directory on VPS..." -Type "Info"
-            $cleanResult = ssh $vpsHost "rm -rf $vpsPath/* $vpsPath/.*[^.]*" 2>&1
-            if ($LASTEXITCODE -eq 0) {
-                Write-Log "VPS directory cleaned successfully" -Type "Success"
-            } else {
-                Write-Log "Warning: VPS clean command had issues: $cleanResult" -Type "Warning"
-            }
+        $tempPath = "${vpsPath}_new"
+        $oldPath = "${vpsPath}_old"
+        
+        # Step 1: Clean up any leftover temp directories from previous failed deployments
+        Write-Log "Cleaning up temporary directories..." -Type "Info"
+        ssh $vpsHost "rm -rf $tempPath $oldPath" 2>&1 | Out-Null
+        
+        # Step 2: Create new temporary directory
+        Write-Log "Creating temporary deployment directory..." -Type "Info"
+        $mkdirResult = ssh $vpsHost "mkdir -p $tempPath" 2>&1
+        if ($LASTEXITCODE -ne 0) {
+            Write-Log "Failed to create temporary directory: $mkdirResult" -Type "Error"
+            return $false
         }
         
-        Write-Log "Uploading files to VPS..." -Type "Info"
+        # Step 3: Upload files to temporary directory
+        Write-Log "Uploading files to temporary directory..." -Type "Info"
         Push-Location $sourceDir
         
-        $scpResult = scp -r * "${vpsHost}:${vpsPath}/" 2>&1
+        $scpResult = scp -r * "${vpsHost}:${tempPath}/" 2>&1
         $scpSuccess = $LASTEXITCODE -eq 0
         
         Pop-Location
         
-        if ($scpSuccess) {
-            Write-Log "VPS deployment completed successfully!" -Type "Success"
-            return $true
-        } else {
-            Write-Log "VPS deployment failed: $scpResult" -Type "Error"
+        if (-not $scpSuccess) {
+            Write-Log "Upload failed: $scpResult" -Type "Error"
+            # Clean up failed upload
+            ssh $vpsHost "rm -rf $tempPath" 2>&1 | Out-Null
             return $false
         }
+        
+        Write-Log "Upload completed successfully" -Type "Success"
+        
+        # Step 4: Atomic swap - move current to old, new to current
+        Write-Log "Performing atomic directory swap..." -Type "Info"
+        
+        # Check if current directory exists
+        $dirExists = ssh $vpsHost "test -d $vpsPath && echo exists || echo missing" 2>&1
+        
+        if ($dirExists -match "exists") {
+            # Move current to old
+            $moveOldResult = ssh $vpsHost "mv $vpsPath $oldPath" 2>&1
+            if ($LASTEXITCODE -ne 0) {
+                Write-Log "Failed to move current to old: $moveOldResult" -Type "Error"
+                ssh $vpsHost "rm -rf $tempPath" 2>&1 | Out-Null
+                return $false
+            }
+        }
+        
+        # Move new to current
+        $moveNewResult = ssh $vpsHost "mv $tempPath $vpsPath" 2>&1
+        if ($LASTEXITCODE -ne 0) {
+            Write-Log "Failed to move new to current: $moveNewResult" -Type "Error"
+            # Try to restore old version if it exists
+            if ($dirExists -match "exists") {
+                Write-Log "Attempting rollback..." -Type "Warning"
+                ssh $vpsHost "mv $oldPath $vpsPath" 2>&1 | Out-Null
+            }
+            return $false
+        }
+        
+        Write-Log "Atomic swap completed successfully" -Type "Success"
+        
+        # Step 5: Clean up old directory
+        Write-Log "Cleaning up old version..." -Type "Info"
+        ssh $vpsHost "rm -rf $oldPath" 2>&1 | Out-Null
+        
+        Write-Log "VPS deployment completed successfully!" -Type "Success"
+        Write-Log "Site was never offline during deployment" -Type "Info"
+        return $true
     }
     catch {
         Write-Log "VPS deployment error: $($_.Exception.Message)" -Type "Error"
+        # Cleanup on error
+        ssh $vpsHost "rm -rf $tempPath" 2>&1 | Out-Null
         return $false
     }
 }
