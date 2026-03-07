@@ -278,7 +278,7 @@ def search_simkl_id(client_id: str, title: str, year: int | str,
 
 def html_date_to_iso(raw: str) -> str | None:
     """Convert HTML date strings like '2026-01-01 Thu 01:52' to ISO-8601 UTC."""
-    raw = raw.strip()
+    raw = raw.strip().rstrip("]")  # strip accidental trailing ] from Emacs export
     if not raw or raw == "\xa0":
         return None
     for fmt in ("%Y-%m-%d %a %H:%M", "%Y-%m-%d %a", "%Y-%m-%d %H:%M", "%Y-%m-%d"):
