@@ -1,10 +1,6 @@
 ---
-date: '2022-12-01T04:36:06'
+date: '2022-12-01 10:36:06'
 draft: false
-tags:
-- dak
-- gevel
-- huis
 title: 'Huis: gevel! dak!'
 ---
 

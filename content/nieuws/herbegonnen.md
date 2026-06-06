@@ -1,9 +1,6 @@
 ---
-date: '2023-01-26T07:56:51'
+date: '2023-01-26 13:56:51'
 draft: false
-tags:
-- gevel
-- huis
 title: Herbegonnen
 ---
 

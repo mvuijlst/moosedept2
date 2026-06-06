@@ -1,9 +1,6 @@
 ---
-date: '2023-02-28T14:01:19'
+date: '2023-02-28 20:01:19'
 draft: false
-tags:
-- gevel
-- huis
 title: Gevel gedaan!
 ---
 

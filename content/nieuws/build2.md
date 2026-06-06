@@ -1,8 +1,6 @@
 ---
-date: '2023-06-03T07:07:28'
+date: '2023-06-03 12:07:28'
 draft: false
-tags:
-- site
 title: Build, vervolg
 ---
 

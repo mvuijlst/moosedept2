@@ -1,9 +1,6 @@
 ---
-date: '2022-12-13T06:10:11'
+date: '2022-12-13 12:10:11'
 draft: false
-tags:
-- gevel
-- huis
 title: Geveldegijniet g'een hebt gij niet
 ---
 

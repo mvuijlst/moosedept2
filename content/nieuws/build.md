@@ -1,8 +1,6 @@
 ---
-date: '2022-12-05T03:09:27'
+date: '2022-12-05 09:09:27'
 draft: false
-tags:
-- site
 title: Build, min of meer
 ---
 

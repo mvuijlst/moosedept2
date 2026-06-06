@@ -1,8 +1,6 @@
 ---
-date: '2022-11-22T04:36:06'
+date: '2022-11-22 10:36:06'
 draft: false
-tags:
-- site
 title: Tiens een site met Hugo
 ---
 

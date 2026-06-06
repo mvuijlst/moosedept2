@@ -1,9 +1,6 @@
 ---
-date: '2023-01-19T05:53:11'
+date: '2023-01-19 11:53:11'
 draft: false
-tags:
-- deur
-- huis
 title: Deur, poging zoveel
 ---
 

@@ -1,8 +1,6 @@
 ---
-date: '2025-05-30T06:42:00'
+date: '2025-05-30 11:42:00'
 draft: false
-tags:
-- site
 title: Wagtail
 ---
 

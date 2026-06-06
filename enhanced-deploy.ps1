@@ -2,7 +2,6 @@ param(
     [switch]$Force = $false,
     [switch]$VPSOnly = $false,
     [switch]$UGentOnly = $false,
-    [switch]$SkipNews = $false,
     [switch]$Verbose = $true,
     [switch]$Interactive = $true,
     [switch]$Quiet = $false
@@ -608,7 +607,6 @@ OPTIONS:
     -Force          Deploy all files regardless of changes
     -VPSOnly        Deploy only to VPS (skip UGent)
     -UGentOnly      Deploy only to UGent share (skip VPS)
-    -SkipNews       Skip news fetching (not implemented yet)
     -Verbose        Show detailed file operations (default: true)
     -Quiet          Suppress verbose output and run non-interactively
     -Interactive    Show interactive menu (default: true)

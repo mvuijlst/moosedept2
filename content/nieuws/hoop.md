@@ -1,9 +1,6 @@
 ---
-date: '2023-08-13T15:40:08'
+date: '2023-08-13 20:40:08'
 draft: false
-tags:
-- huis
-- werk
 title: Hoop doet leven
 ---
 

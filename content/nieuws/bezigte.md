@@ -1,9 +1,6 @@
 ---
-date: '2022-12-18T12:53:14'
+date: '2022-12-18 18:53:14'
 draft: false
-tags:
-- gevel
-- huis
 title: Bezig aan de gevel
 ---
 

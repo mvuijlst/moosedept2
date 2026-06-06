@@ -1,9 +1,6 @@
 ---
-date: '2025-06-08T21:18:00'
+date: '2025-06-09 02:18:00'
 draft: false
-tags:
-- huis
-- verbouwingen
 title: Een nieuw elan
 ---
 

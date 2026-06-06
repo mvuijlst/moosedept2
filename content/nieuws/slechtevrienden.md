@@ -1,8 +1,6 @@
 ---
-date: '2022-12-04T05:25:40'
+date: '2022-12-04 11:25:40'
 draft: false
-tags:
-- gekeken
 title: De slechte vrienden
 ---
 

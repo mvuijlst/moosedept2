@@ -1,8 +1,6 @@
 ---
-date: '2025-08-04T14:00:00'
+date: '2025-08-04 19:00:00'
 draft: false
-tags:
-- site
 title: Verhuisd
 ---
 

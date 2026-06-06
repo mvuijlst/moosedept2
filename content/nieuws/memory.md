@@ -1,8 +1,6 @@
 ---
-date: '2022-12-05T15:27:28'
+date: '2022-12-05 21:27:28'
 draft: false
-tags:
-- gelezen
 title: Children of Memory
 ---
 

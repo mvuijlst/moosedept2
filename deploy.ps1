@@ -2,7 +2,6 @@ param(
     [switch]$Force = $false,
     [switch]$VPSOnly = $false,
     [switch]$UGentOnly = $false,
-    [switch]$SkipNews = $false,
     [switch]$Verbose = $true,
     [switch]$Interactive = $true,
     [switch]$Quiet = $false,
@@ -119,23 +118,6 @@ function Get-CustomFileHash {
             Write-Log "Error calculating hash for $FilePath : $_" -Type "Error"
         }
         return "ERROR"
-    }
-}
-
-# Fetch latest news
-function Invoke-FetchNews {
-    Write-Log "Fetching latest news..." -Type "Info"
-    try {
-        $python = if (Test-Path ".venv\Scripts\python.exe") { ".venv\Scripts\python.exe" } else { "python" }
-        & $python getnews.py 2>&1 | ForEach-Object { Write-Log $_ -Type "Detail" }
-        if ($LASTEXITCODE -eq 0) {
-            Write-Log "News fetched successfully" -Type "Success"
-        } else {
-            Write-Log "News fetch had issues (continuing anyway)" -Type "Warning"
-        }
-    }
-    catch {
-        Write-Log "News fetch failed: $($_.Exception.Message) (continuing anyway)" -Type "Warning"
     }
 }
 
@@ -732,8 +714,7 @@ function Start-Deployment {
     $ugentSuccess = $true
     
     if (-not $UGentOnly) {
-        # Fetch news and build for VPS
-        if (-not $SkipNews) { Invoke-FetchNews }
+        # Build for VPS
         $buildOk = Invoke-HugoBuild -BaseURL $vpsBaseURL
         if (-not $buildOk) {
             Write-Log "Skipping VPS deployment due to build failure" -Type "Error"
@@ -744,8 +725,7 @@ function Start-Deployment {
     }
     
     if (-not $VPSOnly) {
-        # Build for UGent (news already fetched above if both targets)
-        if ($UGentOnly -and -not $SkipNews) { Invoke-FetchNews }
+        # Build for UGent
         $buildOk = Invoke-HugoBuild -BaseURL $ugentBaseURL
         if (-not $buildOk) {
             Write-Log "Skipping UGent deployment due to build failure" -Type "Error"

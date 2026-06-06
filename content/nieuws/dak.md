@@ -1,9 +1,6 @@
 ---
-date: '2023-05-19T07:07:28'
+date: '2023-05-19 12:07:28'
 draft: false
-tags:
-- dak
-- huis
 title: Dak, binnenkort
 ---
 

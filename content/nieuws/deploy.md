@@ -1,8 +1,6 @@
 ---
-date: '2022-12-05T15:58:00'
+date: '2022-12-05 21:58:00'
 draft: false
-tags:
-- site
 title: Deploy, v1
 ---
 

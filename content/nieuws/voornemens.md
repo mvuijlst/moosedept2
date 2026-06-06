@@ -1,9 +1,6 @@
 ---
-date: '2023-01-01T11:31:07'
+date: '2023-01-01 17:31:07'
 draft: false
-tags:
-- gelezen
-- leven
 title: Voornemens 2023
 ---
 

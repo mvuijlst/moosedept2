@@ -1,8 +1,6 @@
 ---
-date: '2024-10-02T19:18:40'
+date: '2024-10-03 00:18:40'
 draft: false
-tags:
-- verbouwingen
 title: Nog maar eens een poging
 ---
 

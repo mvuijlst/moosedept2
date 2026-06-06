@@ -1,8 +1,6 @@
 ---
-date: '2022-10-28T05:36:06'
+date: '2022-10-28 10:36:06'
 draft: false
-tags:
-- hof
 title: Stekelnoten deels om zeep
 ---
 
