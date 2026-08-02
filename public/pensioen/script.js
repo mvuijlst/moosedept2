@@ -14,7 +14,9 @@ const progressBars = [
 
 const startDate = new Date('1970-08-27T00:00:00'); 
 const endDate = new Date('2037-09-01T00:00:00'); 
-const daysOffPerYear = 40; 
+// Vrije dagen die op een werkdag (ma–vr) vallen: 36 vakantiedagen + ~2 brugdagen
+// + ~9 feestdagen op een werkdag (3 vaste ma/do + ~5,7 van 8 vaste-datum-feestdagen, gemiddeld 5/7 op werkdag)
+const daysOffPerYear = 47; 
 
 function createTitleLegend(title, legendId, legendText) {
   const titleLegendDiv = document.createElement('div');
