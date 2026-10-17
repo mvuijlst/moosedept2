@@ -10,9 +10,14 @@ param(
 
 # Configuration
 $sourceDir = "public"
-$ugentDestDir = "\\files\mvuijlst\www\users"
 $vpsHost = "yusupov"
+$vpsPort = 2708
 $vpsPath = "/home/django/moosedept"
+$ugentUser = "mvuijlst"
+$ugentHost = "users.ugent.be"
+$ugentPort = 22
+$ugentPath = "public_html"
+$ugentTarget = "${ugentUser}@${ugentHost}"
 $hashFile = "file-hashes.json"
 $vpsBaseURL = "https://moosedept.org"
 $ugentBaseURL = "http://users.ugent.be/~mvuijlst/"
@@ -59,7 +64,8 @@ function Write-Log {
 function Test-NetworkConnectivity {
     param(
         [string]$Target,
-        [string]$Description
+        [string]$Description,
+        [int]$Port = 22
     )
     
     Write-Log "Testing connectivity to $Description..." -Type "Info"
@@ -71,9 +77,9 @@ function Test-NetworkConnectivity {
             # Test SSH connectivity via a background job with a hard timeout
             # (ConnectTimeout SSH option is unreliable on Windows)
             $job = Start-Job -ScriptBlock {
-                param($t)
-                ssh -o ConnectTimeout=5 -o BatchMode=yes -o StrictHostKeyChecking=no $t "echo connected" 2>&1
-            } -ArgumentList $Target
+                param($t, $p)
+                ssh -p $p -o ConnectTimeout=5 -o BatchMode=yes -o StrictHostKeyChecking=no $t "echo connected" 2>&1
+            } -ArgumentList $Target, $Port
             $completed = Wait-Job $job -Timeout 10
             if ($completed) {
                 $output = Receive-Job $job
@@ -291,8 +297,8 @@ function Test-ConnectivityOnly {
     Write-Host ""
     Write-Log "Testing Connectivity" -Type "Header"
     
-    $vpsConnected = Test-NetworkConnectivity -Target $vpsHost -Description "VPS ($vpsHost)"
-    $ugentConnected = Test-NetworkConnectivity -Target $ugentDestDir -Description "UGent Share"
+    $vpsConnected = Test-NetworkConnectivity -Target $vpsHost -Description "VPS ($vpsHost)" -Port $vpsPort
+    $ugentConnected = Test-NetworkConnectivity -Target $ugentTarget -Description "UGent SSH ($ugentHost)" -Port $ugentPort
     
     Write-Host ""
     Write-Log "Connectivity Summary:" -Type "Header"
@@ -303,7 +309,7 @@ function Test-ConnectivityOnly {
     Write-Log "UGent: $ugentStatus" -Type $(if ($ugentConnected) { "Success" } else { "Error" })
     
     if (-not $ugentConnected) {
-        Write-Log "Tip: UGent share requires VPN connection" -Type "Info"
+        Write-Log "Tip: Check UGent SSH access and VPN connectivity" -Type "Info"
     }
     
     Write-Host ""
@@ -412,8 +418,8 @@ function Show-DeploymentStatus {
     # Check connectivity
     Write-Host ""
     Write-Log "Connectivity Status:" -Type "Header"
-    $vpsConnected = Test-NetworkConnectivity -Target $vpsHost -Description "VPS ($vpsHost)"
-    $ugentConnected = Test-NetworkConnectivity -Target $ugentDestDir -Description "UGent Share"
+    $vpsConnected = Test-NetworkConnectivity -Target $vpsHost -Description "VPS ($vpsHost)" -Port $vpsPort
+    $ugentConnected = Test-NetworkConnectivity -Target $ugentTarget -Description "UGent SSH ($ugentHost)" -Port $ugentPort
     
     Write-Host ""
     if ($newFiles.Count -eq 0 -and $changedFiles.Count -eq 0 -and $deletedFiles.Count -eq 0) {
@@ -435,7 +441,7 @@ function Deploy-ToVPS {
     
     Write-Log "Starting VPS Deployment (atomic mode)" -Type "Header"
     
-    if (-not (Test-NetworkConnectivity -Target $vpsHost -Description "VPS ($vpsHost)")) {
+    if (-not (Test-NetworkConnectivity -Target $vpsHost -Description "VPS ($vpsHost)" -Port $vpsPort)) {
         Write-Log "Cannot connect to VPS. Deployment skipped." -Type "Warning"
         return $false
     }
@@ -446,11 +452,11 @@ function Deploy-ToVPS {
         
         # Step 1: Clean up any leftover temp directories from previous failed deployments
         Write-Log "Cleaning up temporary directories..." -Type "Info"
-        ssh $vpsHost "rm -rf $tempPath $oldPath" 2>&1 | Out-Null
+        ssh -p $vpsPort $vpsHost "rm -rf $tempPath $oldPath" 2>&1 | Out-Null
         
         # Step 2: Create new temporary directory
         Write-Log "Creating temporary deployment directory..." -Type "Info"
-        $mkdirResult = ssh $vpsHost "mkdir -p $tempPath" 2>&1
+        $mkdirResult = ssh -p $vpsPort $vpsHost "mkdir -p $tempPath" 2>&1
         if ($LASTEXITCODE -ne 0) {
             Write-Log "Failed to create temporary directory: $mkdirResult" -Type "Error"
             return $false
@@ -460,7 +466,7 @@ function Deploy-ToVPS {
         Write-Log "Uploading files to temporary directory..." -Type "Info"
         Push-Location $sourceDir
         
-        $scpResult = scp -r * "${vpsHost}:${tempPath}/" 2>&1
+        $scpResult = scp -P $vpsPort -r * "${vpsHost}:${tempPath}/" 2>&1
         $scpSuccess = $LASTEXITCODE -eq 0
         
         Pop-Location
@@ -468,7 +474,7 @@ function Deploy-ToVPS {
         if (-not $scpSuccess) {
             Write-Log "Upload failed: $scpResult" -Type "Error"
             # Clean up failed upload
-            ssh $vpsHost "rm -rf $tempPath" 2>&1 | Out-Null
+            ssh -p $vpsPort $vpsHost "rm -rf $tempPath" 2>&1 | Out-Null
             return $false
         }
         
@@ -478,26 +484,26 @@ function Deploy-ToVPS {
         Write-Log "Performing atomic directory swap..." -Type "Info"
         
         # Check if current directory exists
-        $dirExists = ssh $vpsHost "test -d $vpsPath && echo exists || echo missing" 2>&1
+        $dirExists = ssh -p $vpsPort $vpsHost "test -d $vpsPath && echo exists || echo missing" 2>&1
         
         if ($dirExists -match "exists") {
             # Move current to old
-            $moveOldResult = ssh $vpsHost "mv $vpsPath $oldPath" 2>&1
+            $moveOldResult = ssh -p $vpsPort $vpsHost "mv $vpsPath $oldPath" 2>&1
             if ($LASTEXITCODE -ne 0) {
                 Write-Log "Failed to move current to old: $moveOldResult" -Type "Error"
-                ssh $vpsHost "rm -rf $tempPath" 2>&1 | Out-Null
+                ssh -p $vpsPort $vpsHost "rm -rf $tempPath" 2>&1 | Out-Null
                 return $false
             }
         }
         
         # Move new to current
-        $moveNewResult = ssh $vpsHost "mv $tempPath $vpsPath" 2>&1
+        $moveNewResult = ssh -p $vpsPort $vpsHost "mv $tempPath $vpsPath" 2>&1
         if ($LASTEXITCODE -ne 0) {
             Write-Log "Failed to move new to current: $moveNewResult" -Type "Error"
             # Try to restore old version if it exists
             if ($dirExists -match "exists") {
                 Write-Log "Attempting rollback..." -Type "Warning"
-                ssh $vpsHost "mv $oldPath $vpsPath" 2>&1 | Out-Null
+                ssh -p $vpsPort $vpsHost "mv $oldPath $vpsPath" 2>&1 | Out-Null
             }
             return $false
         }
@@ -506,7 +512,7 @@ function Deploy-ToVPS {
         
         # Step 5: Clean up old directory
         Write-Log "Cleaning up old version..." -Type "Info"
-        ssh $vpsHost "rm -rf $oldPath" 2>&1 | Out-Null
+        ssh -p $vpsPort $vpsHost "rm -rf $oldPath" 2>&1 | Out-Null
         
         Write-Log "VPS deployment completed successfully!" -Type "Success"
         Write-Log "Site was never offline during deployment" -Type "Info"
@@ -515,94 +521,69 @@ function Deploy-ToVPS {
     catch {
         Write-Log "VPS deployment error: $($_.Exception.Message)" -Type "Error"
         # Cleanup on error
-        ssh $vpsHost "rm -rf $tempPath" 2>&1 | Out-Null
+        ssh -p $vpsPort $vpsHost "rm -rf $tempPath" 2>&1 | Out-Null
         return $false
     }
 }
 
-# Function to deploy to UGent share
+# Function to deploy to UGent over SSH using atomic blue-green deployment
 function Deploy-ToUGent {
-    param(
-        [array]$ChangedFiles,
-        [array]$NewFiles,
-        [array]$DeletedFiles,
-        [switch]$ForceAll = $false
-    )
-    
-    Write-Log "Starting UGent Deployment" -Type "Header"
-    
-    if (-not (Test-NetworkConnectivity -Target $ugentDestDir -Description "UGent Share")) {
-        Write-Log "Cannot access UGent share. Is VPN connected?" -Type "Warning"
+    Write-Log "Starting UGent Deployment (atomic SSH mode)" -Type "Header"
+
+    if (-not (Test-NetworkConnectivity -Target $ugentTarget -Description "UGent SSH ($ugentHost)" -Port $ugentPort)) {
+        Write-Log "Cannot connect to UGent over SSH. Deployment skipped." -Type "Warning"
         return $false
     }
-    
+
     try {
-        $fullSourceDir = (Resolve-Path $sourceDir).Path
-        $filesToCopy = if ($ForceAll) { Get-ChildItem -Path $sourceDir -Recurse -File } else { $ChangedFiles + $NewFiles }
-        $copiedCount = 0
-        $deletedCount = 0
-        
-        # Copy new and changed files
-        if ($filesToCopy.Count -gt 0) {
-            Write-Log "Copying $($filesToCopy.Count) files to UGent share..." -Type "Info"
-            
-            foreach ($file in $filesToCopy) {
-                if ($ForceAll) {
-                    $relativePath = $file.FullName.Substring($fullSourceDir.Length + 1)
-                    $sourcePath = $file.FullName
-                } else {
-                    $relativePath = $file
-                    $sourcePath = Join-Path -Path $fullSourceDir -ChildPath $relativePath
-                }
-                
-                $destPath = Join-Path -Path $ugentDestDir -ChildPath $relativePath
-                
-                # Create directory structure
-                $destDirForFile = Split-Path -Path $destPath -Parent
-                if (-not (Test-Path $destDirForFile)) {
-                    New-Item -ItemType Directory -Path $destDirForFile -Force | Out-Null
-                }
-                
-                # Copy the file
-                try {
-                    Copy-Item -Path $sourcePath -Destination $destPath -Force
-                    $copiedCount++
-                    if ($Verbose -and -not $Quiet) {
-                        Write-Log "Copied: $relativePath" -Type "Detail"
-                    }
-                }
-                catch {
-                    Write-Log "Failed to copy $relativePath : $($_.Exception.Message)" -Type "Error"
-                }
+        $tempPath = "${ugentPath}_new"
+        $oldPath = "${ugentPath}_old"
+
+        Write-Log "Preparing temporary UGent directory..." -Type "Info"
+        ssh -p $ugentPort $ugentTarget "rm -rf $tempPath $oldPath && mkdir -p $tempPath" 2>&1 | Out-Null
+        if ($LASTEXITCODE -ne 0) {
+            Write-Log "Failed to prepare the UGent deployment directory" -Type "Error"
+            return $false
+        }
+
+        Write-Log "Uploading files to UGent..." -Type "Info"
+        Push-Location $sourceDir
+        $scpResult = scp -P $ugentPort -r * "${ugentTarget}:${tempPath}/" 2>&1
+        $scpSuccess = $LASTEXITCODE -eq 0
+        Pop-Location
+
+        if (-not $scpSuccess) {
+            Write-Log "UGent upload failed: $scpResult" -Type "Error"
+            ssh -p $ugentPort $ugentTarget "rm -rf $tempPath" 2>&1 | Out-Null
+            return $false
+        }
+
+        $dirExists = ssh -p $ugentPort $ugentTarget "test -d $ugentPath && echo exists || echo missing" 2>&1
+        if ($dirExists -match "exists") {
+            $moveOldResult = ssh -p $ugentPort $ugentTarget "mv $ugentPath $oldPath" 2>&1
+            if ($LASTEXITCODE -ne 0) {
+                Write-Log "Failed to preserve the current UGent site: $moveOldResult" -Type "Error"
+                ssh -p $ugentPort $ugentTarget "rm -rf $tempPath" 2>&1 | Out-Null
+                return $false
             }
         }
-        
-        # Delete removed files
-        if (-not $ForceAll -and $DeletedFiles.Count -gt 0) {
-            Write-Log "Removing $($DeletedFiles.Count) deleted files..." -Type "Info"
-            
-            foreach ($file in $DeletedFiles) {
-                $destPath = Join-Path -Path $ugentDestDir -ChildPath $file
-                if (Test-Path $destPath) {
-                    try {
-                        Remove-Item -Path $destPath -Force
-                        $deletedCount++
-                        if ($Verbose -and -not $Quiet) {
-                            Write-Log "Deleted: $file" -Type "Detail"
-                        }
-                    }
-                    catch {
-                        Write-Log "Failed to delete $file : $($_.Exception.Message)" -Type "Error"
-                    }
-                }
+
+        $moveNewResult = ssh -p $ugentPort $ugentTarget "mv $tempPath $ugentPath" 2>&1
+        if ($LASTEXITCODE -ne 0) {
+            Write-Log "Failed to activate the new UGent site: $moveNewResult" -Type "Error"
+            if ($dirExists -match "exists") {
+                ssh -p $ugentPort $ugentTarget "mv $oldPath $ugentPath" 2>&1 | Out-Null
             }
+            return $false
         }
-        
-        Write-Log "UGent deployment completed! Copied: $copiedCount, Deleted: $deletedCount" -Type "Success"
+
+        ssh -p $ugentPort $ugentTarget "rm -rf $oldPath" 2>&1 | Out-Null
+        Write-Log "UGent deployment completed successfully" -Type "Success"
         return $true
     }
     catch {
         Write-Log "UGent deployment error: $($_.Exception.Message)" -Type "Error"
+        ssh -p $ugentPort $ugentTarget "rm -rf $tempPath" 2>&1 | Out-Null
         return $false
     }
 }
@@ -738,9 +719,7 @@ function Start-Deployment {
             Write-Log "Skipping UGent deployment due to build failure" -Type "Error"
             $ugentSuccess = $false
         } else {
-            # After a fresh Hugo build, always force-copy all files to UGent
-            # (the VPS build produced different content in public/, so hash comparisons are unreliable)
-            $ugentSuccess = Deploy-ToUGent -ChangedFiles @() -NewFiles @() -DeletedFiles $deletedFiles -ForceAll:$true
+            $ugentSuccess = Deploy-ToUGent
         }
     }
     
@@ -803,7 +782,7 @@ USAGE:
 OPTIONS:
     -Force          Deploy all files regardless of changes
     -VPSOnly        Deploy only to VPS (skip UGent)
-    -UGentOnly      Deploy only to UGent share (skip VPS)
+    -UGentOnly      Deploy only to UGent over SSH (skip VPS)
     -SkipGit        Skip git commit and push
     -Verbose        Show detailed file operations (default: true)
     -Quiet          Suppress verbose output and run non-interactively

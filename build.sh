@@ -4,6 +4,7 @@ set -e
 
 # === CONFIGURATION ===
 VPS_ALIAS=yusupov
+VPS_PORT=2708
 VPS_PATH=/home/django/moosedept
 
 UGENT_USER=mvuijlst
@@ -37,7 +38,7 @@ if [[ "$TARGET_CHOICE" == "1" || "$TARGET_CHOICE" == "3" ]]; then
     echo "🏗️  Building Hugo site for Hetzner VPS (moosedept.org)..."
     hugo --baseURL "https://moosedept.org"
     echo "🚀 Deploying to Hetzner VPS ($VPS_ALIAS)..."
-    rsync $RSYNC_FLAGS public/ $VPS_ALIAS:$VPS_PATH
+    rsync $RSYNC_FLAGS -e "ssh -p $VPS_PORT" public/ $VPS_ALIAS:$VPS_PATH
 fi
 
 # === DEPLOY TO UGENT ===
