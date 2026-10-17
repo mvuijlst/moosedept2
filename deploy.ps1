@@ -16,6 +16,8 @@ $vpsPath = "/home/django/moosedept"
 $hashFile = "file-hashes.json"
 $vpsBaseURL = "https://moosedept.org"
 $ugentBaseURL = "http://users.ugent.be/~mvuijlst/"
+$publicGitRemote = "github_public"
+$publicGitURL = "https://github.com/mvuijlst/moosedept2.git"
 
 # Color scheme
 $colors = @{
@@ -181,22 +183,27 @@ function Invoke-GitCommitAndPush {
             Write-Log "No changes to commit" -Type "Info"
         }
         
-        # Push if ahead of origin
-        $ahead = git rev-list --count origin/master..master 2>&1
-        if ($LASTEXITCODE -eq 0 -and [int]$ahead -gt 0) {
-            Write-Log "Pushing $ahead commit(s) to GitHub..." -Type "Info"
-            git push origin master 2>&1 | Out-Null
-            if ($LASTEXITCODE -eq 0) {
-                Write-Log "Successfully pushed to GitHub" -Type "Success"
-                return $true
-            } else {
-                Write-Log "Git push failed" -Type "Error"
+        # Keep the private UGent repository and public mirror in sync.
+        git remote get-url $publicGitRemote 2>&1 | Out-Null
+        if ($LASTEXITCODE -ne 0) {
+            Write-Log "Adding public Git remote '$publicGitRemote'..." -Type "Info"
+            git remote add $publicGitRemote $publicGitURL 2>&1 | Out-Null
+            if ($LASTEXITCODE -ne 0) {
+                Write-Log "Could not add public Git remote" -Type "Error"
                 return $false
             }
-        } else {
-            Write-Log "No commits to push to GitHub" -Type "Info"
-            return $true
         }
+
+        foreach ($remote in @("origin", $publicGitRemote)) {
+            Write-Log "Pushing master to $remote..." -Type "Info"
+            git push $remote master 2>&1 | Out-Null
+            if ($LASTEXITCODE -ne 0) {
+                Write-Log "Git push to $remote failed" -Type "Error"
+                return $false
+            }
+            Write-Log "Successfully pushed to $remote" -Type "Success"
+        }
+        return $true
     }
     catch {
         Write-Log "Git operation failed: $($_.Exception.Message)" -Type "Error"
